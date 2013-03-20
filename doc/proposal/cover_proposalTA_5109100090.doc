@@ -1,0 +1,1185 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="cover_proposalTA_5109100090_files/filelist.xml">
+<link rel=Edit-Time-Data href="cover_proposalTA_5109100090_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>admin</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>admin</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>3</o:TotalTime>
+  <o:Created>2013-03-13T08:35:00Z</o:Created>
+  <o:LastSaved>2013-03-13T08:38:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>240</o:Words>
+  <o:Characters>1369</o:Characters>
+  <o:Lines>11</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>1606</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="cover_proposalTA_5109100090_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="cover_proposalTA_5109100090_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610611985 1107304683 0 0 415 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<table class=MsoNormalTable border=0 cellpadding=0 align=left width=600
+ style='width:6.25in;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-table-lspace:
+ 2.25pt;mso-table-rspace:2.25pt;mso-table-anchor-vertical:paragraph;mso-table-anchor-horizontal:
+ column;mso-table-left:left'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img width=200 height=120 id="_x0000_i1034"
+  src="http://monta.if.its.ac.id/assets/Logo/Logo_ITS.gif"
+  alt="http://monta.if.its.ac.id/assets/Logo/Logo_ITS.gif"></span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <div align=right>
+  <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+   style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .75pt;
+   mso-yfti-tbllook:1184;mso-padding-alt:2.25pt 2.25pt 2.25pt 2.25pt;
+   float:right'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td colspan=3 style='background:black;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+    <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+    mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+    column;mso-height-rule:exactly'><span style='mso-fareast-font-family:"Times New Roman";
+    color:white'>Status Proposal<o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+    <td width=50 style='width:37.5pt;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+    <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+    mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+    paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+    style='mso-fareast-font-family:"Times New Roman"'>OK<o:p></o:p></span></p>
+    </td>
+    <td width=50 style='width:37.5pt;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+    <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+    mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+    paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+    style='mso-fareast-font-family:"Times New Roman"'>REVISI<o:p></o:p></span></p>
+    </td>
+    <td width=50 style='width:37.5pt;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+    <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+    mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+    paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+    style='mso-fareast-font-family:"Times New Roman"'>DITOLAK<o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <div class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>
+  <hr size=10 width="100%" noshade style='color:#007DC5' align=center>
+  </span></div>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='font-size:36.0pt;mso-fareast-font-family:
+  "Times New Roman"'>Proposal Tugas Akhir</span><span style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='font-size:24.0pt;mso-fareast-font-family:
+  "Times New Roman"'>RePlace - Rancang Bangun Sistem Rekomendasi Berbasis
+  Kolaborasi Antar Pengguna Perangkat Bergerak dengan Mekanisme Pencocokan
+  Profil</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:22.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='font-size:18.0pt;mso-fareast-font-family:
+  "Times New Roman"'>RIZKY NOOR ICHWAN</span><span style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='font-size:13.5pt;mso-fareast-font-family:
+  "Times New Roman"'>5109100090</span><span style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:22.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='font-size:13.5pt;mso-fareast-font-family:
+  "Times New Roman"'>Dosen Pembimbing 1</span><span style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <div class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>
+  <hr size=2 width="100%" align=center>
+  </span></div>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='font-size:13.5pt;mso-fareast-font-family:
+  "Times New Roman"'>WASKITHO WIBISONO, S.Kom., M.Eng., Ph.D.</span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='font-size:13.5pt;mso-fareast-font-family:
+  "Times New Roman"'>132256272</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;height:22.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='font-size:13.5pt;mso-fareast-font-family:
+  "Times New Roman"'>Dosen Pembimbing 2</span><span style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <div class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>
+  <hr size=2 width="100%" align=center>
+  </span></div>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='font-size:13.5pt;mso-fareast-font-family:
+  "Times New Roman"'>HUDAN STUDIAWAN, S.Kom., M.Kom. </span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='font-size:13.5pt;mso-fareast-font-family:
+  "Times New Roman"'>510000002</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15;height:22.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:16;height:22.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:17'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><b><span style='mso-fareast-font-family:"Times New Roman"'>Jurusan
+  Teknik Informatika</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:18'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><b><span style='mso-fareast-font-family:"Times New Roman"'>Fakultas
+  Teknologi Informasi</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:19'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><b><span style='mso-fareast-font-family:"Times New Roman"'>Institut
+  Teknologi Sepuluh November</span></b><span style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:20'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><b><span style='mso-fareast-font-family:"Times New Roman"'>Surabaya
+  2013</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:21;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='mso-element:frame;mso-element-frame-hspace:2.25pt;
+  mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 align=left width=600
+ style='width:6.25in;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-table-lspace:
+ 2.25pt;mso-table-rspace:2.25pt;mso-table-anchor-vertical:paragraph;mso-table-anchor-horizontal:
+ column;mso-table-left:left'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:24.0pt;mso-fareast-font-family:"Times New Roman"'>Lembar
+  Revisi</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:24.0pt;mso-fareast-font-family:"Times New Roman"'>Sidang
+  Proposal</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:22.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:18.0pt;mso-fareast-font-family:"Times New Roman"'>RePlace -
+  Rancang Bangun Sistem Rekomendasi Berbasis Kolaborasi Antar Pengguna
+  Perangkat Bergerak dengan Mekanisme Pencocokan Profil</span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:22.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:18.0pt;mso-fareast-font-family:"Times New Roman"'>RIZKY NOOR
+  ICHWAN</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:13.5pt;mso-fareast-font-family:"Times New Roman"'>5109100090</span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:22.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:18.0pt;mso-fareast-font-family:"Times New Roman"'>Isi Revisi
+  :</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;height:11.25pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-line-height-alt:
+  11.25pt;mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
+  around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <div class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>
+  <hr size=2 width="100%" align=center>
+  </span></div>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;height:11.25pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-line-height-alt:
+  11.25pt;mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
+  around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <div class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>
+  <hr size=2 width="100%" align=center>
+  </span></div>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13;height:11.25pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-line-height-alt:
+  11.25pt;mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
+  around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:14'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <div class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>
+  <hr size=2 width="100%" align=center>
+  </span></div>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15;height:11.25pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-line-height-alt:
+  11.25pt;mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
+  around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:16'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <div class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>
+  <hr size=2 width="100%" align=center>
+  </span></div>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:17;height:11.25pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-line-height-alt:
+  11.25pt;mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
+  around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:18'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <div class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>
+  <hr size=2 width="100%" align=center>
+  </span></div>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:19;height:11.25pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-line-height-alt:
+  11.25pt;mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
+  around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
+  column;mso-height-rule:exactly'><span style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:20'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <div class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>
+  <hr size=2 width="100%" align=center>
+  </span></div>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:21;height:11.25pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:22;height:11.25pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:11.25pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:23'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:24;height:22.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:25'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:13.5pt;mso-fareast-font-family:"Times New Roman"'>Surabaya,
+  .......................................</span><span style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:26'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:13.5pt;mso-fareast-font-family:"Times New Roman"'>Revisi
+  disetujui oleh</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:27;height:22.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:22.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:28'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>Dosen Penguji 1<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>Dosen Penguji 2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:29;height:37.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:37.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:37.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:30'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>..................................................<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>..................................................<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:31;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>NIP
+  ........................................<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>NIP
+  ........................................<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 align=left width=600
+ style='width:6.25in;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-table-lspace:
+ 2.25pt;mso-table-rspace:2.25pt;mso-table-anchor-vertical:paragraph;mso-table-anchor-horizontal:
+ column;mso-table-left:left'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:24.0pt;mso-fareast-font-family:"Times New Roman"'>Lembar
+  Pengesahan</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:24.0pt;mso-fareast-font-family:"Times New Roman"'>Proposal
+  Tugas Akhir</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:52.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:52.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:52.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:24.0pt;mso-fareast-font-family:"Times New Roman"'>RePlace -
+  Rancang Bangun Sistem Rekomendasi Berbasis Kolaborasi Antar Pengguna
+  Perangkat Bergerak dengan Mekanisme Pencocokan Profil</span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ </size>
+ <tr style='mso-yfti-irow:4'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:18.0pt;mso-fareast-font-family:"Times New Roman"'>(2441)</span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ </size>
+ <tr style='mso-yfti-irow:5;height:52.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:52.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:52.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:13.5pt;mso-fareast-font-family:"Times New Roman"'>RIZKY NOOR
+  ICHWAN</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>5109100090<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;height:52.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:52.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:52.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:13.5pt;mso-fareast-font-family:"Times New Roman"'>Surabaya, Rabu
+  13 Maret 2013</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;height:52.5pt'>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:52.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt;height:52.5pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='font-size:13.5pt;mso-fareast-font-family:"Times New Roman"'>Menyetujui,</span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>Dosen Pembimbing 1<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>Dosen Pembimbing 2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin-bottom:12.0pt;mso-element:frame;mso-element-frame-hspace:
+  2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
+  mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>&nbsp;<br>
+  <br>
+  <br style='mso-special-character:line-break'>
+  <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+  <![endif]><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:14'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>WASKITHO WIBISONO, S.Kom.,
+  M.Eng., Ph.D.<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>HUDAN STUDIAWAN, S.Kom.,
+  M.Kom. <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>NIP. 132256272<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center;mso-element:frame;
+  mso-element-frame-hspace:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:
+  paragraph;mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
+  style='mso-fareast-font-family:"Times New Roman"'>NIP. 510000002<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
+<hr style="width: 200;"/>
