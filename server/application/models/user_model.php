@@ -2,8 +2,8 @@
 class User_model extends CI_Model
 {
 	private $table = 'user';
-	public $user_name;
-	public $user_password;
+	public $userName;
+	public $userPassword;
 
 	function __construct()
 	{
@@ -12,7 +12,7 @@ class User_model extends CI_Model
 
 	public function login()
 	{
-		$q = $this->db->get_where($this->table, array('user_name' => $this->user_name, 'user_password' => $this->user_password)); 
+		$q = $this->db->get_where($this->table, array('userName' => $this->userName, 'userPassword' => $this->userPassword)); 
 		if($q->num_rows() == 1)
 		{
 			return json_encode($q->result_array());
