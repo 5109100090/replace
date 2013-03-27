@@ -36,13 +36,6 @@ public class PlaceType extends ListActivity {
 		Intent intent = getIntent();
 		String userId = intent.getStringExtra("userId");
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.place_type, menu);
-		return true;
-	}
 	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
