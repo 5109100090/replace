@@ -5,20 +5,15 @@ class User_model extends CI_Model
 	public $userName;
 	public $userPassword;
 
-	function __construct()
-	{
+	function __construct(){
 		$this->load->database();
 	}
 
-	public function login()
-	{
+	public function login(){
 		$q = $this->db->get_where($this->table, array('userName' => $this->userName, 'userPassword' => $this->userPassword)); 
-		if($q->num_rows() == 1)
-		{
-			return json_encode($q->result_array());
-		}
-		else
-		{
+		if($q->num_rows() == 1){
+			return '['.json_encode($q->row_array()).']';
+		}else{
 			return 0;
 		}
 	}
