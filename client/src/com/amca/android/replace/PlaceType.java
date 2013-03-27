@@ -18,7 +18,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.ListActivity;
 import android.content.Intent;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -31,7 +30,8 @@ public class PlaceType extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_place_type);
 		
-		this.http();
+		HTTPPlaceType http = new HTTPPlaceType();
+		http.execute("http://10.151.36.36/replace/server/type/listAll/");
 		
 		Intent intent = getIntent();
 		String userId = intent.getStringExtra("userId");
@@ -48,54 +48,50 @@ public class PlaceType extends ListActivity {
 		}
 	}
 	
-	private void http(){
-		class HTTPPlaceType extends AsyncTask<String, String, String>{
-			@Override
-			protected String doInBackground(String... params) {
-				try {
-					HttpClient httpClient = new DefaultHttpClient();
-					HttpGet httpGet = new HttpGet(params[0]);
-					
-					HttpResponse httpRespose = httpClient.execute(httpGet);
-					HttpEntity httpEntity = httpRespose.getEntity();
-					InputStream in = httpEntity.getContent();
-					BufferedReader read = new BufferedReader(new InputStreamReader(in));
+	class HTTPPlaceType extends AsyncTask<String, String, String>{
+		@Override
+		protected String doInBackground(String... params) {
+			try {
+				HttpClient httpClient = new DefaultHttpClient();
+				HttpGet httpGet = new HttpGet(params[0]);
+				
+				HttpResponse httpRespose = httpClient.execute(httpGet);
+				HttpEntity httpEntity = httpRespose.getEntity();
+				InputStream in = httpEntity.getContent();
+				BufferedReader read = new BufferedReader(new InputStreamReader(in));
 
-					String isi= "";
-					String baris= "";
-					while((baris = read.readLine())!=null){
-						isi+= baris;
-					} 
+				String isi= "";
+				String baris= "";
+				while((baris = read.readLine())!=null){
+					isi+= baris;
+				} 
 
-					return isi;
+				return isi;
 
-				} catch (ClientProtocolException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				return null;
+			} catch (ClientProtocolException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-			
-			@Override
-			protected void onPostExecute(String result) {
-				super.onPostExecute(result);
-				//parse json data
-				try{
-					List<String> list = new ArrayList<String>();
-					JSONArray jArray = new JSONArray(result);
-					for(int i=0;i<jArray.length();i++){
-						JSONObject json_data = jArray.getJSONObject(i);
-						list.add(json_data.getString("typeId") + " - " + json_data.getString("typeName") + " - " + json_data.getString("typeTotal"));
-					}
-					ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, list);
-					setListAdapter(adapter);
-				}catch(JSONException e){
-					Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_LONG).show();
+			return null;
+		}
+		
+		@Override
+		protected void onPostExecute(String result) {
+			super.onPostExecute(result);
+			//parse json data
+			try{
+				List<String> list = new ArrayList<String>();
+				JSONArray jArray = new JSONArray(result);
+				for(int i=0;i<jArray.length();i++){
+					JSONObject json_data = jArray.getJSONObject(i);
+					list.add(json_data.getString("typeId") + " - " + json_data.getString("typeName") + " - " + json_data.getString("typeTotal"));
 				}
+				ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, list);
+				setListAdapter(adapter);
+			}catch(JSONException e){
+				Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_LONG).show();
 			}
 		}
-		HTTPPlaceType http = new HTTPPlaceType();
-		http.execute("http://10.151.36.36/replace/server/type/listAll/");
 	}
 }
