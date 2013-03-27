@@ -8,7 +8,7 @@ class Type_model extends CI_Model
 	}
 
 	public function listAll(){
-		return $this->db->query("SELECT type.typeName AS typeName, COUNT(place.placeId) AS typeTotal
+		return $this->db->query("SELECT type.typeId AS typeId, type.typeName AS typeName, COUNT(place.placeId) AS typeTotal
 				FROM place
 				RIGHT JOIN `type` ON type.typeId = place.placeType
 				GROUP BY type.typeId
