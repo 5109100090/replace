@@ -24,17 +24,17 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class PlaceType extends ListActivity {
-	
+	private String userId;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_place_type);
 		
 		HTTPPlaceType http = new HTTPPlaceType();
-		http.execute("http://10.151.36.36/replace/server/type/listAll/");
+		http.execute("type/listAll");
 		
 		Intent intent = getIntent();
-		String userId = intent.getStringExtra("userId");
+		this.userId = intent.getStringExtra("userId");
 	}
 	
 	@Override
@@ -43,17 +43,22 @@ public class PlaceType extends ListActivity {
 		String[] s = item.split(" - ");
 		if(Integer.parseInt(s[2]) > 0){
 			Toast.makeText(this, s[1] + " selected, go ahead", Toast.LENGTH_SHORT).show();
+			Intent intent = new Intent(PlaceType.this, PlaceSelector.class);
+        	intent.putExtra("userId", this.userId);
+        	startActivity(intent);
 		}else{
 			Toast.makeText(this, "no data available for " + s[1], Toast.LENGTH_SHORT).show();
 		}
 	}
 	
 	class HTTPPlaceType extends AsyncTask<String, String, String>{
+		private String serverUrl = "http://10.151.36.36/replace/server/";
 		@Override
 		protected String doInBackground(String... params) {
+			this.serverUrl += params[0];
 			try {
 				HttpClient httpClient = new DefaultHttpClient();
-				HttpGet httpGet = new HttpGet(params[0]);
+				HttpGet httpGet = new HttpGet(this.serverUrl);
 				
 				HttpResponse httpRespose = httpClient.execute(httpGet);
 				HttpEntity httpEntity = httpRespose.getEntity();
@@ -90,7 +95,7 @@ public class PlaceType extends ListActivity {
 				ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, list);
 				setListAdapter(adapter);
 			}catch(JSONException e){
-				Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_LONG).show();
+				Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();
 			}
 		}
 	}

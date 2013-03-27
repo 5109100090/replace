@@ -50,7 +50,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		data.put("userName", userName.getText().toString());
 		data.put("userPassword", userPassword.getText().toString());
 		HTTPLogin login = new HTTPLogin(data);
-		login.execute("login");
+		login.execute("user/login");
 	}
 	
 	@Override
