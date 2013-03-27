@@ -47,7 +47,12 @@ public class PlaceType extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		String item = (String) getListAdapter().getItem(position);
-		Toast.makeText(this, item + " selected", Toast.LENGTH_SHORT).show();
+		String[] s = item.split(" - ");
+		if(Integer.parseInt(s[2]) > 0){
+			Toast.makeText(this, s[1] + " selected, go ahead", Toast.LENGTH_SHORT).show();
+		}else{
+			Toast.makeText(this, "no data available for " + s[1], Toast.LENGTH_SHORT).show();
+		}
 	}
 	
 	private void http(){
@@ -88,7 +93,7 @@ public class PlaceType extends ListActivity {
 					JSONArray jArray = new JSONArray(result);
 					for(int i=0;i<jArray.length();i++){
 						JSONObject json_data = jArray.getJSONObject(i);
-						list.add(json_data.getString("typeName") + " (" + json_data.getString("typeTotal") + ")");
+						list.add(json_data.getString("typeId") + " - " + json_data.getString("typeName") + " - " + json_data.getString("typeTotal"));
 					}
 					ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, list);
 					setListAdapter(adapter);
