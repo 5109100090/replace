@@ -17,6 +17,14 @@ class Place extends CI_Controller {
 		}
 	}
 
+	public function getDetail(){
+		if($this->input->post('placeId')){
+			$model = new Place_model;
+			$model->placeId =  $this->input->post('placeId');
+			echo json_encode(array($model->getDetail()));
+		}
+	}
+
 	public function index()
 	{
 		$ed = new Edit_distance();

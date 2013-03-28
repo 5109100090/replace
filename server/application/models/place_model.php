@@ -14,10 +14,20 @@ class Place_model extends CI_Model
 		$this->load->database();
 	}
 
+	public function getDetail(){
+		return $this->db->select($this->table.".*, type.typeName AS typeName")
+				->from($this->table)
+				->join('type', 'type.typeId = '.$this->table.'.placeType', 'left')
+				->where(array('placeId' => $this->placeId))
+				->get()
+				->row_array();
+		//return $this->db->get_where($this->table, array('placeId' => $this->placeId))->row_array();
+	}
+
 	public function listInRange($distance = 1000)
 	{
 		return $this->db->query("
-			SELECT placeName,
+			SELECT placeId, placeName,
 				(
 					6371000 *
 					acos(
