@@ -48,13 +48,6 @@ public class PlaceDetail extends ListActivity {
 		http.execute("place/getDetail");
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.place_detail, menu);
-		return true;
-	}
-
 	class HTTPPlaceDetail extends AsyncTask<String, String, String>{
 		
 		private Context mContext;

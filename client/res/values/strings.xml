@@ -9,5 +9,7 @@
     <string name="buttonLogin">Login</string>
     <string name="title_activity_place_type">PlaceType</string>
     <string name="title_activity_place_selector">PlaceSelector</string>
+    <string name="title_activity_place_detail">PlaceDetail</string>
+    <string name="title_activity_activity_window">ActivityWindow</string>
 
 </resources>

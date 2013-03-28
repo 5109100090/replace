@@ -30,6 +30,10 @@
             android:name="com.amca.android.replace.PlaceSelector"
             android:label="@string/title_activity_place_selector" >
         </activity>
+        <activity
+            android:name="com.amca.android.replace.PlaceDetail"
+            android:label="@string/title_activity_place_detail" >
+        </activity>
     </application>
 
 </manifest>

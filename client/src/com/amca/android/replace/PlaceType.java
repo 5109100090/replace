@@ -1,4 +1,5 @@
 package com.amca.android.replace;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,6 +18,8 @@ import org.json.JSONObject;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.ListActivity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -30,7 +33,7 @@ public class PlaceType extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_place_type);
 		
-		HTTPPlaceType http = new HTTPPlaceType();
+		HTTPPlaceType http = new HTTPPlaceType(this);
 		http.execute("type/listAll");
 		
 		Intent intent = getIntent();
@@ -45,6 +48,7 @@ public class PlaceType extends ListActivity {
 			Toast.makeText(this, s[1] + " selected, go ahead", Toast.LENGTH_SHORT).show();
 			Intent intent = new Intent(PlaceType.this, PlaceSelector.class);
         	intent.putExtra("userId", this.userId);
+        	intent.putExtra("typeName", s[1]);
         	startActivity(intent);
 		}else{
 			Toast.makeText(this, "no data available for " + s[1], Toast.LENGTH_SHORT).show();
@@ -52,7 +56,24 @@ public class PlaceType extends ListActivity {
 	}
 	
 	class HTTPPlaceType extends AsyncTask<String, String, String>{
+		
+		private Context mContext;
 		private String serverUrl = "http://10.151.36.36/replace/server/";
+		private ProgressDialog progressDialog;
+		
+		public HTTPPlaceType(Context context){
+			this.mContext = context;
+		}
+		
+		@Override
+	    protected void onPreExecute() {
+			progressDialog = new ProgressDialog(mContext);
+		    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		    progressDialog.setMessage("Loading...");
+		    progressDialog.setCancelable(false);
+		    progressDialog.show();
+		}
+		
 		@Override
 		protected String doInBackground(String... params) {
 			this.serverUrl += params[0];
@@ -97,6 +118,8 @@ public class PlaceType extends ListActivity {
 			}catch(JSONException e){
 				Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();
 			}
+			progressDialog.dismiss();
+			progressDialog = null;
 		}
 	}
 }

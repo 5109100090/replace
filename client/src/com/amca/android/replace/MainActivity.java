@@ -19,6 +19,8 @@ import org.json.simple.JSONValue;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
@@ -49,7 +51,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("userName", userName.getText().toString());
 		data.put("userPassword", userPassword.getText().toString());
-		HTTPLogin login = new HTTPLogin(data);
+		HTTPLogin login = new HTTPLogin(this, data);
 		login.execute("user/login");
 	}
 	
@@ -62,11 +64,23 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	class HTTPLogin extends AsyncTask<String, String, JSONObject>{
 
-		private String serverUrl = "http://10.151.36.36/replace/server/";
+		private Context mContext;
 		private HashMap<String, String> mData = null;
+		private String serverUrl = "http://10.151.36.36/replace/server/";
+		private ProgressDialog progressDialog;
 		
-		public HTTPLogin(HashMap<String, String> data){
+		public HTTPLogin(Context context, HashMap<String, String> data){
+			this.mContext = context;
 			mData = data;
+		}
+		
+		@Override
+	    protected void onPreExecute() {
+			progressDialog = new ProgressDialog(mContext);
+		    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		    progressDialog.setMessage("Loading...");
+		    progressDialog.setCancelable(false);
+		    progressDialog.show();
 		}
 		
 		@Override
@@ -123,6 +137,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	        	intent.putExtra("userId", result.get("userId").toString());
 	        	startActivity(intent);
 			}
+			progressDialog.dismiss();
+			progressDialog = null;
 		}
 	}
 }
