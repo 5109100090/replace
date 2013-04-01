@@ -17,5 +17,13 @@ class User_model extends CI_Model
 			return 0;
 		}
 	}
+
+	public function listAll(){
+		return $this->db->get($this->table)->result();
+	}
+
+	public function update($data){
+		$this->db->update_batch($this->table, $data, 'userId'); 
+	}
 }
 ?>

@@ -9,11 +9,11 @@ class Place extends CI_Controller {
 	}
 
 	public function process(){
-		if($this->input->post('userId') && $this->input->post('currentLat') && $this->input->post('currentLng')){
+		if($this->input->post('userId') && $this->input->post('typeId') && $this->input->post('currentLat') && $this->input->post('currentLng') && $this->input->post('range')){
 			$model = new Place_model;
 			$model->placeLat =  $this->input->post('currentLat');
 			$model->placeLng =  $this->input->post('currentLng');
-			echo json_encode($model->listInRange(2000));
+			echo json_encode($model->listInRange($this->input->post('typeId'), $this->input->post('range')));
 		}
 	}
 
@@ -32,8 +32,13 @@ class Place extends CI_Controller {
 		$ed->str2 = "watch movie";
 		echo $ed->similarity();
 		$model = new Place_model;
-		$model->placeLat = -7.27957;
-		$model->placeLng = 112.79751;
+
+		//03-28 14:18:38.370: I/System.out(2233): lat : 1.609325408935547E-5 | lon : -326.3999891281128
+
+		//$model->placeLat = -7.27957;
+		//$model->placeLng = 112.79751;
+		$model->placeLat = "1.6093254089355";
+		$model->placeLng = "-326.39998912";
 		echo $this->table->generate($model->listInRange(2000));
 	}
 }

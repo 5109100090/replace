@@ -14,6 +14,10 @@ class Place_model extends CI_Model
 		$this->load->database();
 	}
 
+	public function listAll(){
+		return $this->db->get($this->table)->result();
+	}
+	
 	public function getDetail(){
 		return $this->db->select($this->table.".*, type.typeName AS typeName")
 				->from($this->table)
@@ -24,7 +28,7 @@ class Place_model extends CI_Model
 		//return $this->db->get_where($this->table, array('placeId' => $this->placeId))->row_array();
 	}
 
-	public function listInRange($distance = 1000)
+	public function listInRange($typeId = 1, $distance = 1000)
 	{
 		return $this->db->query("
 			SELECT placeId, placeName,
@@ -39,6 +43,7 @@ class Place_model extends CI_Model
 					)
 				) AS placeDistance
 			FROM " . $this->table . "
+			WHERE placeType = '". $typeId . "'
 			HAVING placeDistance < $distance
 			ORDER BY placeDistance")->result_array();
 	}
