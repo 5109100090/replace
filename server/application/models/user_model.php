@@ -10,8 +10,8 @@ class User_model extends CI_Model
 		$this->load->database();
 	}
 
-	public function get(){
-		return $this->db->get_where($this->table, array('userId' => $this->userId))->row();
+	public function getByKey($key, $value){
+		return $this->db->get_where($this->table, array($key => $value))->row();
 	}
 
 	public function login(){
