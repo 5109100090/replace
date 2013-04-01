@@ -2,11 +2,16 @@
 class User_model extends CI_Model
 {
 	private $table = 'user';
+	public $userId;
 	public $userName;
 	public $userPassword;
 
 	function __construct(){
 		$this->load->database();
+	}
+
+	public function get(){
+		return $this->db->get_where($this->table, array('userId' => $this->userId))->row();
 	}
 
 	public function login(){
