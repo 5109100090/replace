@@ -19,8 +19,6 @@ import org.json.simple.JSONValue;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
@@ -28,13 +26,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnClickListener {
 
-	private EditText userName;
-	private EditText userPassword;
+	private EditText userName, userPassword;
 	private Button buttonLogin;
+	private ProgressBar progressBar; 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +41,19 @@ public class MainActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 		userName = (EditText) findViewById(R.id.userName);
 		userPassword = (EditText) findViewById(R.id.userPassword);
+		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
+		progressBar.setVisibility(View.INVISIBLE);
 		buttonLogin = (Button) findViewById(R.id.buttonLogin);
 		buttonLogin.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
+		progressBar.setVisibility(View.VISIBLE);
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("userName", userName.getText().toString());
 		data.put("userPassword", userPassword.getText().toString());
-		HTTPLogin login = new HTTPLogin(this, data);
+		HTTPLogin login = new HTTPLogin(data);
 		login.execute("user/login");
 	}
 	
@@ -64,23 +66,11 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	class HTTPLogin extends AsyncTask<String, String, JSONObject>{
 
-		private Context mContext;
 		private HashMap<String, String> mData = null;
 		private String serverUrl = "http://10.151.36.36/replace/server/";
-		private ProgressDialog progressDialog;
 		
-		public HTTPLogin(Context context, HashMap<String, String> data){
-			this.mContext = context;
+		public HTTPLogin(HashMap<String, String> data){
 			mData = data;
-		}
-		
-		@Override
-	    protected void onPreExecute() {
-			progressDialog = new ProgressDialog(mContext);
-		    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		    progressDialog.setMessage("Loading...");
-		    progressDialog.setCancelable(false);
-		    progressDialog.show();
 		}
 		
 		@Override
@@ -137,8 +127,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	        	intent.putExtra("userId", result.get("userId").toString());
 	        	startActivity(intent);
 			}
-			progressDialog.dismiss();
-			progressDialog = null;
+			progressBar.setVisibility(View.INVISIBLE);
 		}
 	}
 }

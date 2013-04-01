@@ -22,51 +22,64 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Dialog;
 import android.app.ListActivity;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class PlaceDetail extends ListActivity {
 
+	private String placeId;
+	private ProgressBar progressBar; 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_place_detail);
 		
 		Intent intent = getIntent();
-		String placeId = intent.getStringExtra("placeId");
+		this.placeId = intent.getStringExtra("placeId");
+		
+		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 		
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("placeId", placeId);
 		
-		HTTPPlaceDetail http = new HTTPPlaceDetail(this, data);
+		HTTPPlaceDetail http = new HTTPPlaceDetail(data);
 		http.execute("place/getDetail");
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.place_detail, menu);
+		return true;
+	}
+	
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+    	switch (item.getItemId()) {
+			case R.id.action_reviews:
+				Intent intent = new Intent(PlaceDetail.this, PlaceReviews.class);
+		    	intent.putExtra("placeId", this.placeId);
+		    	startActivity(intent);
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+    }
+    
 	class HTTPPlaceDetail extends AsyncTask<String, String, String>{
 		
-		private Context mContext;
 		private HashMap<String, String> mData = null;
 		private String serverUrl = "http://10.151.36.36/replace/server/";
-		private ProgressDialog progressDialog;
 		
-		public HTTPPlaceDetail(Context context, HashMap<String, String> data){
-			this.mContext = context;
+		public HTTPPlaceDetail(HashMap<String, String> data){
 			mData = data;
-		}
-		
-		@Override
-	    protected void onPreExecute() {
-			progressDialog = new ProgressDialog(mContext);
-		    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		    progressDialog.setMessage("Loading...");
-		    progressDialog.setCancelable(false);
-		    progressDialog.show();
 		}
 		
 		@Override
@@ -126,8 +139,7 @@ public class PlaceDetail extends ListActivity {
 			}catch(JSONException e){
 				Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();
 			}
-			progressDialog.dismiss();
-			progressDialog = null;
+			progressBar.setVisibility(View.INVISIBLE);
 		}
 	}
 }

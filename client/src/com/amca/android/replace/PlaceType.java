@@ -17,62 +17,65 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.ListActivity;
-import android.app.ProgressDialog;
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class PlaceType extends ListActivity {
+public class PlaceType extends Activity implements OnClickListener {
+	
 	private String userId;
+	private Spinner spinnerPlaceType, spinnerRange;
+	private Button buttonSubmit;
+	private ProgressBar progressBar; 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_place_type);
 		
-		HTTPPlaceType http = new HTTPPlaceType(this);
-		http.execute("type/listAll");
-		
 		Intent intent = getIntent();
 		this.userId = intent.getStringExtra("userId");
+		
+		spinnerPlaceType = (Spinner) findViewById(R.id.spinnerPlaceType);
+		spinnerRange = (Spinner) findViewById(R.id.spinnerRange);
+		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
+		buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
+		buttonSubmit.setOnClickListener(this);
+		
+		progressBar.setVisibility(View.VISIBLE);
+		spinnerPlaceType.setVisibility(View.INVISIBLE);
+		spinnerRange.setVisibility(View.INVISIBLE);
+		buttonSubmit.setVisibility(View.INVISIBLE);
+		
+		HTTPPlaceType http = new HTTPPlaceType();
+		http.execute("type/listAll");
 	}
 	
 	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
-		String item = (String) getListAdapter().getItem(position);
-		String[] s = item.split(" - ");
-		if(Integer.parseInt(s[2]) > 0){
-			Toast.makeText(this, s[1] + " selected, go ahead", Toast.LENGTH_SHORT).show();
+	public void onClick(View v) {
+		String[] placeType = String.valueOf(spinnerPlaceType.getSelectedItem()).split(" - ");
+		if(Integer.parseInt(placeType[2]) > 0){
 			Intent intent = new Intent(PlaceType.this, PlaceSelector.class);
         	intent.putExtra("userId", this.userId);
-        	intent.putExtra("typeName", s[1]);
+        	intent.putExtra("typeId", placeType[0]);
+        	intent.putExtra("typeName", placeType[1]);
+        	String [] range = String.valueOf(spinnerRange.getSelectedItem()).split(" meter");
+        	intent.putExtra("range", range[0]);
         	startActivity(intent);
 		}else{
-			Toast.makeText(this, "no data available for " + s[1], Toast.LENGTH_SHORT).show();
+			Toast.makeText(PlaceType.this, "no data available for " + placeType[1], Toast.LENGTH_SHORT).show();
 		}
 	}
 	
 	class HTTPPlaceType extends AsyncTask<String, String, String>{
 		
-		private Context mContext;
 		private String serverUrl = "http://10.151.36.36/replace/server/";
-		private ProgressDialog progressDialog;
-		
-		public HTTPPlaceType(Context context){
-			this.mContext = context;
-		}
-		
-		@Override
-	    protected void onPreExecute() {
-			progressDialog = new ProgressDialog(mContext);
-		    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		    progressDialog.setMessage("Loading...");
-		    progressDialog.setCancelable(false);
-		    progressDialog.show();
-		}
 		
 		@Override
 		protected String doInBackground(String... params) {
@@ -113,13 +116,16 @@ public class PlaceType extends ListActivity {
 					JSONObject json_data = jArray.getJSONObject(i);
 					list.add(json_data.getString("typeId") + " - " + json_data.getString("typeName") + " - " + json_data.getString("typeTotal"));
 				}
-				ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, list);
-				setListAdapter(adapter);
+				ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, list);
+				dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+				spinnerPlaceType.setAdapter(dataAdapter);
 			}catch(JSONException e){
 				Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();
 			}
-			progressDialog.dismiss();
-			progressDialog = null;
+			progressBar.setVisibility(View.INVISIBLE);
+			spinnerPlaceType.setVisibility(View.VISIBLE);
+			spinnerRange.setVisibility(View.VISIBLE);
+			buttonSubmit.setVisibility(View.VISIBLE);
 		}
 	}
 }

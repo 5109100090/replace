@@ -12,4 +12,17 @@
     <string name="title_activity_place_detail">PlaceDetail</string>
     <string name="title_activity_activity_window">ActivityWindow</string>
 
+    <string-array name="spinnerRange">
+        <item>100 meter</item>
+        <item>500 meter</item>
+        <item>1000 meter</item>
+        <item>2000 meter</item>
+    </string-array>
+
+    <string name="buttonSubmit">Submit</string>
+    <string name="spinnerPlaceTypePrompt">Choose type</string>
+    <string name="spinnerRangePrompt">Choose Range</string>
+    <string name="action_reviews">Reviews</string>
+    <string name="title_activity_place_reviews">PlaceReviews</string>
+
 </resources>
