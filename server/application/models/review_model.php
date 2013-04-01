@@ -23,5 +23,9 @@ class Review_model extends CI_Model{
 	public function insert(){
 		$this->db->insert($this->table, array('reviewUser' => $this->reviewUser, 'reviewPlace' => $this->reviewPlace, 'reviewPoint' => $this->reviewPoint));
 	}
+
+	public function listByKey($key, $value){
+		return $this->db->get_where($this->table, array($key => $value))->result();
+	}
 }
 ?>
