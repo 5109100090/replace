@@ -24,5 +24,6 @@
     <string name="spinnerRangePrompt">Choose Range</string>
     <string name="action_reviews">Reviews</string>
     <string name="title_activity_place_reviews">PlaceReviews</string>
+    <string name="title_activity_settings">Settings</string>
 
 </resources>

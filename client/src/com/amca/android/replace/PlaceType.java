@@ -17,8 +17,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -75,14 +77,13 @@ public class PlaceType extends Activity implements OnClickListener {
 	
 	class HTTPPlaceType extends AsyncTask<String, String, String>{
 		
-		private String serverUrl = "http://10.151.36.36/replace/server/";
-		
 		@Override
 		protected String doInBackground(String... params) {
-			this.serverUrl += params[0];
+			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PlaceType.this);
+			String serverUrl = preferences.getString("serverUrl", "") + params[0];
 			try {
 				HttpClient httpClient = new DefaultHttpClient();
-				HttpGet httpGet = new HttpGet(this.serverUrl);
+				HttpGet httpGet = new HttpGet(serverUrl);
 				
 				HttpResponse httpRespose = httpClient.execute(httpGet);
 				HttpEntity httpEntity = httpRespose.getEntity();

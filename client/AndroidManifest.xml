@@ -39,6 +39,10 @@
             android:name="com.amca.android.replace.PlaceReviews"
             android:label="@string/title_activity_place_reviews" >
         </activity>
+        <activity
+            android:name="com.amca.android.replace.Settings"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>

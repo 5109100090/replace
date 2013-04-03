@@ -27,11 +27,13 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_reviews=0x7f090008;
-        public static final int action_settings=0x7f090007;
+        public static final int action_reviews=0x7f09000a;
+        public static final int action_settings=0x7f090009;
         public static final int buttonLogin=0x7f090002;
+        public static final int buttonSetting=0x7f090008;
         public static final int buttonSubmit=0x7f090006;
         public static final int progressBar1=0x7f090003;
+        public static final int serverUrl=0x7f090007;
         public static final int spinnerPlaceType=0x7f090004;
         public static final int spinnerRange=0x7f090005;
         public static final int userName=0x7f090000;
@@ -43,6 +45,7 @@ public final class R {
         public static final int activity_place_reviews=0x7f030002;
         public static final int activity_place_selector=0x7f030003;
         public static final int activity_place_type=0x7f030004;
+        public static final int activity_settings=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -64,6 +67,7 @@ public final class R {
         public static final int title_activity_place_reviews=0x7f05000e;
         public static final int title_activity_place_selector=0x7f050007;
         public static final int title_activity_place_type=0x7f050006;
+        public static final int title_activity_settings=0x7f05000f;
         public static final int userNameHint=0x7f050003;
         public static final int userPasswordHint=0x7f050004;
     }

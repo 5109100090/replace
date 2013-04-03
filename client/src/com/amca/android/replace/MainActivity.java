@@ -18,10 +18,14 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -39,6 +43,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		this.prepareConfiguration();
+		
 		userName = (EditText) findViewById(R.id.userName);
 		userPassword = (EditText) findViewById(R.id.userPassword);
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
@@ -64,10 +71,28 @@ public class MainActivity extends Activity implements OnClickListener {
 		return true;
 	}
 
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item){
+    	switch (item.getItemId()) {
+			case R.id.action_settings:
+				Intent intent = new Intent(MainActivity.this, Settings.class);
+		    	startActivity(intent);
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+    }
+	
+	private void prepareConfiguration(){
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+		Editor editor = preferences.edit();
+		editor.putString("serverUrl", "http://10.151.36.36/replace/server/");
+		editor.commit();
+	}
+	
 	class HTTPLogin extends AsyncTask<String, String, JSONObject>{
 
 		private HashMap<String, String> mData = null;
-		private String serverUrl = "http://10.151.36.36/replace/server/";
 		
 		public HTTPLogin(HashMap<String, String> data){
 			mData = data;
@@ -75,7 +100,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		@Override
 		protected JSONObject doInBackground(String... params) {
-			this.serverUrl += params[0];
+			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+			String serverUrl = preferences.getString("serverUrl", "") + params[0];
 			
 			ArrayList<NameValuePair> nameValuePair = new ArrayList<NameValuePair>();
             Iterator<String> it = mData.keySet().iterator();

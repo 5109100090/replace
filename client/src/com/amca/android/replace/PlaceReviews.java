@@ -26,9 +26,11 @@ import com.amca.android.replace.PlaceDetail.HTTPPlaceDetail;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -67,7 +69,6 @@ public class PlaceReviews extends ListActivity {
 	class HTTPPlaceDetail extends AsyncTask<String, String, String>{
 		
 		private HashMap<String, String> mData = null;
-		private String serverUrl = "http://10.151.36.36/replace/server/";
 		
 		public HTTPPlaceDetail(HashMap<String, String> data){
 			mData = data;
@@ -75,7 +76,8 @@ public class PlaceReviews extends ListActivity {
 		
 		@Override
 		protected String doInBackground(String... params) {
-			this.serverUrl += params[0];
+			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PlaceReviews.this);
+			String serverUrl = preferences.getString("serverUrl", "") + params[0];
 			
 			ArrayList<NameValuePair> nameValuePair = new ArrayList<NameValuePair>();
             Iterator<String> it = mData.keySet().iterator();
