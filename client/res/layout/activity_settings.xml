@@ -8,17 +8,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Settings" >
 
-    <EditText
-        android:id="@+id/serverUrl"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:ems="10" />
+    <RadioGroup
+        android:id="@+id/radioServer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/buttonSetting"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/buttonSubmit"
-        android:layout_below="@+id/serverUrl" />
+        <RadioButton
+            android:id="@+id/server1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/server1"
+            android:onClick="onRadioButtonClicked" />
+
+        <RadioButton
+            android:id="@+id/server2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/server2"
+            android:onClick="onRadioButtonClicked" />
+    </RadioGroup>
 
 </RelativeLayout>

@@ -6,32 +6,30 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class Settings extends Activity implements OnClickListener {
+public class Settings extends Activity {
 
-	private EditText serverUrl;
-	private Button buttonSetting;
+	private RadioButton radioButtonServer, radioButtonServer1, radioButtonServer2;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
 		
-		serverUrl = (EditText) findViewById(R.id.serverUrl);
-		serverUrl.setText(this.getPref("serverUrl"));
-		
-		buttonSetting = (Button) findViewById(R.id.buttonSetting);
-		buttonSetting.setOnClickListener(this);
+		String serverUrl = this.getPref("serverUrl");
+		radioButtonServer1 = (RadioButton) findViewById(R.id.server1);
+		radioButtonServer2 = (RadioButton) findViewById(R.id.server2);
+		radioButtonServer1.setChecked(serverUrl.equals(radioButtonServer1.getText()));
+		radioButtonServer2.setChecked(serverUrl.equals(radioButtonServer2.getText()));
 	}
 	
-	@Override
-	public void onClick(View v) {
-		this.setPref("serverUrl", serverUrl.getText().toString());
+	public void onRadioButtonClicked(View view) {
+		radioButtonServer = (RadioButton) findViewById(view.getId());
+		this.setPref("serverUrl", radioButtonServer.getText().toString());
 		Toast.makeText(getApplicationContext(), "settings saved", Toast.LENGTH_SHORT).show();
+
 	}
 	
 	private void setPref(String key, String value) {

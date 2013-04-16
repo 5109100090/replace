@@ -29,7 +29,6 @@ import android.preference.PreferenceManager;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -89,13 +88,6 @@ public class PlaceSelector extends ListActivity {
 		Intent intent = new Intent(PlaceSelector.this, PlaceDetail.class);
     	intent.putExtra("placeId", s[0]);
     	startActivity(intent);
-	}
-	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.place_selector, menu);
-		return true;
 	}
 	
 	class HTTPPlaceSelector extends AsyncTask<String, String, String>{
