@@ -27,7 +27,7 @@
     <string name="title_activity_place_reviews">PlaceReviews</string>
     <string name="title_activity_settings">Settings</string>
     <string name="server1">http://10.151.36.36/replace/server/</string>
-    <string name="server2">http://riset.ajk.if.its.ac.id/replace/</string>
+    <string name="server2">http://riset.ajk.if.its.ac.id/replace/server/</string>
     <string name="title_activity_place_selector_map">PlaceSelectorMap</string>
 
 </resources>
