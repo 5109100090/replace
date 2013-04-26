@@ -29,7 +29,7 @@ public class Settings extends Activity {
 		radioButtonServer = (RadioButton) findViewById(view.getId());
 		this.setPref("serverUrl", radioButtonServer.getText().toString());
 		Toast.makeText(getApplicationContext(), "settings saved", Toast.LENGTH_SHORT).show();
-
+		finish();
 	}
 	
 	private void setPref(String key, String value) {
