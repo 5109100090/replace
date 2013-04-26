@@ -41,8 +41,8 @@ public class PlaceSelector extends ListActivity {
 
 	private LocationManager locationMangaer = null;  
 	private MyLocationListener locationListener = null;   
-	private String userId, typeId, range, currentLat, currentLng;
-	private ProgressBar progressBar; 
+	private String userId, typeId, range, currentLat, currentLng, jsonValue;
+	private ProgressBar progressBar;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +108,7 @@ public class PlaceSelector extends ListActivity {
 				Intent intent = new Intent(PlaceSelector.this, PlaceSelectorMap.class);
 				intent.putExtra("currentLat", Float.parseFloat(this.currentLat));
 				intent.putExtra("currentLng", Float.parseFloat(this.currentLng));
+				intent.putExtra("jsonValue", this.jsonValue);
 		    	startActivity(intent);
 				return true;
 			default:
@@ -163,6 +164,7 @@ public class PlaceSelector extends ListActivity {
 		@Override
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);
+			jsonValue = result;
 			//parse json data
 			try{
 				List<String> list = new ArrayList<String>();
