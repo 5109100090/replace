@@ -7,6 +7,7 @@
     <string name="userNameHint">Username</string>
     <string name="userPasswordHint">Password</string>
     <string name="buttonLogin">Login</string>
+    <string name="quickButtonLogin">Quick Login</string>
     <string name="title_activity_place_type">PlaceType</string>
     <string name="title_activity_place_selector">PlaceSelector</string>
     <string name="title_activity_place_detail">PlaceDetail</string>

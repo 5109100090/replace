@@ -33,10 +33,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends Activity {
 
 	private EditText userName, userPassword;
-	private Button buttonLogin;
+	private Button buttonLogin, quickButtonLogin;
 	private ProgressBar progressBar; 
 	
 	@Override
@@ -51,17 +51,17 @@ public class MainActivity extends Activity implements OnClickListener {
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 		progressBar.setVisibility(View.INVISIBLE);
 		buttonLogin = (Button) findViewById(R.id.buttonLogin);
-		buttonLogin.setOnClickListener(this);
-	}
-
-	@Override
-	public void onClick(View v) {
-		progressBar.setVisibility(View.VISIBLE);
-		HashMap<String, String> data = new HashMap<String, String>();
-		data.put("userName", userName.getText().toString());
-		data.put("userPassword", userPassword.getText().toString());
-		HTTPLogin login = new HTTPLogin(data);
-		login.execute("user/login");
+		buttonLogin.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	doLogin(userName.getText().toString(), userPassword.getText().toString());
+            }
+        });
+		quickButtonLogin = (Button) findViewById(R.id.quickButtonLogin);
+		quickButtonLogin.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	doLogin("rizky", "123qwe");
+            }
+        });
 	}
 	
 	@Override
@@ -82,6 +82,15 @@ public class MainActivity extends Activity implements OnClickListener {
 				return super.onOptionsItemSelected(item);
 		}
     }
+	
+	private void doLogin(String username, String password){
+		progressBar.setVisibility(View.VISIBLE);
+		HashMap<String, String> data = new HashMap<String, String>();
+		data.put("userName", username);
+		data.put("userPassword", password);
+		HTTPLogin login = new HTTPLogin(data);
+		login.execute("user/login");
+	}
 	
 	private void prepareConfiguration(){
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);

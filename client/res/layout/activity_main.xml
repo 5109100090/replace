@@ -29,6 +29,13 @@
         android:layout_height="wrap_content"
         android:text="@string/buttonLogin"
         android:layout_below="@+id/userPassword" />
+
+    <Button
+        android:id="@+id/quickButtonLogin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/quickButtonLogin"
+        android:layout_below="@+id/buttonLogin" />
     
     <ProgressBar
         android:id="@+id/progressBar1"
