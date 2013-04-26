@@ -29,6 +29,8 @@ import android.preference.PreferenceManager;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -39,7 +41,7 @@ public class PlaceSelector extends ListActivity {
 
 	private LocationManager locationMangaer = null;  
 	private MyLocationListener locationListener = null;   
-	private String userId, typeId, range;
+	private String userId, typeId, range, currentLat, currentLng;
 	private ProgressBar progressBar; 
 	
 	@Override
@@ -61,6 +63,8 @@ public class PlaceSelector extends ListActivity {
 		locationListener = new MyLocationListener();  
 		locationMangaer.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener); 
 		//*/
+		this.currentLat = "-7.27957";
+		this.currentLng = "112.79751";
 		
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("userId", userId);
@@ -71,8 +75,8 @@ public class PlaceSelector extends ListActivity {
 		data.put("currentLng", locationListener.getLongitude());
 		System.out.println("lat : "+locationListener.getLatitude()+" | lon : "+locationListener.getLongitude());
 		/*/
-		data.put("currentLat", "-7.27957");
-		data.put("currentLng", "112.79751");
+		data.put("currentLat", this.currentLat);
+		data.put("currentLng", this.currentLng);
 		//*/
 		
 		HTTPPlaceSelector http = new HTTPPlaceSelector(data);
@@ -89,6 +93,27 @@ public class PlaceSelector extends ListActivity {
     	intent.putExtra("placeId", s[0]);
     	startActivity(intent);
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.place_selector, menu);
+		return true;
+	}
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item){
+    	switch (item.getItemId()) {
+			case R.id.action_map:
+				Intent intent = new Intent(PlaceSelector.this, PlaceSelectorMap.class);
+				intent.putExtra("currentLat", Float.parseFloat(this.currentLat));
+				intent.putExtra("currentLng", Float.parseFloat(this.currentLng));
+		    	startActivity(intent);
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+    }
 	
 	class HTTPPlaceSelector extends AsyncTask<String, String, String>{
 		
