@@ -12,7 +12,7 @@
         android:id="@+id/textViewServerUrl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Server URL"
+        android:text="@string/spinnerServer"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
     <Spinner
@@ -20,13 +20,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewServerUrl"
-        android:entries="@array/spinnerServer" />
+        android:entries="@array/spinnerServerEntries"
+        android:prompt="@string/spinnerServer" />
 
 	<TextView
         android:id="@+id/textViewGeolocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Geolocation"
+        android:text="@string/spinnerGeolocation"
         android:layout_below="@+id/spinnerServer"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 	
@@ -35,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewGeolocation"
-        android:entries="@array/spinnerGeolocation" />
+        android:entries="@array/spinnerGeolocationEntries"
+        android:prompt="@string/spinnerGeolocation" />
 
 </RelativeLayout>

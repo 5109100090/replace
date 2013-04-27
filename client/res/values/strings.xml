@@ -13,24 +13,26 @@
     <string name="title_activity_place_detail">PlaceDetail</string>
     <string name="title_activity_activity_window">ActivityWindow</string>
 
-    <string-array name="spinnerRange">
+    <string-array name="spinnerRangeEntries">
         <item>100 meter</item>
         <item>500 meter</item>
         <item>1000 meter</item>
         <item>2000 meter</item>
     </string-array>
-    <string-array name="spinnerServer">
+    <string-array name="spinnerServerEntries">
         <item>http://10.151.36.36/replace/server/</item>
         <item>http://riset.ajk.if.its.ac.id/replace/server/</item>
     </string-array>
-	<string-array name="spinnerGeolocation">
+	<string-array name="spinnerGeolocationEntries">
         <item>static</item>
         <item>auto</item>
     </string-array>
     
     <string name="buttonSubmit">Submit</string>
-    <string name="spinnerPlaceTypePrompt">Choose type</string>
-    <string name="spinnerRangePrompt">Choose Range</string>
+    <string name="spinnerPlaceType">Place Type</string>
+    <string name="spinnerRange">Range</string>
+    <string name="spinnerServer">Server URL</string>
+    <string name="spinnerGeolocation">Geolocation</string>
     <string name="action_reviews">Reviews</string>
     <string name="action_map">View Map</string>
     <string name="title_activity_place_reviews">PlaceReviews</string>

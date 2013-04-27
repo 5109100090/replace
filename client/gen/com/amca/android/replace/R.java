@@ -9,9 +9,9 @@ package com.amca.android.replace;
 
 public final class R {
     public static final class array {
-        public static final int spinnerGeolocation=0x7f070002;
-        public static final int spinnerRange=0x7f070000;
-        public static final int spinnerServer=0x7f070001;
+        public static final int spinnerGeolocationEntries=0x7f070002;
+        public static final int spinnerRangeEntries=0x7f070000;
+        public static final int spinnerServerEntries=0x7f070001;
     }
     public static final class attr {
         /** <p>Must be a floating point value, such as "<code>1.2</code>".
@@ -147,11 +147,11 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_map=0x7f040014;
-        public static final int action_reviews=0x7f040013;
-        public static final int action_settings=0x7f040012;
+        public static final int action_map=0x7f040016;
+        public static final int action_reviews=0x7f040015;
+        public static final int action_settings=0x7f040014;
         public static final int buttonLogin=0x7f040007;
-        public static final int buttonSubmit=0x7f04000d;
+        public static final int buttonSubmit=0x7f04000f;
         public static final int hybrid=0x7f040004;
         public static final int map=0x7f04000a;
         public static final int none=0x7f040000;
@@ -159,13 +159,15 @@ containing a value of this type.
         public static final int progressBar1=0x7f040009;
         public static final int quickButtonLogin=0x7f040008;
         public static final int satellite=0x7f040002;
-        public static final int spinnerGeolocation=0x7f040011;
-        public static final int spinnerPlaceType=0x7f04000b;
-        public static final int spinnerRange=0x7f04000c;
-        public static final int spinnerServer=0x7f04000f;
+        public static final int spinnerGeolocation=0x7f040013;
+        public static final int spinnerPlaceType=0x7f04000c;
+        public static final int spinnerRange=0x7f04000e;
+        public static final int spinnerServer=0x7f040011;
         public static final int terrain=0x7f040003;
-        public static final int textViewGeolocation=0x7f040010;
-        public static final int textViewServerUrl=0x7f04000e;
+        public static final int textViewGeolocation=0x7f040012;
+        public static final int textViewPlaceType=0x7f04000b;
+        public static final int textViewRange=0x7f04000d;
+        public static final int textViewServerUrl=0x7f040010;
         public static final int userName=0x7f040005;
         public static final int userPassword=0x7f040006;
     }
@@ -186,8 +188,8 @@ containing a value of this type.
         public static final int place_selector_map=0x7f090004;
     }
     public static final class string {
-        public static final int action_map=0x7f050020;
-        public static final int action_reviews=0x7f05001f;
+        public static final int action_map=0x7f050022;
+        public static final int action_reviews=0x7f050021;
         public static final int action_settings=0x7f050012;
         public static final int app_name=0x7f050011;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=70] 
@@ -256,15 +258,17 @@ containing a value of this type.
         public static final int common_signin_button_text_long=0x7f05000d;
         public static final int hello_world=0x7f050013;
         public static final int quickButtonLogin=0x7f050017;
-        public static final int spinnerPlaceTypePrompt=0x7f05001d;
-        public static final int spinnerRangePrompt=0x7f05001e;
+        public static final int spinnerGeolocation=0x7f050020;
+        public static final int spinnerPlaceType=0x7f05001d;
+        public static final int spinnerRange=0x7f05001e;
+        public static final int spinnerServer=0x7f05001f;
         public static final int title_activity_activity_window=0x7f05001b;
         public static final int title_activity_place_detail=0x7f05001a;
-        public static final int title_activity_place_reviews=0x7f050021;
+        public static final int title_activity_place_reviews=0x7f050023;
         public static final int title_activity_place_selector=0x7f050019;
-        public static final int title_activity_place_selector_map=0x7f050023;
+        public static final int title_activity_place_selector_map=0x7f050025;
         public static final int title_activity_place_type=0x7f050018;
-        public static final int title_activity_settings=0x7f050022;
+        public static final int title_activity_settings=0x7f050024;
         public static final int userNameHint=0x7f050014;
         public static final int userPasswordHint=0x7f050015;
     }

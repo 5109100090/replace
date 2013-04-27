@@ -14,23 +14,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true" />
-        
+
+	<TextView
+        android:id="@+id/textViewPlaceType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/spinnerPlaceType"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
     <Spinner
         android:id="@+id/spinnerPlaceType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/progressBar1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-		android:prompt="@string/spinnerPlaceTypePrompt" />
+        android:layout_below="@+id/textViewPlaceType"
+		android:prompt="@string/spinnerPlaceType" />
 
+	<TextView
+        android:id="@+id/textViewRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/spinnerRange"
+        android:layout_below="@+id/spinnerPlaceType"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
     <Spinner
         android:id="@+id/spinnerRange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerPlaceType"
-        android:entries="@array/spinnerRange"
-        android:prompt="@string/spinnerRangePrompt" />
+        android:layout_below="@+id/textViewRange"
+        android:entries="@array/spinnerRangeEntries"
+        android:prompt="@string/spinnerRange" />
 
     <Button
         android:id="@+id/buttonSubmit"
