@@ -20,14 +20,10 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.ListActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.Menu;
@@ -39,9 +35,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class PlaceSelector extends ListActivity {
-
-	private LocationManager locationManager = null;  
-	private MyLocationListener locationListener = null;   
+ 
 	private String userId, typeId, range, currentLat, currentLng, jsonValue;
 	private ProgressBar progressBar;
 	
@@ -174,36 +168,5 @@ public class PlaceSelector extends ListActivity {
 			}
 			progressBar.setVisibility(View.INVISIBLE);
 		}
-	}
-	
-	/*----------Listener class to get coordinates ------------- */  
-	 class MyLocationListener implements LocationListener {  
-
-		 @Override  
-	     public void onLocationChanged(Location loc) {  
-			 Toast.makeText(getBaseContext(),"Location changed : Lat: " +
-					 loc.getLatitude()+ " Lng: " + loc.getLongitude(),
-					 Toast.LENGTH_SHORT).show();
-			 
-			 Double lat = loc.getLatitude();
-			 Double lng = loc.getLongitude();
-			 currentLat = lat.toString();
-			 currentLng = lng.toString(); 
-		 }
-		 
-		 @Override
-		 public void onProviderDisabled(String provider) {
-			 // TODO Auto-generated method stub
-		 }
-
-		 @Override
-		 public void onProviderEnabled(String provider) {
-			 // TODO Auto-generated method stub           
-		 }  
-	  
-		 @Override  
-		 public void onStatusChanged(String provider, int status, Bundle extras) {  
-			 // TODO Auto-generated method stub           
-		 }
-	 }  
+	} 
 }

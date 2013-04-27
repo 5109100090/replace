@@ -15,9 +15,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.amca.android.replace.PlaceSelector.MyLocationListener;
-
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
