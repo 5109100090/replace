@@ -6,30 +6,68 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.view.View;
-import android.widget.RadioButton;
-import android.widget.Toast;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 public class Settings extends Activity {
 
-	private RadioButton radioButtonServer, radioButtonServer1, radioButtonServer2;
+	private Spinner spinnerServer, spinnerGeolocation;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
 		
-		String serverUrl = this.getPref("serverUrl");
-		radioButtonServer1 = (RadioButton) findViewById(R.id.server1);
-		radioButtonServer2 = (RadioButton) findViewById(R.id.server2);
-		radioButtonServer1.setChecked(serverUrl.equals(radioButtonServer1.getText()));
-		radioButtonServer2.setChecked(serverUrl.equals(radioButtonServer2.getText()));
+		spinnerServer = (Spinner) findViewById(R.id.spinnerServer);
+		spinnerGeolocation = (Spinner) findViewById(R.id.spinnerGeolocation);
+		
+		setSelection();
+		
+		spinnerServer.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+		    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+		    	setPref("serverUrl", spinnerServer.getSelectedItem().toString());
+		    } 
+
+		    public void onNothingSelected(AdapterView<?> adapterView) {
+		    	return;
+		    } 
+		});
+		
+		spinnerGeolocation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+		    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {		    	
+		    	setPref("geolocation", spinnerGeolocation.getSelectedItem().toString());
+		    } 
+
+		    public void onNothingSelected(AdapterView<?> adapterView) {
+		    	return;
+		    } 
+		});
 	}
 	
-	public void onRadioButtonClicked(View view) {
-		radioButtonServer = (RadioButton) findViewById(view.getId());
-		this.setPref("serverUrl", radioButtonServer.getText().toString());
-		Toast.makeText(getApplicationContext(), "settings saved", Toast.LENGTH_SHORT).show();
-		finish();
+	private void setSelection(){
+		String serverUrl = this.getPref("serverUrl");
+		String geolocation = this.getPref("geolocation");
+		
+		ArrayAdapter adapterServerUrl = (ArrayAdapter<?>) spinnerServer.getAdapter();
+	    for (int position = 0; position < adapterServerUrl.getCount(); position++)
+	    {
+	        if(spinnerServer.getItemAtPosition(position).toString().equals(serverUrl))
+	        {
+	        	spinnerServer.setSelection(position);
+	            break;
+	        }
+	    }
+	    
+	    ArrayAdapter adapterGeolocation = (ArrayAdapter) spinnerGeolocation.getAdapter();
+	    for (int position = 0; position < adapterGeolocation.getCount(); position++)
+	    {
+	        if(spinnerGeolocation.getItemAtPosition(position).toString().equals(geolocation))
+	        {
+	        	spinnerGeolocation.setSelection(position);
+	            break;
+	        }
+	    }
 	}
 	
 	private void setPref(String key, String value) {

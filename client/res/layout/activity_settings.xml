@@ -8,25 +8,33 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Settings" >
 
-    <RadioGroup
-        android:id="@+id/radioServer"
+    <TextView
+        android:id="@+id/textViewServerUrl"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:text="Server URL"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <Spinner
+        android:id="@+id/spinnerServer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewServerUrl"
+        android:entries="@array/spinnerServer" />
 
-        <RadioButton
-            android:id="@+id/server1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/server1"
-            android:onClick="onRadioButtonClicked" />
-
-        <RadioButton
-            android:id="@+id/server2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/server2"
-            android:onClick="onRadioButtonClicked" />
-    </RadioGroup>
+	<TextView
+        android:id="@+id/textViewGeolocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Geolocation"
+        android:layout_below="@+id/spinnerServer"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+    <Spinner
+        android:id="@+id/spinnerGeolocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewGeolocation"
+        android:entries="@array/spinnerGeolocation" />
 
 </RelativeLayout>

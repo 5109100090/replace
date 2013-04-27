@@ -96,6 +96,7 @@ public class MainActivity extends Activity {
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
 		Editor editor = preferences.edit();
 		editor.putString("serverUrl", "http://10.151.36.36/replace/server/");
+		editor.putString("geolocation", "static");
 		editor.commit();
 	}
 	
