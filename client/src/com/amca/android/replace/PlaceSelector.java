@@ -27,6 +27,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.Menu;
@@ -39,7 +40,7 @@ import android.widget.Toast;
 
 public class PlaceSelector extends ListActivity {
 
-	private LocationManager locationMangaer = null;  
+	private LocationManager locationManager = null;  
 	private MyLocationListener locationListener = null;   
 	private String userId, typeId, range, currentLat, currentLng, jsonValue;
 	private ProgressBar progressBar;
@@ -53,31 +54,19 @@ public class PlaceSelector extends ListActivity {
 		this.userId = intent.getStringExtra("userId");
 		this.typeId = intent.getStringExtra("typeId");
 		this.range = intent.getStringExtra("range");
+		this.currentLat = intent.getStringExtra("currentLat");
+		this.currentLng = intent.getStringExtra("currentLng");
 		String typeName = intent.getStringExtra("typeName");
 		setTitle(typeName);
 		
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 		
-		/*/
-		locationMangaer = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		locationListener = new MyLocationListener();  
-		locationMangaer.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener); 
-		//*/
-		this.currentLat = "-7.27957";
-		this.currentLng = "112.79751";
-		
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("userId", userId);
 		data.put("typeId", typeId);
 		data.put("range", range);
-		/*/
-		data.put("currentLat", locationListener.getLatitude());
-		data.put("currentLng", locationListener.getLongitude());
-		System.out.println("lat : "+locationListener.getLatitude()+" | lon : "+locationListener.getLongitude());
-		/*/
 		data.put("currentLat", this.currentLat);
 		data.put("currentLng", this.currentLng);
-		//*/
 		
 		HTTPPlaceSelector http = new HTTPPlaceSelector(data);
 		http.execute("place/process");
@@ -87,7 +76,6 @@ public class PlaceSelector extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		String item = (String) getListAdapter().getItem(position);
 		String[] s = item.split(" - ");
-		//Toast.makeText(this, s[1] + " selected, go ahead", Toast.LENGTH_SHORT).show();
 		
 		Intent intent = new Intent(PlaceSelector.this, PlaceDetail.class);
     	intent.putExtra("placeId", s[0]);
@@ -190,25 +178,6 @@ public class PlaceSelector extends ListActivity {
 	
 	/*----------Listener class to get coordinates ------------- */  
 	 class MyLocationListener implements LocationListener {  
-		 
-		 private String longitude;
-		 private String latitude;
-		 
-		 public String getLongitude() {
-			 return longitude;
-		 }
-		 
-		 public void setLongitude(String longitude) {
-			 this.longitude = longitude;
-		 }
-		 
-		 public String getLatitude() {
-			 return latitude;
-		 }
-		 
-		 public void setLatitude(String latitude) {
-			 this.latitude = latitude;
-		 }
 
 		 @Override  
 	     public void onLocationChanged(Location loc) {  
@@ -218,9 +187,8 @@ public class PlaceSelector extends ListActivity {
 			 
 			 Double lat = loc.getLatitude();
 			 Double lng = loc.getLongitude();
-			 
-			 this.setLatitude(lat.toString());
-			 this.setLongitude(lng.toString());  
+			 currentLat = lat.toString();
+			 currentLng = lng.toString(); 
 		 }
 		 
 		 @Override

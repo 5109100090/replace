@@ -49,7 +49,7 @@ public class Settings extends Activity {
 		String serverUrl = this.getPref("serverUrl");
 		String geolocation = this.getPref("geolocation");
 		
-		ArrayAdapter adapterServerUrl = (ArrayAdapter<?>) spinnerServer.getAdapter();
+		ArrayAdapter<?> adapterServerUrl = (ArrayAdapter<?>) spinnerServer.getAdapter();
 	    for (int position = 0; position < adapterServerUrl.getCount(); position++)
 	    {
 	        if(spinnerServer.getItemAtPosition(position).toString().equals(serverUrl))
@@ -59,7 +59,7 @@ public class Settings extends Activity {
 	        }
 	    }
 	    
-	    ArrayAdapter adapterGeolocation = (ArrayAdapter) spinnerGeolocation.getAdapter();
+	    ArrayAdapter<?> adapterGeolocation = (ArrayAdapter<?>) spinnerGeolocation.getAdapter();
 	    for (int position = 0; position < adapterGeolocation.getCount(); position++)
 	    {
 	        if(spinnerGeolocation.getItemAtPosition(position).toString().equals(geolocation))
