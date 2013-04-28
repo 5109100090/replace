@@ -1,29 +1,16 @@
 package com.amca.android.replace;
 
-import java.io.IOException;
-import java.util.ArrayList;
+import com.amca.android.replace.http.HTTPTransfer;
 import java.util.HashMap;
-import java.util.Iterator;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
-import android.os.AsyncTask;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -88,7 +75,9 @@ public class MainActivity extends Activity {
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("userName", username);
 		data.put("userPassword", password);
-		HTTPLogin login = new HTTPLogin(data);
+		HTTPLogin login = new HTTPLogin();
+		login.setCtx(MainActivity.this);
+		login.setData(data);
 		login.execute("user/login");
 	}
 	
@@ -100,68 +89,24 @@ public class MainActivity extends Activity {
 		editor.commit();
 	}
 	
-	class HTTPLogin extends AsyncTask<String, String, JSONObject>{
-
-		private HashMap<String, String> mData = null;
-		
-		public HTTPLogin(HashMap<String, String> data){
-			mData = data;
-		}
-		
+	class HTTPLogin extends HTTPTransfer{
 		@Override
-		protected JSONObject doInBackground(String... params) {
-			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
-			String serverUrl = preferences.getString("serverUrl", "") + params[0];
-			
-			ArrayList<NameValuePair> nameValuePair = new ArrayList<NameValuePair>();
-            Iterator<String> it = mData.keySet().iterator();
-            while (it.hasNext()) {
-                String key = it.next();
-                nameValuePair.add(new BasicNameValuePair(key, mData.get(key)));
-            }
-            
-			try{
-		        HttpClient client = new DefaultHttpClient();
-		        HttpPost post = new HttpPost(serverUrl);
-		        post.setEntity(new UrlEncodedFormEntity(nameValuePair));
-		        HttpResponse responsePost = client.execute(post);
-		        HttpEntity resEntity = responsePost.getEntity();
-		        if(resEntity == null){
-		        	return null;
-		        }else{
-		        	String result = null;
-					try {
-						result = EntityUtils.toString(resEntity);
-					}catch (IOException e) {
-						e.printStackTrace();
-					}
-					
-		        	System.out.println(result);
-		        	if(!result.equals("0") || !result.equals(null))
-		        	{
-			        	Object obj = JSONValue.parse(result);
-			        	JSONArray array = (JSONArray) obj;
-			        	return (JSONObject) array.get(0);
-		        	}
-		        	return null;
-		        }
-	        }catch(Exception e){
-		        e.printStackTrace();
-		        Log.e("log_tag","error: "+e.toString());
-	        }
-	        return null;
-		}
-		
-		@Override
-		protected void onPostExecute(JSONObject result) {
+		protected void onPostExecute(String result) {
 			super.onPostExecute(result);
-			if(result == null){
+			if(result.equals("null")){
 				System.out.println("invalid username & password");
 	        	Toast.makeText(getApplicationContext(), "invalid username & password", Toast.LENGTH_SHORT).show();
 			}else{
-				Intent intent = new Intent(MainActivity.this, PlaceType.class);
-	        	intent.putExtra("userId", result.get("userId").toString());
-	        	startActivity(intent);
+				try{
+					JSONArray jArray = new JSONArray(result);
+					JSONObject json_data = jArray.getJSONObject(0);
+					
+					Intent intent = new Intent(MainActivity.this, PlaceType.class);
+		        	intent.putExtra("userId", json_data.getInt("userId"));
+		        	startActivity(intent);
+				}catch(JSONException e){
+					Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();
+				}
 			}
 			progressBar.setVisibility(View.INVISIBLE);
 		}

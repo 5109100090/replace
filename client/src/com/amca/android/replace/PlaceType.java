@@ -1,24 +1,14 @@
 package com.amca.android.replace;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import com.amca.android.replace.http.HTTPTransfer;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.Activity;
@@ -36,7 +26,8 @@ import android.widget.Toast;
 
 public class PlaceType extends Activity implements OnClickListener {
 	
-	private String userId, currentLat, currentLng, geolocation;
+	private Integer userId;
+	private String currentLat, currentLng, geolocation;
 	private TextView textViewPlaceType, textViewRange;
 	private Spinner spinnerPlaceType, spinnerRange;
 	private Button buttonSubmit;
@@ -50,7 +41,7 @@ public class PlaceType extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_place_type);
 		
 		Intent intent = getIntent();
-		this.userId = intent.getStringExtra("userId");
+		this.userId = intent.getIntExtra("userId", 0);
 		
 		textViewPlaceType = (TextView) findViewById(R.id.textViewPlaceType);
 		textViewRange = (TextView) findViewById(R.id.textViewRange);
@@ -80,6 +71,8 @@ public class PlaceType extends Activity implements OnClickListener {
 		}
 		
 		HTTPPlaceType http = new HTTPPlaceType();
+		http.setCtx(PlaceType.this);
+		http.setMode(2);
 		http.execute("type/listAll");
 	}
 	
@@ -91,7 +84,7 @@ public class PlaceType extends Activity implements OnClickListener {
 			String [] range = String.valueOf(spinnerRange.getSelectedItem()).split(" meter");
         	intent.putExtra("range", range[0]);
         	intent.putExtra("userId", this.userId);
-        	intent.putExtra("typeId", placeType[0]);
+        	intent.putExtra("typeId", Integer.parseInt(placeType[0]));
         	intent.putExtra("typeName", placeType[1]);
         	intent.putExtra("currentLat", this.currentLat);
         	intent.putExtra("currentLng", this.currentLng);
@@ -101,37 +94,7 @@ public class PlaceType extends Activity implements OnClickListener {
 		}
 	}
 	
-	class HTTPPlaceType extends AsyncTask<String, String, String>{
-		
-		@Override
-		protected String doInBackground(String... params) {
-			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PlaceType.this);
-			String serverUrl = preferences.getString("serverUrl", "") + params[0];
-			try {
-				HttpClient httpClient = new DefaultHttpClient();
-				HttpGet httpGet = new HttpGet(serverUrl);
-				
-				HttpResponse httpRespose = httpClient.execute(httpGet);
-				HttpEntity httpEntity = httpRespose.getEntity();
-				InputStream in = httpEntity.getContent();
-				BufferedReader read = new BufferedReader(new InputStreamReader(in));
-
-				String isi= "";
-				String baris= "";
-				while((baris = read.readLine())!=null){
-					isi+= baris;
-				} 
-
-				return isi;
-
-			} catch (ClientProtocolException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return null;
-		}
-		
+	class HTTPPlaceType extends HTTPTransfer{
 		@Override
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);

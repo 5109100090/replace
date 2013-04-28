@@ -1,5 +1,6 @@
 package com.amca.android.replace;
 
+import com.amca.android.replace.http.HTTPTransfer;
 import com.amca.android.replace.model.Place;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -37,7 +38,8 @@ import android.widget.Toast;
 
 public class PlaceSelector extends ListActivity {
  
-	private String userId, typeId, range, currentLat, currentLng, jsonValue;
+	private Integer userId, typeId;
+	private String range, currentLat, currentLng, jsonValue;
 	private List<Place> placesList = new ArrayList<Place>();
 	private ProgressBar progressBar;
 	
@@ -47,8 +49,8 @@ public class PlaceSelector extends ListActivity {
 		setContentView(R.layout.activity_place_selector);
 		
 		Intent intent = getIntent();
-		this.userId = intent.getStringExtra("userId");
-		this.typeId = intent.getStringExtra("typeId");
+		this.userId = intent.getIntExtra("userId", 0);
+		this.typeId = intent.getIntExtra("typeId", 0);
 		this.range = intent.getStringExtra("range");
 		this.currentLat = intent.getStringExtra("currentLat");
 		this.currentLng = intent.getStringExtra("currentLng");
@@ -58,13 +60,15 @@ public class PlaceSelector extends ListActivity {
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 		
 		HashMap<String, String> data = new HashMap<String, String>();
-		data.put("userId", userId);
-		data.put("typeId", typeId);
+		data.put("userId", userId.toString());
+		data.put("typeId", typeId.toString());
 		data.put("range", range);
 		data.put("currentLat", this.currentLat);
 		data.put("currentLng", this.currentLng);
 		
-		HTTPPlaceSelector http = new HTTPPlaceSelector(data);
+		HTTPPlaceSelector http = new HTTPPlaceSelector();
+		http.setCtx(PlaceSelector.this);
+		http.setData(data);
 		http.execute("place/process");
 	}
 
@@ -72,7 +76,8 @@ public class PlaceSelector extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Place selectedPlace = placesList.get(position);
 		Intent intent = new Intent(PlaceSelector.this, PlaceDetail.class);
-    	intent.putExtra("placeId", selectedPlace.getPlaceId().toString());
+    	intent.putExtra("placeId", selectedPlace.getPlaceId());
+    	intent.putExtra("userId", this.userId);
     	startActivity(intent);
 	}
 	
@@ -91,6 +96,7 @@ public class PlaceSelector extends ListActivity {
 				intent.putExtra("currentLat", Float.parseFloat(this.currentLat));
 				intent.putExtra("currentLng", Float.parseFloat(this.currentLng));
 				intent.putExtra("jsonValue", this.jsonValue);
+				intent.putExtra("userId", this.userId);
 		    	startActivity(intent);
 				return true;
 			default:
@@ -98,51 +104,7 @@ public class PlaceSelector extends ListActivity {
 		}
     }
 	
-	class HTTPPlaceSelector extends AsyncTask<String, String, String>{
-		
-		private HashMap<String, String> mData = null;
-		
-		public HTTPPlaceSelector(HashMap<String, String> data){
-			mData = data;
-		}
-		
-		@Override
-		protected String doInBackground(String... params) {
-			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PlaceSelector.this);
-			String serverUrl = preferences.getString("serverUrl", "") + params[0];
-			
-			ArrayList<NameValuePair> nameValuePair = new ArrayList<NameValuePair>();
-            Iterator<String> it = mData.keySet().iterator();
-            while (it.hasNext()) {
-                String key = it.next();
-                nameValuePair.add(new BasicNameValuePair(key, mData.get(key)));
-            }
-            
-			try {
-				HttpClient client = new DefaultHttpClient();				
-				HttpPost post = new HttpPost(serverUrl);
-				post.setEntity(new UrlEncodedFormEntity(nameValuePair));
-				HttpResponse responsePost = client.execute(post);
-				HttpEntity httpEntity = responsePost.getEntity();
-				InputStream in = httpEntity.getContent();
-				BufferedReader read = new BufferedReader(new InputStreamReader(in));
-
-				String isi= "";
-				String baris= "";
-				while((baris = read.readLine())!=null){
-					isi+= baris;
-				} 
-
-				return isi;
-
-			} catch (ClientProtocolException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return null;
-		}
-		
+	class HTTPPlaceSelector extends HTTPTransfer{
 		@Override
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);

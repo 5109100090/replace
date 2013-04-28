@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 public class PlaceSelectorMap extends FragmentActivity implements OnInfoWindowClickListener  {
 
+	private Integer userId;
 	private GoogleMap map = null;
 	private Float currentLat, currentLng;
 	private String jsonValue;
@@ -37,6 +38,7 @@ public class PlaceSelectorMap extends FragmentActivity implements OnInfoWindowCl
 		this.currentLat = intent.getFloatExtra("currentLat", 0);
 		this.currentLng = intent.getFloatExtra("currentLng", 0);
 		this.jsonValue = intent.getStringExtra("jsonValue");
+		this.userId = intent.getIntExtra("userId", 0);
 		
 		setUpMap();
 	}
@@ -56,7 +58,8 @@ public class PlaceSelectorMap extends FragmentActivity implements OnInfoWindowCl
 		if(id >= 0 && id < placesList.size()){
 			Place selectedPlace = placesList.get(id);
 			Intent intent = new Intent(PlaceSelectorMap.this, PlaceDetail.class);
-	    	intent.putExtra("placeId", selectedPlace.getPlaceId().toString());
+			intent.putExtra("userId", this.userId);
+	    	intent.putExtra("placeId", selectedPlace.getPlaceId());
 	    	startActivity(intent);
 		}
 	} 

@@ -34,6 +34,7 @@
     <string name="spinnerServer">Server URL</string>
     <string name="spinnerGeolocation">Geolocation</string>
     <string name="action_reviews">Reviews</string>
+    <string name="action_rating">Give Rating</string>
     <string name="action_map">View Map</string>
     <string name="title_activity_place_reviews">PlaceReviews</string>
     <string name="title_activity_settings">Settings</string>

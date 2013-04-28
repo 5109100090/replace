@@ -20,6 +20,9 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.amca.android.replace.http.HTTPTransfer;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -34,7 +37,7 @@ import android.widget.Toast;
 
 public class PlaceReviews extends ListActivity {
 	
-	private String placeId;
+	private Integer placeId;
 	private ProgressBar progressBar; 
 	
 	@Override
@@ -43,14 +46,16 @@ public class PlaceReviews extends ListActivity {
 		setContentView(R.layout.activity_place_reviews);
 		
 		Intent intent = getIntent();
-		this.placeId = intent.getStringExtra("placeId");
+		this.placeId = intent.getIntExtra("placeId", 0);
 		
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 		
 		HashMap<String, String> data = new HashMap<String, String>();
-		data.put("placeId", placeId);
+		data.put("placeId", placeId.toString());
 		
-		HTTPPlaceDetail http = new HTTPPlaceDetail(data);
+		HTTPPlaceDetail http = new HTTPPlaceDetail();
+		http.setCtx(PlaceReviews.this);
+		http.setData(data);
 		http.execute("review/listReviews");
 	}
 
@@ -61,51 +66,7 @@ public class PlaceReviews extends ListActivity {
 		return true;
 	}
 
-	class HTTPPlaceDetail extends AsyncTask<String, String, String>{
-		
-		private HashMap<String, String> mData = null;
-		
-		public HTTPPlaceDetail(HashMap<String, String> data){
-			mData = data;
-		}
-		
-		@Override
-		protected String doInBackground(String... params) {
-			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PlaceReviews.this);
-			String serverUrl = preferences.getString("serverUrl", "") + params[0];
-			
-			ArrayList<NameValuePair> nameValuePair = new ArrayList<NameValuePair>();
-            Iterator<String> it = mData.keySet().iterator();
-            while (it.hasNext()) {
-                String key = it.next();
-                nameValuePair.add(new BasicNameValuePair(key, mData.get(key)));
-            }
-            
-			try {
-				HttpClient client = new DefaultHttpClient();				
-				HttpPost post = new HttpPost(serverUrl);
-				post.setEntity(new UrlEncodedFormEntity(nameValuePair));
-				HttpResponse responsePost = client.execute(post);
-				HttpEntity httpEntity = responsePost.getEntity();
-				InputStream in = httpEntity.getContent();
-				BufferedReader read = new BufferedReader(new InputStreamReader(in));
-
-				String isi= "";
-				String baris= "";
-				while((baris = read.readLine())!=null){
-					isi+= baris;
-				} 
-
-				return isi;
-
-			} catch (ClientProtocolException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return null;
-		}
-		
+	class HTTPPlaceDetail extends HTTPTransfer{
 		@Override
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);

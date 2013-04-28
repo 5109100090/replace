@@ -1,42 +1,29 @@
 package com.amca.android.replace;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import com.amca.android.replace.http.HTTPTransfer;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 public class PlaceDetail extends ListActivity {
 
-	private String placeId;
-	private ProgressBar progressBar; 
+	private Integer userId, placeId;
+	private ProgressBar progressBar;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +31,17 @@ public class PlaceDetail extends ListActivity {
 		setContentView(R.layout.activity_place_detail);
 		
 		Intent intent = getIntent();
-		this.placeId = intent.getStringExtra("placeId");
+		this.userId = intent.getIntExtra("userId", 0);
+		this.placeId = intent.getIntExtra("placeId", 0);
 		
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 		
 		HashMap<String, String> data = new HashMap<String, String>();
-		data.put("placeId", placeId);
+		data.put("placeId", placeId.toString());
 		
-		HTTPPlaceDetail http = new HTTPPlaceDetail(data);
+		HTTPPlaceDetail http = new HTTPPlaceDetail();
+		http.setCtx(PlaceDetail.this);
+		http.setData(data);
 		http.execute("place/getDetail");
 	}
 
@@ -70,56 +60,39 @@ public class PlaceDetail extends ListActivity {
 		    	intent.putExtra("placeId", this.placeId);
 		    	startActivity(intent);
 				return true;
+			case R.id.action_rating:
+				final AlertDialog.Builder popDialog = new AlertDialog.Builder(this);
+				final RatingBar rating = new RatingBar(this);
+				rating.setMax(5);
+				
+				popDialog.setTitle("Give Rating");
+				popDialog.setView(rating);
+				
+				popDialog.setPositiveButton(android.R.string.ok,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int which) {
+								//txtView.setText(String.valueOf(rating.getProgress()));
+								dialog.dismiss();
+							}
+						}
+				)
+				.setNegativeButton("Cancel",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								dialog.cancel();
+							}
+						}
+				);
+				
+				popDialog.create();
+				popDialog.show();
+				return true;
 			default:
 				return super.onOptionsItemSelected(item);
 		}
     }
     
-	class HTTPPlaceDetail extends AsyncTask<String, String, String>{
-		
-		private HashMap<String, String> mData = null;
-		
-		public HTTPPlaceDetail(HashMap<String, String> data){
-			mData = data;
-		}
-		
-		@Override
-		protected String doInBackground(String... params) {
-			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PlaceDetail.this);
-			String serverUrl = preferences.getString("serverUrl", "") + params[0];
-			
-			ArrayList<NameValuePair> nameValuePair = new ArrayList<NameValuePair>();
-            Iterator<String> it = mData.keySet().iterator();
-            while (it.hasNext()) {
-                String key = it.next();
-                nameValuePair.add(new BasicNameValuePair(key, mData.get(key)));
-            }
-            
-			try {
-				HttpClient client = new DefaultHttpClient();				
-				HttpPost post = new HttpPost(serverUrl);
-				post.setEntity(new UrlEncodedFormEntity(nameValuePair));
-				HttpResponse responsePost = client.execute(post);
-				HttpEntity httpEntity = responsePost.getEntity();
-				InputStream in = httpEntity.getContent();
-				BufferedReader read = new BufferedReader(new InputStreamReader(in));
-
-				String isi= "";
-				String baris= "";
-				while((baris = read.readLine())!=null){
-					isi+= baris;
-				} 
-
-				return isi;
-
-			} catch (ClientProtocolException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return null;
-		}
-		
+	class HTTPPlaceDetail extends HTTPTransfer{
 		@Override
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);

@@ -4,5 +4,9 @@
         android:id="@+id/action_reviews"
         android:orderInCategory="100"
         android:title="@string/action_reviews"/>
+    <item
+        android:id="@+id/action_rating"
+        android:orderInCategory="100"
+        android:title="@string/action_rating"/>
 
 </menu>

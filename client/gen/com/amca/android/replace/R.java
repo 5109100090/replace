@@ -147,7 +147,8 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_map=0x7f040016;
+        public static final int action_map=0x7f040017;
+        public static final int action_rating=0x7f040016;
         public static final int action_reviews=0x7f040015;
         public static final int action_settings=0x7f040014;
         public static final int buttonLogin=0x7f040007;
@@ -188,7 +189,8 @@ containing a value of this type.
         public static final int place_selector_map=0x7f090004;
     }
     public static final class string {
-        public static final int action_map=0x7f050022;
+        public static final int action_map=0x7f050023;
+        public static final int action_rating=0x7f050022;
         public static final int action_reviews=0x7f050021;
         public static final int action_settings=0x7f050012;
         public static final int app_name=0x7f050011;
@@ -264,11 +266,11 @@ containing a value of this type.
         public static final int spinnerServer=0x7f05001f;
         public static final int title_activity_activity_window=0x7f05001b;
         public static final int title_activity_place_detail=0x7f05001a;
-        public static final int title_activity_place_reviews=0x7f050023;
+        public static final int title_activity_place_reviews=0x7f050024;
         public static final int title_activity_place_selector=0x7f050019;
-        public static final int title_activity_place_selector_map=0x7f050025;
+        public static final int title_activity_place_selector_map=0x7f050026;
         public static final int title_activity_place_type=0x7f050018;
-        public static final int title_activity_settings=0x7f050024;
+        public static final int title_activity_settings=0x7f050025;
         public static final int userNameHint=0x7f050014;
         public static final int userPasswordHint=0x7f050015;
     }
