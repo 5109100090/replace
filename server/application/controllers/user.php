@@ -15,7 +15,7 @@ class User extends CI_Controller
 			$model->userName = $this->input->post('userName');
 			$model->userPassword = md5($this->input->post('userPassword'));
 
-			echo '['.json_encode($model->login()).']';
+			echo json_encode($model->login());
 		}
 	}
 }
