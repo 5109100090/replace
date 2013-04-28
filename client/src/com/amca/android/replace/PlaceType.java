@@ -1,6 +1,7 @@
 package com.amca.android.replace;
 
 import com.amca.android.replace.http.HTTPTransfer;
+import com.amca.android.replace.model.Type;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
@@ -28,6 +29,7 @@ public class PlaceType extends Activity implements OnClickListener {
 	
 	private Integer userId;
 	private String currentLat, currentLng, geolocation;
+	private List<Type> typeList = new ArrayList<Type>();
 	private TextView textViewPlaceType, textViewRange;
 	private Spinner spinnerPlaceType, spinnerRange;
 	private Button buttonSubmit;
@@ -79,19 +81,20 @@ public class PlaceType extends Activity implements OnClickListener {
 	
 	@Override
 	public void onClick(View v) {
-		String[] placeType = String.valueOf(spinnerPlaceType.getSelectedItem()).split(" - ");
-		if(Integer.parseInt(placeType[2]) > 0){
+		int position = spinnerPlaceType.getSelectedItemPosition();
+		Type type = typeList.get(position);
+		if(type.getTypeTotal() > 0){
 			Intent intent = new Intent(PlaceType.this, PlaceSelector.class);
 			String [] range = String.valueOf(spinnerRange.getSelectedItem()).split(" meter");
         	intent.putExtra("range", range[0]);
         	intent.putExtra("userId", this.userId);
-        	intent.putExtra("typeId", Integer.parseInt(placeType[0]));
-        	intent.putExtra("typeName", placeType[1]);
+        	intent.putExtra("typeId", type.getTypeId());
+        	intent.putExtra("typeName", type.getTypeName());
         	intent.putExtra("currentLat", this.currentLat);
         	intent.putExtra("currentLng", this.currentLng);
         	startActivity(intent);
 		}else{
-			Toast.makeText(PlaceType.this, "no data available for " + placeType[1], Toast.LENGTH_SHORT).show();
+			Toast.makeText(PlaceType.this, "no data available for " + type.getTypeName(), Toast.LENGTH_SHORT).show();
 		}
 	}
 	
@@ -105,7 +108,13 @@ public class PlaceType extends Activity implements OnClickListener {
 				JSONArray jArray = new JSONArray(result);
 				for(int i=0;i<jArray.length();i++){
 					JSONObject json_data = jArray.getJSONObject(i);
-					list.add(json_data.getString("typeId") + " - " + json_data.getString("typeName") + " - " + json_data.getString("typeTotal"));
+					
+					Type type = new Type();
+					type.setTypeId(json_data.getInt("typeId"));
+					type.setTypeName(json_data.getString("typeName"));
+					type.setTypeTotal(json_data.getInt("typeTotal"));
+					list.add(type.getTypeName());
+					typeList.add(type);
 				}
 				ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, list);
 				dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
