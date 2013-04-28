@@ -69,19 +69,29 @@ public class PlaceDetail extends ListActivity {
 				popDialog.setView(rating);
 				
 				popDialog.setPositiveButton(android.R.string.ok,
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int which) {
-								//txtView.setText(String.valueOf(rating.getProgress()));
-								dialog.dismiss();
-							}
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							System.out.println(String.valueOf(rating.getProgress()));
+							HashMap<String, String> data = new HashMap<String, String>();
+							data.put("userId", userId.toString());
+							data.put("placeId", placeId.toString());
+							data.put("reviewPoint", String.valueOf(rating.getProgress()));
+							
+							HTTPTransfer rating = new HTTPTransfer();
+							rating.setCtx(PlaceDetail.this);
+							rating.setData(data);
+							rating.setMode(2);
+							rating.execute("review/setRating");
+							dialog.dismiss();
 						}
+					}
 				)
 				.setNegativeButton("Cancel",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								dialog.cancel();
-							}
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							dialog.cancel();
 						}
+					}
 				);
 				
 				popDialog.create();

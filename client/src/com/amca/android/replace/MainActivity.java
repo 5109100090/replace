@@ -103,6 +103,7 @@ public class MainActivity extends Activity {
 					
 					Intent intent = new Intent(MainActivity.this, PlaceType.class);
 		        	intent.putExtra("userId", json_data.getInt("userId"));
+		        	intent.putExtra("userAlias", json_data.getString("userAlias"));
 		        	startActivity(intent);
 				}catch(JSONException e){
 					Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();
