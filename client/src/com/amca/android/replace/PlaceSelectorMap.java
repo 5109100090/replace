@@ -6,6 +6,8 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.amca.android.replace.model.Place;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
@@ -25,7 +27,7 @@ public class PlaceSelectorMap extends FragmentActivity implements OnInfoWindowCl
 	private GoogleMap map = null;
 	private Float currentLat, currentLng;
 	private String jsonValue;
-	private List<Integer> listMarker = new ArrayList<Integer>();
+	private List<Place> placesList = new ArrayList<Place>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +50,15 @@ public class PlaceSelectorMap extends FragmentActivity implements OnInfoWindowCl
 
 	@Override
     public void onInfoWindowClick(Marker marker) {
-		String id = marker.getId();
-		String[] s = id.split("m");
-		
-		Intent intent = new Intent(PlaceSelectorMap.this, PlaceDetail.class);
-    	intent.putExtra("placeId", listMarker.get(Integer.parseInt(s[1])).toString());
-    	startActivity(intent);
+		String markerId = marker.getId();
+		String[] s = markerId.split("m");
+		int id = Integer.parseInt(s[1]);
+		if(id >= 0 && id < placesList.size()){
+			Place selectedPlace = placesList.get(id);
+			Intent intent = new Intent(PlaceSelectorMap.this, PlaceDetail.class);
+	    	intent.putExtra("placeId", selectedPlace.getPlaceId().toString());
+	    	startActivity(intent);
+		}
 	} 
 	
 	private void setUpMap() {
@@ -72,11 +77,20 @@ public class PlaceSelectorMap extends FragmentActivity implements OnInfoWindowCl
 					JSONArray jArray = new JSONArray(this.jsonValue);
 					for(int i=0;i<jArray.length();i++){
 						JSONObject json_data = jArray.getJSONObject(i);
-						listMarker.add(json_data.getInt("placeId"));
+						
+						Place place = new Place();
+						place.setPlaceId(json_data.getInt("placeId"));
+						place.setPlaceName(json_data.getString("placeName"));
+						place.setPlaceDesc(json_data.getString("placeDesc"));
+						place.setPlaceLat(json_data.getString("placeLat"));
+						place.setPlaceLng(json_data.getString("placeLng"));
+						place.setPlaceType(json_data.getInt("placeType"));
+						placesList.add(place);
+						
 						map.addMarker(new MarkerOptions()
-							.position(new LatLng(json_data.getDouble("placeLat"), json_data.getDouble("placeLng")))
-							.title(json_data.getString("placeName"))
-							.snippet(json_data.getString("placeDesc")));
+							.position(new LatLng(Double.parseDouble(place.getPlaceLat()), Double.parseDouble(place.getPlaceLng())))
+							.title(place.getPlaceName())
+							.snippet(place.getPlaceDesc()));
 					}
 				}catch(JSONException e){
 					Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();
@@ -89,5 +103,4 @@ public class PlaceSelectorMap extends FragmentActivity implements OnInfoWindowCl
 	        }
 	    }
 	}
-
 }

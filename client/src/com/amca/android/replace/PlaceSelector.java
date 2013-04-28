@@ -1,5 +1,6 @@
 package com.amca.android.replace;
 
+import com.amca.android.replace.model.Place;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,6 +38,7 @@ import android.widget.Toast;
 public class PlaceSelector extends ListActivity {
  
 	private String userId, typeId, range, currentLat, currentLng, jsonValue;
+	private List<Place> placesList = new ArrayList<Place>();
 	private ProgressBar progressBar;
 	
 	@Override
@@ -68,11 +70,9 @@ public class PlaceSelector extends ListActivity {
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		String item = (String) getListAdapter().getItem(position);
-		String[] s = item.split(" - ");
-		
+		Place selectedPlace = placesList.get(position);
 		Intent intent = new Intent(PlaceSelector.this, PlaceDetail.class);
-    	intent.putExtra("placeId", s[0]);
+    	intent.putExtra("placeId", selectedPlace.getPlaceId().toString());
     	startActivity(intent);
 	}
 	
@@ -158,7 +158,17 @@ public class PlaceSelector extends ListActivity {
 				
 				for(int i=0;i<jArray.length();i++){
 					JSONObject json_data = jArray.getJSONObject(i);
-					list.add(json_data.getString("placeId") + " - " + json_data.getString("placeName") + " - " + json_data.getString("placeDistance"));
+					
+					Place place = new Place();
+					place.setPlaceId(json_data.getInt("placeId"));
+					place.setPlaceName(json_data.getString("placeName"));
+					place.setPlaceDesc(json_data.getString("placeDesc"));
+					place.setPlaceLat(json_data.getString("placeLat"));
+					place.setPlaceLng(json_data.getString("placeLng"));
+					place.setPlaceType(json_data.getInt("placeType"));
+					placesList.add(place);
+					
+					list.add(json_data.getString("placeName") + " - " + json_data.getString("placeDistance"));
 				}
 				
 				ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, list);
