@@ -31,7 +31,7 @@ class Place_model extends CI_Model
 	public function listInRange($typeId = 1, $distance = 1000)
 	{
 		return $this->db->query("
-			SELECT placeId, placeName,
+			SELECT *,
 				(
 					6371000 *
 					acos(
