@@ -37,7 +37,7 @@ public class PlaceReviews extends ListActivity {
 		HTTPPlaceDetail http = new HTTPPlaceDetail();
 		http.setCtx(PlaceReviews.this);
 		http.setData(data);
-		http.execute("review/listReviews");
+		http.execute("review/listReviews/");
 	}
 
 	@Override

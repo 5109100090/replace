@@ -52,7 +52,7 @@ public class PlaceSelector extends ListActivity {
 		HTTPPlaceSelector http = new HTTPPlaceSelector();
 		http.setCtx(PlaceSelector.this);
 		http.setData(data);
-		http.execute("place/process");
+		http.execute("place/process/");
 	}
 
 	@Override

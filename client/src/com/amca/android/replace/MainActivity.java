@@ -78,13 +78,13 @@ public class MainActivity extends Activity {
 		HTTPLogin login = new HTTPLogin();
 		login.setCtx(MainActivity.this);
 		login.setData(data);
-		login.execute("user/login");
+		login.execute("authenticate/login/");
 	}
 	
 	private void prepareConfiguration(){
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
 		Editor editor = preferences.edit();
-		editor.putString("serverUrl", "http://10.151.36.36/replace/server/");
+		editor.putString("serverUrl", "http://10.151.36.36:8080/");
 		editor.putString("geolocation", "static");
 		editor.commit();
 	}

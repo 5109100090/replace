@@ -42,7 +42,7 @@ public class PlaceDetail extends ListActivity {
 		HTTPPlaceDetail http = new HTTPPlaceDetail();
 		http.setCtx(PlaceDetail.this);
 		http.setData(data);
-		http.execute("place/getDetail");
+		http.execute("place/getDetail/");
 	}
 
 	@Override
@@ -61,10 +61,13 @@ public class PlaceDetail extends ListActivity {
 		    	startActivity(intent);
 				return true;
 			case R.id.action_rating:
-				final AlertDialog.Builder popDialog = new AlertDialog.Builder(this);
-				final RatingBar rating = new RatingBar(this);
-				rating.setMax(5);
+				final AlertDialog.Builder popDialog = new AlertDialog.Builder(PlaceDetail.this);
+				final RatingBar rating = new RatingBar(PlaceDetail.this);
+				//rating.setMax(5);
+				rating.setNumStars(5);
+				rating.setStepSize(1);
 				
+				popDialog.setIcon(android.R.drawable.btn_star_big_on);
 				popDialog.setTitle("Give Rating");
 				popDialog.setView(rating);
 				
