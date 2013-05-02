@@ -9,7 +9,7 @@ class Generator extends CI_Controller{
 	private $drinks = array('Es Teh','Teh Hangat','Teh Tawar','Teh Hangat Tawar','Teh Hijau','Air Putih','Es Jeruk','Jeruk Hangat','Es Campur','Es Sirup','Jus Jeruk','Jus Apel','Jus Melon','Jus Semangka','Jus Alpukat','Es Leci');
 	private $books = array('Komik','Novel','Biografi','Bisnis','Manajemen','Desain','Fiksi','Ensiklopedi','Fashion','Fiksi','Filsafat','Fotografi','Kesehatan','Kisah Nyata','Komputer','Gaya Hidup','Majalah','Jurnalisme','Musik','Non Fiksi','Non Profit','Keluarga','Perkebunan','Peternakan');
 	private $movies = array('Action','Adventure','Animation','Biography','Comedy','Crime','Documentary','Drama','FamilyFantasy','Film-Noir','Game-Show','History','Horror','Music','Musical','Mystery','News','Reality-TV','Romance','Sci-Fi','Sport','Talk-Show','Thriller','War','Western');
-	private $musics = array('acoustic','ambient','blues','classical','country','electronic','emo','folk','hardcore','hip hop','indie','jazz','latin','metal','pop','pop punk','punk','reggae','rnb','rock','soul','world','60s','70s','80s','90s');
+	private $musics = array('Acoustic','Ambient','Blues','Classical','Country','Electronic','Emo','Folk','Hardcore','Hip Hop','Indie','Jazz','Latin','Metal','Pop','Pop Punk','Punk','Reggae','RNB','Rock','Soul','World','60s','70s','80s','90s');
 	private $occupation = array('Pelajar','Pengajar','Dokter','Pegawai Negri Sipil','Pegawai Kantor','Wiraswasta','Pemain Film','Penyanyi','Pelukis');
 
 	public function user(){
@@ -39,13 +39,14 @@ class Generator extends CI_Controller{
 		$n = count($array)-1;
 		for($i=0; $i<rand(3,7); $i++){
 			$randomIndex = rand(0,$n);
-			for($j=0; $j<count($temp)-1; $j++){
-				if($randomIndex == $temp[$j]){
+			while(true){
+				if(in_array($randomIndex, $temp)){
 					$randomIndex = rand(0,$n);
-					$j=0;
+				}else{
+					$temp[] = $randomIndex;
+					break;
 				}
 			}
-			$temp[] = $randomIndex;
 		}
 
 		$i = 0;
