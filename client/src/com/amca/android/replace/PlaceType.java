@@ -2,18 +2,15 @@ package com.amca.android.replace;
 
 import com.amca.android.replace.http.HTTPTransfer;
 import com.amca.android.replace.model.Type;
+import com.amca.android.replace.gps.GPSTracker;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.View;
@@ -34,8 +31,6 @@ public class PlaceType extends Activity implements OnClickListener {
 	private Spinner spinnerPlaceType, spinnerRange;
 	private Button buttonSubmit;
 	private ProgressBar progressBar;
-	private LocationManager locationManager = null;
-	private MyLocationListener locationListener = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +63,16 @@ public class PlaceType extends Activity implements OnClickListener {
 			this.currentLat = "-7.27957";
 			this.currentLng = "112.79751";
 		}else{
-			locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-			locationListener = new MyLocationListener();
-			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
+			GPSTracker gps = new GPSTracker(PlaceType.this);
+			if(gps.canGetLocation()){
+	        	Double latitude = gps.getLatitude();
+	        	Double longitude = gps.getLongitude();
+	        	this.currentLat = latitude.toString();
+	        	this.currentLng = longitude.toString();
+	        	Toast.makeText(getApplicationContext(), "Your Location is \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();	
+	        }else{
+	        	gps.showSettingsAlert();
+	        }
 		}
 		
 		HTTPPlaceType http = new HTTPPlaceType();
@@ -123,52 +125,12 @@ public class PlaceType extends Activity implements OnClickListener {
 				Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();
 			}
 			
-			if(geolocation.equals("static")){
-				progressBar.setVisibility(View.INVISIBLE);
-				textViewPlaceType.setVisibility(View.VISIBLE);
-				textViewRange.setVisibility(View.VISIBLE);
-				spinnerPlaceType.setVisibility(View.VISIBLE);
-				spinnerRange.setVisibility(View.VISIBLE);
-				buttonSubmit.setVisibility(View.VISIBLE);
-			}
+			progressBar.setVisibility(View.INVISIBLE);
+			textViewPlaceType.setVisibility(View.VISIBLE);
+			textViewRange.setVisibility(View.VISIBLE);
+			spinnerPlaceType.setVisibility(View.VISIBLE);
+			spinnerRange.setVisibility(View.VISIBLE);
+			buttonSubmit.setVisibility(View.VISIBLE);
 		}
-	}
-	
-	class MyLocationListener implements LocationListener {
-		@Override
-		public void onLocationChanged(Location loc) {
-			Toast.makeText(getBaseContext(),"Location changed : Lat: " +
-					loc.getLatitude()+ " Lng: " + loc.getLongitude(),
-					Toast.LENGTH_SHORT).show();
-			
-			Double lat = loc.getLatitude();
-			Double lng = loc.getLongitude();
-			currentLat = lat.toString();
-			currentLng = lng.toString();
-
-			if(geolocation.equals("auto")){
-				progressBar.setVisibility(View.INVISIBLE);
-				textViewPlaceType.setVisibility(View.VISIBLE);
-				textViewRange.setVisibility(View.VISIBLE);
-				spinnerPlaceType.setVisibility(View.VISIBLE);
-				spinnerRange.setVisibility(View.VISIBLE);
-				buttonSubmit.setVisibility(View.VISIBLE);
-			}
-		}
-		
-		@Override
-		public void onProviderDisabled(String provider) {
-			// TODO Auto-generated method stub
-		}
-
-		@Override
-		public void onProviderEnabled(String provider) {
-			// TODO Auto-generated method stub           
-		}
- 
-		@Override  
-		public void onStatusChanged(String provider, int status, Bundle extras) {  
-			// TODO Auto-generated method stub           
-		}
-	 }  
+	}  
 }
