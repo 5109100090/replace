@@ -1,3 +1,5 @@
+from Levenshtein import *
+
 class EditDistance():
     def __init__(self, str1, str2):
         self.str1 = str1
@@ -5,8 +7,13 @@ class EditDistance():
         self.length1 = len(str1)
         self.length2 = len(str2)
         
-    def similarity(self):
+    def similarity1(self):
         d = float(self.process())
+        x = 1 - (d / max(self.length1, self.length2))
+        return x
+    
+    def similarity2(self):
+        d = float(distance(self.str1, self.str2))
         x = 1 - (d / max(self.length1, self.length2))
         return x
     
