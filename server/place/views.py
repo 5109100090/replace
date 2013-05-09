@@ -4,8 +4,8 @@ from place.ed import EditDistance
 from type.models import Type
 from authenticate.models import User
 from review.models import Review
-import json, time
-from Levenshtein import *
+import json, time, math
+from datetime import date
 
 def index(request):
     return HttpResponse("Hello")
@@ -60,7 +60,7 @@ def process1(request):
     placeLng =  '112.79751';
     type = Type()
     type.typeId = 1
-    start_time = time.clock()
+    
     for p in Place.objects.listInRange(placeLat, placeLng, type, 1000) :
         response += "<h1>"+p.placeName+"</h1>"
         for r in Review.objects.filter(reviewPlace_id = p.placeId) :
@@ -77,47 +77,51 @@ def process1(request):
             currenteUser['userDOB'] = str(r.reviewUser.userDOB)
             currenteUser['userGender'] = r.reviewUser.userGender
             
+            response += activeUser.userAlias + " & " + r.reviewUser.userAlias + "<br />"
+            start_time = time.clock()
             for keyProperty in activeUserProperty:
                 if keyProperty == 'userGender':
                     average = 1.0 if activeUserProperty['userGender'] == currenteUser['userGender'] else 0.0
-                    response += keyProperty + " => EditDistance " + activeUser.userName + " ("+activeUserProperty[keyProperty]+") & " + r.reviewUser.userName + " ("+currenteUser[keyProperty]+") : " + str(sum) + "<br />"
+                    method = "If-else"
+                elif keyProperty == 'userDOB':
+                    user1 = activeUserProperty['userDOB'].split('-')
+                    user2 = currenteUser['userDOB'].split('-')
+
+                    delta = date(int(user1[0]), int(user1[1]), int(user1[2])) - date(int(user2[0]), int(user2[1]), int(user2[2]))
+                    #diff = float((float(delta.days) + 1825.0)/3650.0)
+                    diff = float( (1825.0-float(math.fabs(delta.days)))/1825.0 )
+                    average = 0.0 if diff < 0.0 else diff
+                    method = "Difference"
+                elif keyProperty == 'userOccupation':
+                    ed = EditDistance(activeUserProperty[keyProperty], currenteUser[keyProperty])
+                    average = ed.similarity2()
+                    method = "EditDistance"
                 else:
-                    if keyProperty in ('userOccupation','userDOB'):
-                        numOfItem = 1
-                        '''
-                        ed = EditDistance(activeUserProperty[keyProperty], currenteUser[keyProperty])
-                        sum = ed.similarity()
-                        '''
-                        ed = distance(activeUserProperty[keyProperty], currenteUser[keyProperty])
-                        sum = 1 - (float(ed) / max(len(activeUserProperty[keyProperty]), len(currenteUser[keyProperty])))
-                        
-                        response += keyProperty + " => EditDistance " + activeUser.userName + " ("+activeUserProperty[keyProperty]+") & " + r.reviewUser.userName + " ("+currenteUser[keyProperty]+") : " + str(sum) + "<br />"
-                    else:
-                        sum = 0
-                        numOfItem = 0
-                        
-                        listTemp = []
-                        for p1 in activeUserProperty[keyProperty]:
-                            for p2 in currenteUser[keyProperty]:
-                                '''
-                                ed = EditDistance(p1, p2)
-                                edValue = ed.similarity()                                
-                                '''
-                                ed = distance(p1, p2)
-                                edValue = 1 - (float(ed) / max(len(p1), len(p2)))
-                                
-                                sum += edValue
-                                numOfItem += 1
-                                strTemp = keyProperty + " => EditDistance " + activeUser.userName + " ("+p1+") & " + r.reviewUser.userName + " ("+p2+") : " + str(edValue) + "<br />"
-                                
-                                listTemp.append( (edValue, strTemp) )
-                                
-                        newList = sorted(listTemp, key=lambda attr: attr[0], reverse=True)
-                        for l in range(len(newList)):
-                            response += newList[l][1]
-                                
+                    sum = 0
+                    numOfItem = 0
+                    
+                    listTemp = []
+                    for p1 in activeUserProperty[keyProperty]:
+                        for p2 in currenteUser[keyProperty]:
+                            ed = EditDistance(p1, p2)
+                            edValue = ed.similarity2()
+                            
+                            sum += edValue
+                            numOfItem += 1
+                            strTemp = keyProperty + " => [EditDistance]  " + p1 + " & " + p2 + " = " + str(edValue) + "<br />"
+                            
+                            listTemp.append( (edValue, strTemp) )
+                            
+                    #for l in sorted(listTemp, key=lambda attr: attr[0], reverse=True):
+                    #    response += l[1]
+                            
                     average = sum / numOfItem
-                response += keyProperty + " => Average " + activeUser.userName + " & " + r.reviewUser.userName + " : " + str(average) + "<br />"
-        response += str(time.clock() - start_time) + " seconds"
+                    method = "Average EditDistance"
+                    
+                response += keyProperty + " => " + method + " = " + str(average) + "<br />"
+                
+            response += str(time.clock() - start_time) + " seconds<br />"
+            response += "<br/>"
+        
     return HttpResponse(response)
     
