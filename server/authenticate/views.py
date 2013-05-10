@@ -15,6 +15,15 @@ def login(request):
     else :
         return HttpResponse("what?")
     
+def detail(request):
+    if request.method == "POST" :
+        userId = str(request.POST["userId"])
+        u = User.objects.get(userId=userId)
+        data = [ { 'userName':u.userName, 'userPassword':u.userPassword, 'userAlias':u.userAlias, 'userFoods':u.userFoods, 'userDrinks':u.userDrinks, 'userBooks':u.userBooks, 'userMovies':u.userMovies, 'userMusics':u.userMusics, 'userGender':u.userGender, 'userOccupation':u.userOccupation, 'userDOB':str(u.userDOB)} ]
+        return HttpResponse(json.dumps(data))
+    else :
+        return HttpResponse("what?")
+    
 def users(request):
     response = ""
     for user in User.objects.all():
@@ -26,3 +35,4 @@ def users(request):
         + "<tr><td>userOccupation</td><td>" + user.userOccupation + "</td></tr></table><br />"
 
     return HttpResponse(response)
+
