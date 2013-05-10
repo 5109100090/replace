@@ -10,7 +10,7 @@
         android:id="@+id/userName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/userNameHint"
+        android:hint="@string/userName"
         android:ems="10" >
     </EditText>
 
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="@string/userPasswordHint"
+        android:hint="@string/userPassword"
         android:layout_below="@+id/userName" />
 
     <Button
@@ -36,6 +36,13 @@
         android:layout_height="wrap_content"
         android:text="@string/quickButtonLogin"
         android:layout_below="@+id/buttonLogin" />
+    
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonRegister"
+        android:layout_below="@+id/quickButtonLogin" />
     
     <ProgressBar
         android:id="@+id/progressBar1"

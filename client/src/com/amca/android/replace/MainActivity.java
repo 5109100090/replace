@@ -23,7 +23,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
 	private EditText userName, userPassword;
-	private Button buttonLogin, quickButtonLogin;
+	private Button buttonLogin, quickButtonLogin, buttonRegister;
 	private ProgressBar progressBar; 
 	
 	@Override
@@ -47,6 +47,14 @@ public class MainActivity extends Activity {
 		quickButtonLogin.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
             	doLogin("rizky", "123qwe");
+            }
+        });
+		buttonRegister = (Button) findViewById(R.id.buttonRegister);
+		buttonRegister.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	Intent intent = new Intent(MainActivity.this, UserForm.class);
+            	intent.putExtra("mode", "register");
+		    	startActivity(intent);
             }
         });
 	}
