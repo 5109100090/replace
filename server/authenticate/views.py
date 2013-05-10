@@ -14,3 +14,15 @@ def login(request):
         return HttpResponse(json.dumps(data))
     else :
         return HttpResponse("what?")
+    
+def users(request):
+    response = ""
+    for user in User.objects.all():
+        response += "<table border='1' width='100%'><tr><td colspan='2'>" + user.userAlias + "</td></tr>" \
+        + "<tr><td>userFoods</td><td>" + user.userFoods + "</td></tr>" \
+        + "<tr><td>userDrinks</td><td>" + user.userDrinks + "</td></tr>" \
+        + "<tr><td>userBooks</td><td>" + user.userBooks + "</td></tr>" \
+        + "<tr><td>userMovies</td><td>" + user.userMovies + "</td></tr>" \
+        + "<tr><td>userOccupation</td><td>" + user.userOccupation + "</td></tr></table><br />"
+
+    return HttpResponse(response)
