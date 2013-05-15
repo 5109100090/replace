@@ -33,8 +33,8 @@ public class UserFormDetail extends Activity implements OnClickListener{
 		attribute = intent.getStringExtra("attribute");
 		setTitle(attribute);
 		
-		if(mode.equals("update")){
-			String data = intent.getStringExtra("data");
+		String data = intent.getStringExtra("data");
+		if(!data.equals("null")){
 			dataSplit = data.split(",");
 			n = dataSplit.length + 1;
 		}
@@ -44,7 +44,7 @@ public class UserFormDetail extends Activity implements OnClickListener{
 			EditText ed = new EditText(this);
 			ed.setInputType(InputType.TYPE_CLASS_TEXT);
 			
-			if(mode.equals("update") && i < n-1){
+			if(i < n-1){
 				ed.setText(dataSplit[i]);
 			}else{
 				ed.setHint("Write your " + attribute + " here");

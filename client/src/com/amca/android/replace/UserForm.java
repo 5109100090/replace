@@ -49,8 +49,8 @@ public class UserForm extends ListActivity {
 		attributeList.add("Occupation");
 		attributeList.add("Date of Birth");
 		
-		for(@SuppressWarnings("unused") String s : attributeList) {
-			dataList.add(null);
+		for(String s : attributeList) {
+			dataList.add("null");
 		}
 		
 		if(mode.equals("update")){
@@ -73,9 +73,7 @@ public class UserForm extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Intent intent = new Intent(UserForm.this, UserFormDetail.class);
-		if(mode.equals("update")){
-			intent.putExtra("data", dataList.get(position).toString());
-		}
+		intent.putExtra("data", dataList.get(position).toString());
 		intent.putExtra("attribute", getListAdapter().getItem(position).toString());
 		intent.putExtra("mode", this.mode);
 		startActivityForResult(intent, USER_FORM_DETAIL_REQUEST);
@@ -87,7 +85,6 @@ public class UserForm extends ListActivity {
 			if (resultCode == RESULT_OK) {
 				Bundle extras = intent.getExtras();
 				dataList.set(attributeList.indexOf(extras.getString("attribute")), extras.getString("data"));
-				System.out.println(dataList.get(attributeList.indexOf(extras.getString("attribute"))));
 			}
 		}
 	}
