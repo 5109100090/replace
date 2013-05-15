@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from authenticate.models import User
-import json, hashlib
+import json, hashlib, datetime
 
 def index(request):
     return HttpResponse("Hello")
@@ -36,3 +36,30 @@ def users(request):
 
     return HttpResponse(response)
 
+def update(request):
+    if request.method == "POST" :
+        req = request.POST
+        u = User.objects.get(userName=req['userName'])
+        u.userPassword = hashlib.md5(str(req['userPassword'])).hexdigest()
+        u.userFoods = req['userFoods']
+        u.userDrinks = req['userDrinks']
+        u.userBooks = req['userBooks']
+        u.userMovies = req['userMovies']
+        u.userGender = req['userGender']
+        u.userOccupation = req['userOccupation']
+        dob = req['userDOB'].split('-')
+        u.userDOB = datetime.date(int(dob[0]), int(dob[1]), int(dob[2]))
+        u.save()
+        return HttpResponse("oke")
+    else :
+        return HttpResponse("what?")
+
+def register(request):
+    if request.method == "POST" :
+        req = request.POST
+        dob = req['userDOB'].split('-')
+        u = User(userName=req['userName'], userAlias=req['userAlias'], userPassword=hashlib.md5(str(req['userPassword'])).hexdigest(), userFoods=req['userFoods'], userDrinks=req['userDrinks'], userBooks=req['userBooks'], userMovies=req['userMovies'], userGender=req['userGender'], userOccupation=req['userOccupation'], userDOB=datetime.date(int(dob[0]), int(dob[1]), int(dob[2])))
+        u.save()
+        return HttpResponse("oke")
+    else :
+        return HttpResponse("what?")
