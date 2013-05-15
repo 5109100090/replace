@@ -114,7 +114,7 @@ public class PlaceType extends Activity implements OnClickListener {
     	switch (item.getItemId()) {
 			case R.id.action_profile:
 				Intent intent = new Intent(PlaceType.this, UserForm.class);
-				intent.putExtra("mode", "profile");
+				intent.putExtra("mode", "update");
 				intent.putExtra("userId", this.userId.toString());
 		    	startActivity(intent);
 				return true;

@@ -152,6 +152,7 @@ containing a value of this type.
         public static final int action_rating=0x7f040018;
         public static final int action_reviews=0x7f040017;
         public static final int action_settings=0x7f040016;
+        public static final int action_submit=0x7f04001b;
         public static final int buttonLogin=0x7f040007;
         public static final int buttonRegister=0x7f040009;
         public static final int buttonSubmit=0x7f040010;
