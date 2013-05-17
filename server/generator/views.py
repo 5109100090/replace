@@ -2,7 +2,7 @@ from django.http import HttpResponse
 import random
 from random import randrange, choice
 from place.models import Place
-from place.ed import EditDistance
+from similarity.ed import EditDistance
 from type.models import Type
 from authenticate.models import User
 from review.models import Review
