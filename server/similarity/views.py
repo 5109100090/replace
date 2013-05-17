@@ -3,6 +3,7 @@ from similarity.models import Similarity
 from authenticate.models import User
 from similarity.sp import SimilarityProcess
 import json, time
+from django.db.models import Q
 
 def processAll(request):
     start_time = time.clock()
@@ -30,7 +31,7 @@ def processAll(request):
             response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
             similarityValue[user1.userId][user2.userId] = simValue
             
-           #''' insert similarity value to db
+            ''' insert similarity value to db
             sim = Similarity()
             sim.similarityUser1 = user1
             sim.similarityUser2 = user2
@@ -40,3 +41,33 @@ def processAll(request):
 
     response += str(time.clock() - start_time) + " seconds<br />"
     return HttpResponse(response)
+
+def processUser(request):
+    if request.method == "POST" :
+        userId = str(request.POST["userId"])
+        user1 = User.objects.select_related().get(userId=userId)
+
+        similarityValue = {}
+        response = ""
+        for user2 in User.objects.select_related().all():
+            if user1.userId == user2.userId or user2.userId in similarityValue:
+                continue
+            
+            sp = SimilarityProcess()
+            simValue = sp.process(user1, user2)
+            
+            #response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
+            similarityValue[user2.userId] = simValue
+            
+            #''' update data on db
+            sim = Similarity.objects.get(
+                Q(similarityUser1_id=user1.userId) & Q(similarityUser2_id=user2.userId) |
+                Q(similarityUser1_id=user2.userId) & Q(similarityUser2_id=user1.userId)  
+            )
+            sim.similarityValue = simValue
+            sim.save() 
+            #'''
+            
+        return HttpResponse(response)
+    else :
+        return HttpResponse("what?")
