@@ -19,4 +19,5 @@ urlpatterns = patterns('',
     url(r'^place/', include('place.urls')),
     url(r'^review/', include('review.urls')),
     url(r'^generator/', include('generator.urls')),
+    url(r'^similarity/', include('similarity.urls')),
 )

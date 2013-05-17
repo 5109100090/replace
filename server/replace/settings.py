@@ -128,6 +128,7 @@ INSTALLED_APPS = (
     'type',
     'place',
     'review',
+    'similarity',
 )
 
 # A sample logging configuration. The only tangible logging
