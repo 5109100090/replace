@@ -57,6 +57,7 @@ public class PlaceDetail extends ListActivity {
     	switch (item.getItemId()) {
 			case R.id.action_reviews:
 				Intent intent = new Intent(PlaceDetail.this, PlaceReviews.class);
+				intent.putExtra("userId", this.userId);
 		    	intent.putExtra("placeId", this.placeId);
 		    	startActivity(intent);
 				return true;
