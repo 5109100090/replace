@@ -41,7 +41,7 @@ class SimilarityProcess():
                 average = ed.similarity2()
                 method = "EditDistance"
             else:
-                sum = 0
+                sumOfItem = 0
                 numOfItem = 0
                 
                 listTemp = []
@@ -50,7 +50,7 @@ class SimilarityProcess():
                         ed = EditDistance(p1, p2)
                         edValue = ed.similarity2()
                         
-                        sum += edValue
+                        sumOfItem += edValue
                         numOfItem += 1
                         strTemp = keyProperty + " => [EditDistance]  " + p1 + " & " + p2 + " = " + str(edValue) + "<br />"
                         
@@ -59,7 +59,7 @@ class SimilarityProcess():
                 #for l in sorted(listTemp, key=lambda attr: attr[0], reverse=True):
                 #    response += l[1]
                         
-                average = sum / numOfItem
+                average = sumOfItem / numOfItem
                 method = "Average EditDistance"
             
             #newSim = average    
@@ -73,7 +73,8 @@ class SimilarityProcess():
         ds = DempsterShafer()
         simValue = ds.process(attributeValue)
         #'''
-        simValue = reduce(lambda x, y: x + y / float(len(attributeValue.values())), attributeValue.values(), 0)
+        #simValue = reduce(lambda x, y: x + y / float(len(attributeValue.values())), attributeValue.values(), 0)
+        simValue = sum(attributeValue.values(), 0.0) / len(attributeValue.values())
         #response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
         #response += str(time.clock() - start_time) + " seconds<br />"
         #response += "<br/>"
