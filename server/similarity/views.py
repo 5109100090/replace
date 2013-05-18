@@ -12,9 +12,7 @@ def processAll(request):
     response = ""
     for user1 in User.objects.select_related().all():
         similarityValue[user1.userId] = {}
-        for user2 in User.objects.select_related().all():
-            if user1.userId == user2.userId:
-                continue
+        for user2 in User.objects.select_related().exclude(userId=user1.userId):
              
             #if Similarity.objects.extra(where=["similarityUser1_id IN (%s, %s) AND similarityUser2_id IN (%s, %s)"], params=[user1.userId,user2.userId,user1.userId,user2.userId]).exists():
             if user1.userId in similarityValue:
@@ -45,29 +43,8 @@ def processAll(request):
 def processUser(request):
     if request.method == "POST" :
         userId = str(request.POST["userId"])
-        user1 = User.objects.select_related().get(userId=userId)
-
-        similarityValue = {}
-        response = ""
-        for user2 in User.objects.select_related().all():
-            if user1.userId == user2.userId or user2.userId in similarityValue:
-                continue
-            
-            sp = SimilarityProcess()
-            simValue = sp.process(user1, user2)
-            
-            #response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
-            similarityValue[user2.userId] = simValue
-            
-            #''' update data on db
-            sim = Similarity.objects.get(
-                Q(similarityUser1_id=user1.userId) & Q(similarityUser2_id=user2.userId) |
-                Q(similarityUser1_id=user2.userId) & Q(similarityUser2_id=user1.userId)  
-            )
-            sim.similarityValue = simValue
-            sim.save() 
-            #'''
-            
-        return HttpResponse(response)
+        sp = SimilarityProcess()
+        sp.processUser(userId)
+        return HttpResponse("")
     else :
         return HttpResponse("what?")

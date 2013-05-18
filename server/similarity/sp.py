@@ -1,9 +1,31 @@
 from similarity.ed import EditDistance
 from similarity.ds import DempsterShafer
+from similarity.models import Similarity
+from authenticate.models import User
 from datetime import date
 import time, math
 
 class SimilarityProcess():
+    def processUser(self, userId):
+        user1 = User.objects.select_related().get(userId=userId)
+
+        similarityValue = {}
+        response = ""
+        for user2 in User.objects.select_related().exclude(userId=userId):
+            simValue = self.process(user1, user2)
+            
+            #response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
+            similarityValue[user2.userId] = simValue
+            
+            #''' update data on db
+            sim = Similarity.objects.get(
+                Q(similarityUser1_id=user1.userId) & Q(similarityUser2_id=user2.userId) |
+                Q(similarityUser1_id=user2.userId) & Q(similarityUser2_id=user1.userId)  
+            )
+            sim.similarityValue = simValue
+            sim.save()
+            #'''
+        
     def process(self, user1, user2):
         weightAttribute = {'userFoods' : 0.2, 'userDrinks' : 0.2, 'userBooks' : 0.1, 'userMovies' : 0.1, 'userOccupation' : 0.1, 'userDOB' : 0.2, 'userGender' : 0.1}
         
