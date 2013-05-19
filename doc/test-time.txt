@@ -1,0 +1,7 @@
+test time EditDistance
+A : from pypi using c wrapper
+B : own program
+
+15/05/2013 22:16
+A : 9.38627014271 seconds
+B : 54.1312561091 seconds
