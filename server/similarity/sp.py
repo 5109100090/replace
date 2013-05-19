@@ -85,8 +85,8 @@ class SimilarityProcess():
                 method = "Average EditDistance"
             
             #newSim = average    
-            #newSim = float( (2 * average * weightAttribute[keyProperty]) / (1 + (average * weightAttribute[keyProperty])) )
-            newSim = average * weightAttribute[keyProperty]
+            newSim = float( (2 * average * weightAttribute[keyProperty]) / (1 + (average * weightAttribute[keyProperty])) )
+            #newSim = average * weightAttribute[keyProperty]
             attributeValue[keyProperty] = newSim
             
             #response += keyProperty + " => " + method + " = " + str(newSim) + "<br />"
