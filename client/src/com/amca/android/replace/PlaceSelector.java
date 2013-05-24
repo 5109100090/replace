@@ -1,16 +1,8 @@
 package com.amca.android.replace;
 
-import com.amca.android.replace.http.HTTPTransfer;
-import com.amca.android.replace.model.Place;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import android.os.Bundle;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +10,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.amca.android.replace.http.HTTPTransfer;
+import com.amca.android.replace.model.Place;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class PlaceSelector extends ListActivity {
  
@@ -116,7 +119,7 @@ public class PlaceSelector extends ListActivity {
 					list.add(json_data.getString("placeName") + " - " + json_data.getString("placeDistance"));
 				}
 				
-				ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, list);
+				ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getCtx(), android.R.layout.simple_list_item_1, list);
 				setListAdapter(adapter);
 			}catch(JSONException e){
 				Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();

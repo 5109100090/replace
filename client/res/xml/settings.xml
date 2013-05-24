@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Application">
+        <ListPreference
+                android:key="serverUrl"
+                android:entries="@array/serverUrl"
+                android:summary="choose server address"
+                android:entryValues="@array/serverUrl"
+                android:title="Server URL" />
+
+        <CheckBoxPreference
+                android:summary="locate current position automatically"
+                android:title="Auto Locate Position"
+                android:key="autoLocation"
+                android:defaultValue="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>

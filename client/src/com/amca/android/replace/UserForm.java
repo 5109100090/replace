@@ -1,15 +1,8 @@
 package com.amca.android.replace;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import com.amca.android.replace.http.HTTPTransfer;
-import android.os.Bundle;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +10,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.amca.android.replace.http.HTTPTransfer;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class UserForm extends ListActivity {
 
@@ -66,7 +69,7 @@ public class UserForm extends ListActivity {
 			progressBar.setVisibility(View.INVISIBLE);
 		}
 		
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, attributeList);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, attributeList);
 		setListAdapter(adapter);
 	}
 

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="spinnerRangeEntries">
+        <item>100 meter</item>
+        <item>500 meter</item>
+        <item>1000 meter</item>
+        <item>2000 meter</item>
+    </string-array>
+
     <string-array name="serverUrl">
         <item>http://10.151.36.36:8080/</item>
         <item>http://riset.ajk.if.its.ac.id/replace/</item>

@@ -1,21 +1,24 @@
 package com.amca.android.replace;
 
-import com.amca.android.replace.http.HTTPTransfer;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import com.amca.android.replace.http.HTTPTransfer;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class PlaceReviews extends Activity {
 	
@@ -72,7 +75,7 @@ public class PlaceReviews extends Activity {
 					list.add(map);
 				}
 				
-				SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), list, R.layout.activity_place_reviews_row,
+				SimpleAdapter adapter = new SimpleAdapter(this.getCtx(), list, R.layout.activity_place_reviews_row,
 			            new String[] {"left_col", "right_col"}, new int[] {R.id.left_col, R.id.right_col});
 				listView.setAdapter(adapter);
 			}catch(JSONException e){
