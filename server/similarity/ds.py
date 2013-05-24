@@ -64,20 +64,61 @@ class DempsterShafer():
         #return (key, before[key])
         return before[key]
     
+    def assignThreshold(self, data):
+        #data['A'] = round(data['A'], 2)
+
+        a = data['A'] - (data['A'] * 0.1)
+        b = 1 - data['A']
+        ab = 1 - (a + b)
+        
+        '''
+        data['A'] = round(a, 2)
+        data['B'] = round(b, 2)
+        data['AB'] = round(ab, 2)
+        #'''
+        data['A'] = a
+        data['B'] = b
+        data['AB'] = ab
+        #print data
+        #'''
+        return data
+    
+    def process2(self, data, debug = False):
+        m1 = {}
+        m2 = {}
+        for key in data:
+            if(len(m1) == 0):
+                m1['A'] = data[key]
+                continue
+            m1 = self.assignThreshold(m1)
+            
+            m2['A'] = data[key]
+            m2 = self.assignThreshold(m2)
+            
+            q = m1['A'] * m2['A'] + m1['A'] * m2['AB'] + m1['AB'] * m2['A']
+            w = m1['A'] * m2['B'] + m1['B'] * m2['A']
+            m3 = q / (1 - w)
+            m1['A'] = m3
+        
+        #return {'A':round(m1['A'], 2), 'B':round(1 - m1['A'], 2) }
+        #return {'A':m1['A'], 'B':1 - m1['A'] }
+        return m3
+
 if __name__ == "__main__":
     data = {}
     #'''
-    data['userMovies'] = 0.0732137427272
-    data['userOccupation'] = 0.333333333333
-    data['userDrinks'] = 0.038853734062
-    data['userFoods'] = 0.044262140884
-    data['userBooks'] = 0.042398746623
-    data['userGender'] = 0.333333333333
-    data['userDOB'] = 0.0
+    data['userMovies'] =  0.0510703743887
+    data['userOccupation'] = 0.181818181818
+    data['userDrinks'] = 0.133615580761
+    data['userFoods'] = 0.144806087205
+    data['userBooks'] = 0.0328666641286
+    data['userGender'] = 0.181818181818
+    data['userDOB'] = 0.290398126464
     '''
-    data["F,D,B"] = 0.8
-    data["A,F,D"] = 0.9
-    data["A"] = 0.6
-    '''
+    data["1"] = 0.8
+    data["2"] = 0
+    #'''
     ds = DempsterShafer()
-    print ds.process(data, True)
+    res = ds.process2(data, True)
+    print res
+    print res['A'] if res['A'] >= 0.5 else res['B']

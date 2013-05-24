@@ -27,7 +27,8 @@ class SimilarityProcess():
             #'''
         
     def process(self, user1, user2):
-        weightAttribute = {'userFoods' : 0.2, 'userDrinks' : 0.2, 'userBooks' : 0.1, 'userMovies' : 0.1, 'userOccupation' : 0.1, 'userDOB' : 0.2, 'userGender' : 0.1}
+        response = ""
+        weightAttribute = {'userFoods' : 0.25, 'userDrinks' : 0.25, 'userBooks' : 0.05, 'userMovies' : 0.05, 'userOccupation' : 0.1, 'userDOB' : 0.2, 'userGender' : 0.1}
         
         user1Property = {}
         user1Property['userFoods'] = user1.userFoods.split(',')
@@ -50,7 +51,7 @@ class SimilarityProcess():
         attributeValue = {}
         for keyProperty in user1Property:
             if keyProperty == 'userGender':
-                average = 1.0 if user1Property['userGender'] == user2Property['userGender'] else 0.0
+                average = 0.7 if user1Property['userGender'] == user2Property['userGender'] else 0.3
                 method = "If-else"
             elif keyProperty == 'userDOB':
                 delta = date(int(user1Property['userDOB'][0]), int(user1Property['userDOB'][1]), int(user1Property['userDOB'][2])) - date(int(user2Property['userDOB'][0]), int(user2Property['userDOB'][1]), int(user2Property['userDOB'][2]))
@@ -89,17 +90,19 @@ class SimilarityProcess():
             #newSim = average * weightAttribute[keyProperty]
             attributeValue[keyProperty] = newSim
             
-            #response += keyProperty + " => " + method + " = " + str(newSim) + "<br />"
+            response += keyProperty + " => " + method + " = " + str(newSim) + "<br />"
         
-        '''
-        ds = DempsterShafer()
-        simValue = ds.process(attributeValue)
         #'''
+        ds = DempsterShafer()
+        simValue = ds.process2(attributeValue) * 1000000
+        response += "DS : " + str(simValue) + "<br />"
+        #'''
+        #simValue = response
         #simValue = reduce(lambda x, y: x + y / float(len(attributeValue.values())), attributeValue.values(), 0)
-        simValue = sum(attributeValue.values(), 0.0) / len(attributeValue.values())
+        #simValue = sum(attributeValue.values(), 0.0) / len(attributeValue.values())
         #response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
         #response += str(time.clock() - start_time) + " seconds<br />"
-        #response += "<br/>"
+        response += "<br/>"
 
         return simValue
         
