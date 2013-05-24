@@ -18,19 +18,21 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+	private TextView registerScreen;
 	private EditText userName, userPassword;
-	private Button buttonLogin, quickButtonLogin, buttonRegister;
+	private Button buttonLogin, quickButtonLogin;
 	private ProgressBar progressBar; 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+		setTitle("Login to your Account");
 		this.prepareConfiguration();
 		
 		userName = (EditText) findViewById(R.id.userName);
@@ -43,20 +45,22 @@ public class MainActivity extends Activity {
             	doLogin(userName.getText().toString(), userPassword.getText().toString());
             }
         });
+        registerScreen = (TextView) findViewById(R.id.linkToRegister);
+        registerScreen.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+            	Intent intent = new Intent(MainActivity.this, UserForm.class);
+            	intent.putExtra("mode", "register");
+		    	startActivity(intent);
+			}
+		});
+		/*/
 		quickButtonLogin = (Button) findViewById(R.id.quickButtonLogin);
 		quickButtonLogin.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
             	doLogin("rizky", "123qwe");
             }
         });
-		buttonRegister = (Button) findViewById(R.id.buttonRegister);
-		buttonRegister.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-            	Intent intent = new Intent(MainActivity.this, UserForm.class);
-            	intent.putExtra("mode", "register");
-		    	startActivity(intent);
-            }
-        });
+        //*/
 	}
 	
 	@Override

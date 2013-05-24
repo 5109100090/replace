@@ -73,7 +73,7 @@ public class UserForm extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Intent intent = new Intent(UserForm.this, UserFormDetail.class);
-		intent.putExtra("data", dataList.get(position).toString());
+		intent.putExtra("data", dataList.get(position));
 		intent.putExtra("attribute", getListAdapter().getItem(position).toString());
 		intent.putExtra("mode", this.mode);
 		startActivityForResult(intent, USER_FORM_DETAIL_REQUEST);

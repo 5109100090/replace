@@ -52,5 +52,5 @@
     <string name="title_activity_place_selector_map">PlaceSelectorMap</string>
     <string name="title_activity_user_form">UserForm</string>
     <string name="title_activity_user_form_detail">UserFormDetail</string>
-
+    <string name="linkToRegister">New user? Register here</string>
 </resources>

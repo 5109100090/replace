@@ -145,39 +145,41 @@ containing a value of this type.
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int repeat_bg=0x7f020001;
     }
     public static final class id {
-        public static final int action_map=0x7f04001c;
-        public static final int action_profile=0x7f04001d;
-        public static final int action_rating=0x7f04001b;
-        public static final int action_reviews=0x7f04001a;
-        public static final int action_settings=0x7f040019;
-        public static final int action_submit=0x7f04001e;
-        public static final int buttonLogin=0x7f040007;
-        public static final int buttonRegister=0x7f040009;
-        public static final int buttonSubmit=0x7f040013;
+        public static final int action_map=0x7f04001d;
+        public static final int action_profile=0x7f04001e;
+        public static final int action_rating=0x7f04001c;
+        public static final int action_reviews=0x7f04001b;
+        public static final int action_settings=0x7f04001a;
+        public static final int action_submit=0x7f04001f;
+        public static final int buttonLogin=0x7f040009;
+        public static final int buttonSubmit=0x7f040014;
+        public static final int footer=0x7f040006;
+        public static final int header=0x7f040005;
         public static final int hybrid=0x7f040004;
-        public static final int left_col=0x7f04000c;
-        public static final int linearLayout=0x7f040018;
-        public static final int listView1=0x7f04000b;
-        public static final int map=0x7f04000e;
+        public static final int left_col=0x7f04000d;
+        public static final int linearLayout=0x7f040019;
+        public static final int linkToRegister=0x7f04000a;
+        public static final int listView1=0x7f04000c;
+        public static final int map=0x7f04000f;
         public static final int none=0x7f040000;
         public static final int normal=0x7f040001;
-        public static final int progressBar1=0x7f04000a;
-        public static final int quickButtonLogin=0x7f040008;
-        public static final int right_col=0x7f04000d;
+        public static final int progressBar1=0x7f04000b;
+        public static final int right_col=0x7f04000e;
         public static final int satellite=0x7f040002;
-        public static final int spinnerGeolocation=0x7f040017;
-        public static final int spinnerPlaceType=0x7f040010;
-        public static final int spinnerRange=0x7f040012;
-        public static final int spinnerServer=0x7f040015;
+        public static final int spinnerGeolocation=0x7f040018;
+        public static final int spinnerPlaceType=0x7f040011;
+        public static final int spinnerRange=0x7f040013;
+        public static final int spinnerServer=0x7f040016;
         public static final int terrain=0x7f040003;
-        public static final int textViewGeolocation=0x7f040016;
-        public static final int textViewPlaceType=0x7f04000f;
-        public static final int textViewRange=0x7f040011;
-        public static final int textViewServerUrl=0x7f040014;
-        public static final int userName=0x7f040005;
-        public static final int userPassword=0x7f040006;
+        public static final int textViewGeolocation=0x7f040017;
+        public static final int textViewPlaceType=0x7f040010;
+        public static final int textViewRange=0x7f040012;
+        public static final int textViewServerUrl=0x7f040015;
+        public static final int userName=0x7f040007;
+        public static final int userPassword=0x7f040008;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -190,6 +192,8 @@ containing a value of this type.
         public static final int activity_settings=0x7f030007;
         public static final int activity_user_form=0x7f030008;
         public static final int activity_user_form_detail=0x7f030009;
+        public static final int footer_repeat=0x7f03000a;
+        public static final int header_gradient=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -274,6 +278,7 @@ containing a value of this type.
          */
         public static final int common_signin_button_text_long=0x7f05000d;
         public static final int hello_world=0x7f050012;
+        public static final int linkToRegister=0x7f050034;
         public static final int quickButtonLogin=0x7f05001f;
         public static final int spinnerGeolocation=0x7f050029;
         public static final int spinnerPlaceType=0x7f050026;

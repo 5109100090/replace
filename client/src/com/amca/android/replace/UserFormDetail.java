@@ -34,22 +34,33 @@ public class UserFormDetail extends Activity implements OnClickListener{
 		setTitle(attribute);
 		
 		String data = intent.getStringExtra("data");
-		if(!data.equals("null")){
-			dataSplit = data.split(",");
-			n = dataSplit.length + 1;
-		}
 		
 		LinearLayout ll = (LinearLayout)findViewById(R.id.linearLayout);
-		for(int i=0; i<n; i++){
+		if(attribute.equals("Username") || attribute.equals("Password") || attribute.equals("Alias") || attribute.equals("Gender") || attribute.equals("Occupation") || attribute.equals("Date of Birth")){
 			EditText ed = new EditText(this);
-			ed.setInputType(InputType.TYPE_CLASS_TEXT);
-			
-			if(i < n-1){
-				ed.setText(dataSplit[i]);
+			if(mode.equals("update")){
+				ed.setText(data);
 			}else{
 				ed.setHint("Write your " + attribute + " here");
 			}
 			ll.addView(ed);
+		}else{
+			if(!data.equals("null")){
+				dataSplit = data.split(",");
+				n = dataSplit.length + 1;
+			}
+			
+			for(int i=0; i<n; i++){
+				EditText ed = new EditText(this);
+				ed.setInputType(InputType.TYPE_CLASS_TEXT);
+				
+				if(i < n-1){
+					ed.setText(dataSplit[i]);
+				}else{
+					ed.setHint("Write your " + attribute + " here");
+				}
+				ll.addView(ed);
+			}
 		}
 		
 		Button b = new Button(this);
