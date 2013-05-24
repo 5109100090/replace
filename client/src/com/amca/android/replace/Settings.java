@@ -1,48 +1,20 @@
 package com.amca.android.replace;
-
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.app.Activity;
+import android.preference.PreferenceActivity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.view.View;
-import android.widget.AdapterView;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class Settings extends Activity {
+public class Settings extends PreferenceActivity {
 
 	private Spinner spinnerServer, spinnerGeolocation;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_settings);
-		
-		spinnerServer = (Spinner) findViewById(R.id.spinnerServer);
-		spinnerGeolocation = (Spinner) findViewById(R.id.spinnerGeolocation);
-		
-		setSelection();
-		
-		spinnerServer.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-		    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-		    	setPref("serverUrl", spinnerServer.getSelectedItem().toString());
-		    } 
-
-		    public void onNothingSelected(AdapterView<?> adapterView) {
-		    	return;
-		    } 
-		});
-		
-		spinnerGeolocation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-		    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {		    	
-		    	setPref("geolocation", spinnerGeolocation.getSelectedItem().toString());
-		    } 
-
-		    public void onNothingSelected(AdapterView<?> adapterView) {
-		    	return;
-		    } 
-		});
+        addPreferencesFromResource(R.xml.settings);
 	}
 	
 	private void setSelection(){

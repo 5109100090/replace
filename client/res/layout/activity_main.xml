@@ -37,7 +37,8 @@
   				android:layout_width="fill_parent"
   				android:layout_height="72dip"
   				android:background="@layout/footer_repeat"
-  				android:layout_alignParentBottom="true">
+  				android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
   		</LinearLayout>
   		<!-- Footer Ends -->
   		
@@ -94,11 +95,6 @@
 		  		android:textSize="20sp"
 		  		android:textColor="#0b84aa"
 		  		android:text="@string/linkToRegister" />
-		    <ProgressBar
-		        android:id="@+id/progressBar1"
-		        style="?android:attr/progressBarStyleLarge"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content" />
 
 		</LinearLayout>
   		<!-- Login Form Ends --> 		

@@ -1,18 +1,10 @@
 package com.amca.android.replace;
 
-import com.amca.android.replace.http.HTTPTransfer;
-import com.amca.android.replace.model.Type;
-import com.amca.android.replace.gps.GPSTracker;
-import java.util.ArrayList;
-import java.util.List;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,10 +16,22 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amca.android.replace.gps.GPSTracker;
+import com.amca.android.replace.http.HTTPTransfer;
+import com.amca.android.replace.model.Type;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class PlaceType extends Activity implements OnClickListener {
 	
 	private Integer userId;
-	private String currentLat, currentLng, geolocation;
+	private String currentLat, currentLng;
+    private boolean autoLocation;
 	private List<Type> typeList = new ArrayList<Type>();
 	private TextView textViewPlaceType, textViewRange;
 	private Spinner spinnerPlaceType, spinnerRange;
@@ -59,22 +63,22 @@ public class PlaceType extends Activity implements OnClickListener {
 		buttonSubmit.setVisibility(View.INVISIBLE);
 		
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PlaceType.this);
-		geolocation = preferences.getString("geolocation", "");
+        autoLocation = preferences.getBoolean("autoLocation", false);
 		
-		if(geolocation.equals("static")){
-			this.currentLat = "-7.27957";
-			this.currentLng = "112.79751";
+		if(autoLocation){
+            GPSTracker gps = new GPSTracker(PlaceType.this);
+            if(gps.canGetLocation()){
+                Double latitude = gps.getLatitude();
+                Double longitude = gps.getLongitude();
+                this.currentLat = latitude.toString();
+                this.currentLng = longitude.toString();
+                Toast.makeText(getApplicationContext(), "Your Location is \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+            }else{
+                gps.showSettingsAlert();
+            }
 		}else{
-			GPSTracker gps = new GPSTracker(PlaceType.this);
-			if(gps.canGetLocation()){
-	        	Double latitude = gps.getLatitude();
-	        	Double longitude = gps.getLongitude();
-	        	this.currentLat = latitude.toString();
-	        	this.currentLng = longitude.toString();
-	        	Toast.makeText(getApplicationContext(), "Your Location is \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();	
-	        }else{
-	        	gps.showSettingsAlert();
-	        }
+            this.currentLat = "-7.27957";
+            this.currentLng = "112.79751";
 		}
 		
 		HTTPPlaceType http = new HTTPPlaceType();

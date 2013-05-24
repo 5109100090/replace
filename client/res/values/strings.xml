@@ -29,14 +29,6 @@
         <item>1000 meter</item>
         <item>2000 meter</item>
     </string-array>
-    <string-array name="spinnerServerEntries">
-        <item>http://10.151.36.36:8080/</item>
-        <item>http://riset.ajk.if.its.ac.id/replace/</item>
-    </string-array>
-    <string-array name="spinnerGeolocationEntries">
-        <item>static</item>
-        <item>auto</item>
-    </string-array>
 
     <string name="spinnerPlaceType">Place Type</string>
     <string name="spinnerRange">Range</string>

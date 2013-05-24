@@ -1,44 +1,43 @@
 package com.amca.android.replace;
 
-import com.amca.android.replace.http.HTTPTransfer;
-import java.util.HashMap;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.amca.android.replace.http.HTTPTransfer;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 public class MainActivity extends Activity {
 
 	private TextView registerScreen;
 	private EditText userName, userPassword;
 	private Button buttonLogin, quickButtonLogin;
-	private ProgressBar progressBar; 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		setTitle("Login to your Account");
-		this.prepareConfiguration();
+		//this.prepareConfiguration();
 		
 		userName = (EditText) findViewById(R.id.userName);
 		userPassword = (EditText) findViewById(R.id.userPassword);
-		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
-		progressBar.setVisibility(View.INVISIBLE);
 		buttonLogin = (Button) findViewById(R.id.buttonLogin);
 		buttonLogin.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -83,7 +82,6 @@ public class MainActivity extends Activity {
     }
 	
 	private void doLogin(String username, String password){
-		progressBar.setVisibility(View.VISIBLE);
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("userName", username);
 		data.put("userPassword", password);
@@ -121,7 +119,6 @@ public class MainActivity extends Activity {
 					Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();
 				}
 			}
-			progressBar.setVisibility(View.INVISIBLE);
 		}
 	}
 }
