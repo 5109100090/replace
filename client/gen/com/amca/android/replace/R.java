@@ -9,7 +9,8 @@ package com.amca.android.replace;
 
 public final class R {
     public static final class array {
-        public static final int serverUrl=0x7f080001;
+        public static final int serverUrlEntries=0x7f080001;
+        public static final int serverUrlValues=0x7f080002;
         public static final int spinnerRangeEntries=0x7f080000;
     }
     public static final class attr {
