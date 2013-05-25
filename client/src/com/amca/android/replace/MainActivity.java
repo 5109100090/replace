@@ -1,6 +1,7 @@
 package com.amca.android.replace;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,6 +21,7 @@ import java.util.HashMap;
 
 public class MainActivity extends Activity {
 
+	private ProgressDialog progressDialog;
 	private TextView registerScreen;
 	private EditText userName, userPassword;
 	private Button buttonLogin;
@@ -72,6 +74,8 @@ public class MainActivity extends Activity {
     }
 	
 	private void doLogin(String username, String password){
+		progressDialog = ProgressDialog.show(MainActivity.this,"Loading...",  
+        	    "Authenticate your data", false, false); 
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("userName", username);
 		data.put("userPassword", password);
@@ -102,6 +106,7 @@ public class MainActivity extends Activity {
 					Toast.makeText(this.getCtx(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();
 				}
 			}
+			progressDialog.dismiss();
 		}
 	}
 }
