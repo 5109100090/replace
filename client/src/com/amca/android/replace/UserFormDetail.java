@@ -38,7 +38,9 @@ public class UserFormDetail extends Activity implements OnClickListener{
 		LinearLayout ll = (LinearLayout)findViewById(R.id.linearLayout);
 		if(attribute.equals("Username") || attribute.equals("Password") || attribute.equals("Alias") || attribute.equals("Gender") || attribute.equals("Occupation") || attribute.equals("Date of Birth")){
 			EditText ed = new EditText(this);
-			if(mode.equals("update")){
+			if(attribute.equals("Password")){
+				ed.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+			}else if(mode.equals("update")){
 				ed.setText(data);
 			}else{
 				ed.setHint("Write your " + attribute + " here");
