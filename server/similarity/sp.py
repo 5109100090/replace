@@ -14,17 +14,17 @@ class SimilarityProcess():
         for user2 in User.objects.select_related().exclude(userId=userId):
             simValue = self.process(user1, user2)
             
-            #response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
+            # response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
             similarityValue[user2.userId] = simValue
             
-            #''' update data on db
+            # ''' update data on db
             sim = Similarity.objects.get(
-                Q(similarityUser1_id=user1.userId) & Q(similarityUser2_id=user2.userId) |
+                Q(similarityUser1_id=user1.userId) & Q(similarityUser2_id=user2.userId) | 
                 Q(similarityUser1_id=user2.userId) & Q(similarityUser2_id=user1.userId)  
             )
             sim.similarityValue = simValue
             sim.save()
-            #'''
+            # '''
         
     def process(self, user1, user2):
         response = ""
@@ -55,8 +55,8 @@ class SimilarityProcess():
                 method = "If-else"
             elif keyProperty == 'userDOB':
                 delta = date(int(user1Property['userDOB'][0]), int(user1Property['userDOB'][1]), int(user1Property['userDOB'][2])) - date(int(user2Property['userDOB'][0]), int(user2Property['userDOB'][1]), int(user2Property['userDOB'][2]))
-                #diff = float((float(delta.days) + 1825.0)/3650.0)
-                diff = float( (1825.0-float(math.fabs(delta.days)))/1825.0 )
+                # diff = float((float(delta.days) + 1825.0)/3650.0)
+                diff = float((1825.0 - float(math.fabs(delta.days))) / 1825.0)
                 average = 0.0 if diff < 0.0 else diff
                 method = "Difference"
             elif keyProperty == 'userOccupation':
@@ -77,31 +77,31 @@ class SimilarityProcess():
                         numOfItem += 1
                         strTemp = keyProperty + " => [EditDistance]  " + p1 + " & " + p2 + " = " + str(edValue) + "<br />"
                         
-                        listTemp.append( (edValue, strTemp) )
+                        listTemp.append((edValue, strTemp))
                         
-                #for l in sorted(listTemp, key=lambda attr: attr[0], reverse=True):
+                # for l in sorted(listTemp, key=lambda attr: attr[0], reverse=True):
                 #    response += l[1]
                         
                 average = sumOfItem / numOfItem
                 method = "Average EditDistance"
             
-            #newSim = average    
-            newSim = float( (2 * average * weightAttribute[keyProperty]) / (1 + (average * weightAttribute[keyProperty])) )
-            #newSim = average * weightAttribute[keyProperty]
+            # newSim = average    
+            newSim = float((2 * average * weightAttribute[keyProperty]) / (1 + (average * weightAttribute[keyProperty])))
+            # newSim = average * weightAttribute[keyProperty]
             attributeValue[keyProperty] = newSim
             
             response += keyProperty + " => " + method + " = " + str(newSim) + "<br />"
         
-        #'''
+        # '''
         ds = DempsterShafer()
         simValue = ds.process2(attributeValue) * 1000000
-        #response += "DS : " + str(simValue) + "<br />"
-        #'''
-        #simValue = response
-        #simValue = reduce(lambda x, y: x + y / float(len(attributeValue.values())), attributeValue.values(), 0)
-        #simValue = sum(attributeValue.values(), 0.0) / len(attributeValue.values())
-        #response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
-        #response += str(time.clock() - start_time) + " seconds<br />"
+        # response += "DS : " + str(simValue) + "<br />"
+        # '''
+        # simValue = response
+        # simValue = reduce(lambda x, y: x + y / float(len(attributeValue.values())), attributeValue.values(), 0)
+        # simValue = sum(attributeValue.values(), 0.0) / len(attributeValue.values())
+        # response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
+        # response += str(time.clock() - start_time) + " seconds<br />"
         response += "<br/>"
 
         return simValue

@@ -10,9 +10,9 @@ def login(request):
         userName = str(request.POST["userName"])
         userPassword = hashlib.md5(str(request.POST["userPassword"])).hexdigest()
 
-        if User.objects.filter(userName=userName,userPassword=userPassword).exists():
-            u = User.objects.get(userName=userName,userPassword=userPassword)
-            data = json.dumps( [ { 'userId':u.userId, 'userAlias':u.userAlias } ] )
+        if User.objects.filter(userName=userName, userPassword=userPassword).exists():
+            u = User.objects.get(userName=userName, userPassword=userPassword)
+            data = json.dumps([ { 'userId':u.userId, 'userAlias':u.userAlias } ])
         else:
             data = "null" 
         return HttpResponse(data)

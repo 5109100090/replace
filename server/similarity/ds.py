@@ -1,5 +1,5 @@
 class DempsterShafer():
-    def process(self, data, debug = False):
+    def process(self, data, debug=False):
         before = {}
         for key in data:
             if(data[key] == -999):
@@ -48,24 +48,24 @@ class DempsterShafer():
             
             if x > 0 and x < 1:
                 del beforeCandidate['x']
-                #beforeCandidate = {(beforeCandidate[bf] / (1 - x)) for bf in beforeCandidate}
+                # beforeCandidate = {(beforeCandidate[bf] / (1 - x)) for bf in beforeCandidate}
                 
                 for bf in beforeCandidate:
                     beforeCandidate[bf] = beforeCandidate[bf] / (1 - x)
                     
             if debug:
                 print 'newEvidence : ' + str(newEvidence)
-                #print 'ds table : '
+                # print 'ds table : '
                 print 'beforeCandidate : ' + str(beforeCandidate)
                 
             before = beforeCandidate 
 
-        key = max(before, key = lambda x: before.get(x))
-        #return (key, before[key])
+        key = max(before, key=lambda x: before.get(x))
+        # return (key, before[key])
         return before[key]
     
     def assignThreshold(self, data):
-        #data['A'] = round(data['A'], 2)
+        # data['A'] = round(data['A'], 2)
 
         a = data['A'] - (data['A'] * 0.1)
         b = 1 - data['A']
@@ -79,11 +79,11 @@ class DempsterShafer():
         data['A'] = a
         data['B'] = b
         data['AB'] = ab
-        #print data
-        #'''
+        # print data
+        # '''
         return data
     
-    def process2(self, data, debug = False):
+    def process2(self, data, debug=False):
         m1 = {}
         m2 = {}
         for key in data:
@@ -100,14 +100,14 @@ class DempsterShafer():
             m3 = q / (1 - w)
             m1['A'] = m3
         
-        #return {'A':round(m1['A'], 2), 'B':round(1 - m1['A'], 2) }
-        #return {'A':m1['A'], 'B':1 - m1['A'] }
+        # return {'A':round(m1['A'], 2), 'B':round(1 - m1['A'], 2) }
+        # return {'A':m1['A'], 'B':1 - m1['A'] }
         return m3
 
 if __name__ == "__main__":
     data = {}
-    #'''
-    data['userMovies'] =  0.0510703743887
+    # '''
+    data['userMovies'] = 0.0510703743887
     data['userOccupation'] = 0.181818181818
     data['userDrinks'] = 0.133615580761
     data['userFoods'] = 0.144806087205

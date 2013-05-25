@@ -17,13 +17,13 @@ def listReviews(request):
         place.placeId = int(request.POST["placeId"])
         
         data = []       
-        #for r in Review.objects.listReviews(user, place) :
+        # for r in Review.objects.listReviews(user, place) :
         for r in Review.objects.filter(reviewPlace_id=place).exclude(reviewUser_id=user) :
             dict = {}
             dict['userAlias'] = r.reviewUser.userAlias
             dict['reviewPoint'] = str(r.reviewPoint)
-            #dict['similarityValue'] = str(r.similarityValue)
-            #dict['newSimilarityValue'] = str(r.newSimilarityValue)
+            # dict['similarityValue'] = str(r.similarityValue)
+            # dict['newSimilarityValue'] = str(r.newSimilarityValue)
             
             sp = SimilarityProcess()
             dict['similarityValue'] = sp.process(User.objects.get(userId=user.userId), r.reviewUser)
