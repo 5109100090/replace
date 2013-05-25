@@ -13,7 +13,9 @@ class EditDistance():
         return x
     
     def similarity2(self):
-        return ratio(self.str1, self.str2)
+        d = distance(self.str1, self.str2)
+        x = 1 - (float(d) / max(self.length1, self.length2))
+        return x
     
     def process(self):
         m = [[0 for i in range(self.length2 + 1)] for j in range(self.length1 + 1)]

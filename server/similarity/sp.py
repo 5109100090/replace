@@ -61,7 +61,7 @@ class SimilarityProcess():
                 method = "Difference"
             elif keyProperty == 'userOccupation':
                 ed = EditDistance(user1Property[keyProperty], user2Property[keyProperty])
-                average = ed.similarity2()
+                average = ed.similarity1()
                 method = "EditDistance"
             else:
                 sumOfItem = 0
@@ -71,7 +71,7 @@ class SimilarityProcess():
                 for p1 in user1Property[keyProperty]:
                     for p2 in user2Property[keyProperty]:
                         ed = EditDistance(p1, p2)
-                        edValue = ed.similarity2()
+                        edValue = ed.similarity1()
                         
                         sumOfItem += edValue
                         numOfItem += 1
@@ -97,12 +97,12 @@ class SimilarityProcess():
         simValue = ds.process2(attributeValue) * 1000000
         # response += "DS : " + str(simValue) + "<br />"
         # '''
-        # simValue = response
         # simValue = reduce(lambda x, y: x + y / float(len(attributeValue.values())), attributeValue.values(), 0)
         # simValue = sum(attributeValue.values(), 0.0) / len(attributeValue.values())
         # response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
         # response += str(time.clock() - start_time) + " seconds<br />"
         response += "<br/>"
+        # simValue = response
 
         return simValue
         
