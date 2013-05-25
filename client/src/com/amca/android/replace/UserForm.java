@@ -62,7 +62,7 @@ public class UserForm extends ListActivity {
 			HashMap<String, String> data = new HashMap<String, String>();
 			data.put("userId", userId);
 			HTTPUserForm http = new HTTPUserForm();
-			http.setCtx(UserForm.this);
+			http.setContext(UserForm.this);
 			http.setData(data);
 			http.execute("authenticate/detail/");
 		}else{
@@ -117,7 +117,7 @@ public class UserForm extends ListActivity {
 				
 				HTTPUserForm http = new HTTPUserForm();
 				http.setMode(1);
-				http.setCtx(UserForm.this);
+				http.setContext(UserForm.this);
 				http.setData(data);
 				http.execute("authenticate/" + mode + "/");
 				finish();

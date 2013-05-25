@@ -43,7 +43,7 @@ public class PlaceReviews extends Activity {
 		data.put("placeId", placeId.toString());
 		
 		HTTPPlaceDetail http = new HTTPPlaceDetail();
-		http.setCtx(PlaceReviews.this);
+		http.setContext(PlaceReviews.this);
 		http.setData(data);
 		http.execute("review/listReviews/");
 	}
@@ -75,7 +75,7 @@ public class PlaceReviews extends Activity {
 					list.add(map);
 				}
 				
-				SimpleAdapter adapter = new SimpleAdapter(this.getCtx(), list, R.layout.activity_place_reviews_row,
+				SimpleAdapter adapter = new SimpleAdapter(this.getContext(), list, R.layout.activity_place_reviews_row,
 			            new String[] {"left_col", "right_col"}, new int[] {R.id.left_col, R.id.right_col});
 				listView.setAdapter(adapter);
 			}catch(JSONException e){

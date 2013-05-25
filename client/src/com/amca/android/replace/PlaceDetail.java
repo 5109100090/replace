@@ -43,7 +43,7 @@ public class PlaceDetail extends ListActivity {
 		data.put("placeId", placeId.toString());
 		
 		HTTPPlaceDetail http = new HTTPPlaceDetail();
-		http.setCtx(PlaceDetail.this);
+		http.setContext(PlaceDetail.this);
 		http.setData(data);
 		http.execute("place/getDetail/");
 	}
@@ -85,7 +85,7 @@ public class PlaceDetail extends ListActivity {
 							data.put("reviewPoint", String.valueOf(rating.getProgress()));
 							
 							HTTPTransfer rating = new HTTPTransfer();
-							rating.setCtx(PlaceDetail.this);
+							rating.setContext(PlaceDetail.this);
 							rating.setData(data);
 							rating.setMode(2);
 							rating.execute("review/setRating");
@@ -126,7 +126,7 @@ public class PlaceDetail extends ListActivity {
 				list.add("Type :\n"+json_data.getString("typeName"));
 				setTitle(json_data.getString("placeName"));
 				
-				ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getCtx(), android.R.layout.simple_list_item_1, list);
+				ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, list);
 				setListAdapter(adapter);
 			}catch(JSONException e){
 				Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();

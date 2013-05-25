@@ -53,7 +53,7 @@ public class PlaceSelector extends ListActivity {
 		data.put("currentLng", this.currentLng);
 		
 		HTTPPlaceSelector http = new HTTPPlaceSelector();
-		http.setCtx(PlaceSelector.this);
+		http.setContext(PlaceSelector.this);
 		http.setData(data);
 		http.execute("place/process/");
 	}
@@ -119,7 +119,7 @@ public class PlaceSelector extends ListActivity {
 					list.add(json_data.getString("placeName") + " - " + json_data.getString("placeDistance"));
 				}
 				
-				ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getCtx(), android.R.layout.simple_list_item_1, list);
+				ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, list);
 				setListAdapter(adapter);
 			}catch(JSONException e){
 				Toast.makeText(getApplicationContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();

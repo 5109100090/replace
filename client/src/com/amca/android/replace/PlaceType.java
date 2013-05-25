@@ -82,7 +82,7 @@ public class PlaceType extends Activity implements OnClickListener {
 		}
 		
 		HTTPPlaceType http = new HTTPPlaceType();
-		http.setCtx(PlaceType.this);
+		http.setContext(PlaceType.this);
 		http.setMode(2);
 		http.execute("type/listAll/");
 	}

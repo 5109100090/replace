@@ -81,7 +81,7 @@ public class MainActivity extends Activity {
 		data.put("userPassword", password);
 
 		HTTPLogin login = new HTTPLogin();
-		login.setCtx(MainActivity.this);
+		login.setContext(MainActivity.this);
 		login.setData(data);
 		login.execute("authenticate/login/");
 	}
@@ -92,7 +92,7 @@ public class MainActivity extends Activity {
 			super.onPostExecute(result);
 			if(result.equals("null")){
 				System.out.println("invalid username & password");
-	        	Toast.makeText(this.getCtx(), "invalid username & password", Toast.LENGTH_SHORT).show();
+	        	Toast.makeText(this.getContext(), "invalid username & password", Toast.LENGTH_SHORT).show();
 			}else{
 				try{
 					JSONArray jArray = new JSONArray(result);
@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
 		        	intent.putExtra("userAlias", json_data.getString("userAlias"));
 		        	startActivity(intent);
 				}catch(JSONException e){
-					Toast.makeText(this.getCtx(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();
+					Toast.makeText(this.getContext(), "Error parsing data "+e.toString(), Toast.LENGTH_SHORT).show();
 				}
 			}
 			progressDialog.dismiss();

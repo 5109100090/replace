@@ -24,7 +24,7 @@ import android.preference.PreferenceManager;
 
 public class HTTPTransfer extends AsyncTask<String, String, String> {
 
-	private Context ctx = null;
+	private Context context = null;
 	private HashMap<String, String> data = null;
 	private Integer mode = 0;
 	
@@ -36,12 +36,12 @@ public class HTTPTransfer extends AsyncTask<String, String, String> {
 		this.mode = mode;
 	}
 
-	public Context getCtx() {
-		return ctx;
+	public Context getContext() {
+		return context;
 	}
 
-	public void setCtx(Context ctx) {
-		this.ctx = ctx;
+	public void setContext(Context ctx) {
+		this.context = ctx;
 	}
 
 	public HashMap<String, String> getData() {
@@ -138,7 +138,7 @@ public class HTTPTransfer extends AsyncTask<String, String, String> {
 	
 	@Override
 	protected String doInBackground(String... params) {
-		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getCtx());
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
 		String serverUrl = preferences.getString("serverUrl", "") + params[0];
 		
 		switch(getMode()){
