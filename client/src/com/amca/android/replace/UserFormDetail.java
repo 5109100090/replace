@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 public class UserFormDetail extends Activity implements OnClickListener{
@@ -36,7 +37,7 @@ public class UserFormDetail extends Activity implements OnClickListener{
 		String data = intent.getStringExtra("data");
 		
 		LinearLayout ll = (LinearLayout)findViewById(R.id.linearLayout);
-		if(attribute.equals("Username") || attribute.equals("Password") || attribute.equals("Alias") || attribute.equals("Gender") || attribute.equals("Occupation") || attribute.equals("Date of Birth")){
+		if(attribute.equals("Username") || attribute.equals("Password") || attribute.equals("Alias") || attribute.equals("Occupation") || attribute.equals("Date of Birth")){
 			EditText ed = new EditText(this);
 			if(attribute.equals("Password")){
 				ed.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
@@ -46,6 +47,21 @@ public class UserFormDetail extends Activity implements OnClickListener{
 				ed.setHint("Write your " + attribute + " here");
 			}
 			ll.addView(ed);
+		}else if(attribute.equals("Gender")){
+			RadioButton[] rb = new RadioButton[5];
+	        RadioGroup rg = new RadioGroup(this);
+	        rg.setOrientation(RadioGroup.HORIZONTAL);
+	        rb[0] = new RadioButton(this);
+            rb[0].setText("L");
+            rb[0].setChecked((mode.equals("update") && data.equals("L")));
+            rb[0].setId(0);
+            rg.addView(rb[0]);
+            rb[1] = new RadioButton(this);
+            rb[1].setText("P");
+            rb[1].setChecked((mode.equals("update") && data.equals("P")));
+            rb[1].setId(1);
+            rg.addView(rb[1]);
+            ll.addView(rg);
 		}else{
 			if(!data.equals("null")){
 				dataSplit = data.split(",");
