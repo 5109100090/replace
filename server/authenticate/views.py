@@ -14,7 +14,7 @@ def login(request):
             u = User.objects.get(userName=userName,userPassword=userPassword)
             data = json.dumps( [ { 'userId':u.userId, 'userAlias':u.userAlias } ] )
         else:
-            data = "null"
+            data = "null" 
         return HttpResponse(data)
     else :
         return HttpResponse("what?")
