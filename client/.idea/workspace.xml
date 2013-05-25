@@ -33,25 +33,24 @@
       </layout>
     </layouts>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="com.amca.android.replace" />
-  </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/com/amca/android/replace/MainActivity.java" line="36" />
+    <bookmark url="file://$PROJECT_DIR$/src/com/amca/android/replace/MainActivity.java" line="31" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10045030-422e-4d68-9f0a-b406feb41ccd" name="Default" comment="new Setting">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/amca/android/replace/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/amca/android/replace/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../server/similarity/sp.py" afterPath="$PROJECT_DIR$/../server/similarity/sp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="client.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="10045030-422e-4d68-9f0a-b406feb41ccd" time="1369409700940" ignored="false" />
+    <file path="/Dummy.txt" changelist="10045030-422e-4d68-9f0a-b406feb41ccd" time="1369457320472" ignored="false" />
     <file path="/fragment.java" changelist="10045030-422e-4d68-9f0a-b406feb41ccd" time="1369407192846" ignored="false" />
     <file path="D:/android/android-sdks/extras/google/google_play_services/libproject/google-play-services_lib/project.properties" changelist="10045030-422e-4d68-9f0a-b406feb41ccd" time="1369404315819" ignored="false" />
     <file path="$PROJECT_DIR$/bin/AndroidManifest.xml" changelist="10045030-422e-4d68-9f0a-b406feb41ccd" time="1369404622696" ignored="false" />
     <file path="/prefs.xml" changelist="10045030-422e-4d68-9f0a-b406feb41ccd" time="1369406321584" ignored="false" />
     <file path="/Settings.java" changelist="10045030-422e-4d68-9f0a-b406feb41ccd" time="1369405250079" ignored="false" />
-    <file path="/MainActivity.java" changelist="10045030-422e-4d68-9f0a-b406feb41ccd" time="1369407167118" ignored="false" />
+    <file path="/MainActivity.java" changelist="10045030-422e-4d68-9f0a-b406feb41ccd" time="1369456178841" ignored="false" />
     <file path="$USER_HOME$/Downloads/Compressed/Android_Preferences_example/project.properties" changelist="10045030-422e-4d68-9f0a-b406feb41ccd" time="1369407018920" ignored="false" />
     <file path="$USER_HOME$/Downloads/Compressed/Android_Preferences_example/src/net/viralpatel/android/MainActivity.java" changelist="10045030-422e-4d68-9f0a-b406feb41ccd" time="1369407168423" ignored="false" />
     <file path="/settings.xml" changelist="10045030-422e-4d68-9f0a-b406feb41ccd" time="1369407575669" ignored="false" />
@@ -119,91 +118,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PlaceSelectorMap.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/amca/android/replace/PlaceSelectorMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="30" selection-start="748" selection-end="748" vertical-scroll-proportion="0.66735536">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/xml/settings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="41" selection-start="627" selection-end="639" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#319#342#0" expanded="true" />
-                <element signature="e#428#440#0" expanded="true" />
-                <element signature="e#505#544#0" expanded="true" />
-                <element signature="e#575#597#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
-          <provider editor-type-id="android-designer">
+          <provider editor-type-id="text-editor">
+            <state line="17" column="34" selection-start="602" selection-end="602" vertical-scroll-proportion="-0.68">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="34" selection-start="602" selection-end="602" vertical-scroll-proportion="-11.56">
+        </entry>
+      </file>
+      <file leaf-file-name="activity_place_type.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/activity_place_type.xml">
+          <provider editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserForm.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amca/android/replace/UserForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="68" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserFormDetail.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amca/android/replace/UserFormDetail.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/amca/android/replace/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="28" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlaceDetail.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amca/android/replace/PlaceDetail.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="72" selection-start="4117" selection-end="4130" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlaceReviews.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amca/android/replace/PlaceReviews.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="58" selection-start="2480" selection-end="2491" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlaceSelector.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/amca/android/replace/PlaceSelector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="16" selection-start="3934" selection-end="3934" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="arrays.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/arrays.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="12" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="85" column="17" selection-start="2776" selection-end="2776" vertical-scroll-proportion="0.1053719">
+              <folding>
+                <element signature="e#1073#1526#0" expanded="true" />
+                <element signature="e#1515#1516#0" expanded="true" />
+                <element signature="e#1642#1868#0" expanded="true" />
+                <element signature="e#1863#1864#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -245,7 +193,6 @@
         <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/res/xml/prefs.xml" />
         <option value="$PROJECT_DIR$/src/com/amca/android/replace/Settings.java" />
-        <option value="$PROJECT_DIR$/src/com/amca/android/replace/MainActivity.java" />
         <option value="$PROJECT_DIR$/res/xml/settings.xml" />
         <option value="$PROJECT_DIR$/src/com/amca/android/replace/PlaceType.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
@@ -256,6 +203,7 @@
         <option value="$PROJECT_DIR$/src/com/amca/android/replace/PlaceDetail.java" />
         <option value="$PROJECT_DIR$/src/com/amca/android/replace/PlaceReviews.java" />
         <option value="$PROJECT_DIR$/src/com/amca/android/replace/PlaceSelector.java" />
+        <option value="$PROJECT_DIR$/src/com/amca/android/replace/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -404,13 +352,13 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="136" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="D:/android/android-sdks/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar!/" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="160" />
@@ -425,14 +373,14 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="S5830da471409" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="C4F12781E5FA79E" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="options.searchVisible" value="true" />
@@ -592,7 +540,8 @@
       <created>1369400628410</created>
       <updated>1369400628410</updated>
       <workItem from="1369400635098" duration="1473000" />
-      <workItem from="1369402709039" duration="7922000" />
+      <workItem from="1369402709039" duration="8631000" />
+      <workItem from="1369454911735" duration="2423000" />
     </task>
     <task id="LOCAL-00001" summary="migrate to Android Studio">
       <created>1369403645874</created>
@@ -626,16 +575,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9395000" />
+    <option name="totallyTimeSpent" value="12527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1394" height="916" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2897898" sideWeight="0.67193675" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295796" sideWeight="0.67193675" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22522523" sideWeight="0.67193675" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20795795" sideWeight="0.67193675" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32806325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295796" sideWeight="0.67193675" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295796" sideWeight="0.67193675" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32806325" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -643,19 +592,19 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32806325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32806325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32806325" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32806325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32720104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19744745" sideWeight="0.67193675" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32806325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32806325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32806325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -726,50 +675,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/values/arrays.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="12" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/amca/android/replace/PlaceType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="20" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.7579618">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/xml/settings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="41" selection-start="627" selection-end="639" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#319#342#0" expanded="true" />
-            <element signature="e#428#440#0" expanded="true" />
-            <element signature="e#505#544#0" expanded="true" />
-            <element signature="e#575#597#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1259#1277#0" expanded="true" />
-            <element signature="e#1428#1446#0" expanded="true" />
-            <element signature="e#1779#1814#0" expanded="true" />
-            <element signature="e#1947#1986#0" expanded="true" />
-            <element signature="e#2117#2154#0" expanded="true" />
-            <element signature="e#2286#2324#0" expanded="true" />
-            <element signature="e#2452#2485#0" expanded="true" />
-            <element signature="e#2621#2664#0" expanded="true" />
-            <element signature="e#2946#2980#0" expanded="true" />
-            <element signature="e#3114#3155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="20" selection-start="32" selection-end="32" vertical-scroll-proportion="0.035123967">
@@ -779,46 +684,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values-sw600dp/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values-sw720dp-land/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_place_detail.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_place_selector.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="34" selection-start="602" selection-end="602" vertical-scroll-proportion="-11.56">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/amca/android/replace/UserForm.java">
@@ -856,10 +747,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/amca/android/replace/PlaceSelectorMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="30" selection-start="748" selection-end="748" vertical-scroll-proportion="0.66735536">
+        <state line="42" column="8" selection-start="1521" selection-end="1521" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state line="17" column="34" selection-start="602" selection-end="602" vertical-scroll-proportion="-0.68">
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/arrays.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="12" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_place_type.xml">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/amca/android/replace/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="17" selection-start="2776" selection-end="2776" vertical-scroll-proportion="0.1053719">
+          <folding>
+            <element signature="e#1073#1526#0" expanded="true" />
+            <element signature="e#1515#1516#0" expanded="true" />
+            <element signature="e#1642#1868#0" expanded="true" />
+            <element signature="e#1863#1864#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
