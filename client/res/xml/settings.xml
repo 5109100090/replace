@@ -4,9 +4,9 @@
     <PreferenceCategory android:title="Application">
         <ListPreference
                 android:key="serverUrl"
-                android:entries="@array/serverUrl"
+                android:entries="@array/serverUrlEntries"
                 android:summary="choose server address"
-                android:entryValues="@array/serverUrl"
+                android:entryValues="@array/serverUrlValues"
                 android:title="Server URL" />
 
         <CheckBoxPreference

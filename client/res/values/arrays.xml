@@ -2,14 +2,18 @@
 <resources>
 
     <string-array name="spinnerRangeEntries">
-        <item>100 meter</item>
-        <item>500 meter</item>
-        <item>1000 meter</item>
-        <item>2000 meter</item>
+        <item name="1">500 meter</item>
+        <item name="2">1000 meter</item>
+        <item name="3">2000 meter</item>
     </string-array>
-    <string-array name="serverUrl">
-        <item>http://10.151.36.36:8080/</item>
-        <item>http://riset.ajk.if.its.ac.id/replace/</item>
+    
+    <string-array name="serverUrlEntries">
+        <item name="1">10.151.36.36</item>
+        <item name="2">riset.ajk.if.its.ac.id</item>
+    </string-array>
+    <string-array name="serverUrlValues">
+        <item name="1">http://10.151.36.36:8080/</item>
+        <item name="2">http://riset.ajk.if.its.ac.id/replace/</item>
     </string-array>
 
 </resources>
