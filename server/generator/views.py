@@ -13,7 +13,7 @@ def index(request):
 
 def user(request):
     foods = [
-                [ ["Ayam Bakar"],["Ayam Goreng"],["Ayam Presto"],["Ayam Rica Rica","Ayam Rica-Rica"],["Ayam Cabe Hijau","Ayam Cabai Hijau"] ],
+                [ ["Ayam Bakar","Ikan Bakar"],["Ayam Goreng","Ikan Goreng"],["Ayam Presto"],["Ayam Rica Rica","Ayam Rica-Rica"],["Ayam Cabe Hijau","Ayam Cabai Hijau"] ],
                 [ ["Soto Ayam","Sate Ayam"],["Soto Daging"],["Soto Madura"],["Soto Kudus"],["Soto Lamongan"],["Soto Kambing","Sate Kambing"] ],
                 [ ["Nasi Goreng"],["Nasi Bakar"],["Nasi Uduk","Nasi Udhuk"],["Nasi Kuning"],["Nasi Pecel"],["Nasi Padang","Nasi Padhang"],["Nasi Tumpeng"] ],
                 [ ["Mie Aceh","Mi Aceh"],["Mie Ayam","Mi Ayam"],["Mie Goreng","Mi Goreng"],["Mie Kuah","Mi Kuah"] ],
@@ -22,7 +22,7 @@ def user(request):
     drinks = [
               [ ["Teh Manis"],["Teh Tawar"],["Teh Hijau"],["Teh Botol"],["Teh Susu"] ],
               [ ["Es Teh"],["Es Teh Manis"],["Es Teh Tawar"],["Es Jeruk"],["Es Sirup","Es Syrup"],["Es Campur"],["Es Leci","Es Lecy"],["Es Susu"] ],
-              [ ["Teh Hangat"],["Jeruk Hangat"],["Kopi Hangat"],["Susu Hangat"] ],
+              [ ["Teh Hangat","Teh Anget"],["Jeruk Hangat"],["Kopi Hangat"],["Susu Hangat"] ],
               [ ["Teh Panas"],["Jeruk Panas"],["Kopi Panas"],["Susu Panas"] ],
               [ ["Kopi"],["Kopi Susu"],["Kopi Luwak"],["Kopi Hitam"],["Kopi Putih"] ]
               ]
@@ -35,9 +35,6 @@ def user(request):
               [ ["Twilight","The Twilight","The Twilight Saga"],["The Twilight Saga : New Moon","The Twilight Saga - New Moon"],["The Twilight Saga : Eclipse","The Twilight Saga - Eclipse"],["The Twilight Saga : Breaking Dawn","The Twilight Saga - Breaking Dawn"] ],
               [ ["Star Trek : The Motion Picture","Star Trek - The Motion Picture"],["Star Trek II : The Wrath of Khan","Star Trek II - The Wrath of Khan"],["Star Trek III : The Search for Spock","Star Trek III - The Search for Spock"],["Star Trek IV : The Voyage Home","Star Trek IV - The Voyage Home"],["Star Trek V : The Final Frontier","Star Trek V - The Final Frontier"],["Star Trek VI : The Undiscovered Country","Star Trek VI - The Undiscovered Country"],["Star Trek Generations"],["Star Trek : First Contact","Star Trek - First Contact"],["Star Trek : Insurrection","Star Trek - Insurrection"],["Star Trek : Nemesis","Star Trek - Nemesis"],["Star Trek"],["Star Trek Into Darkness"] ],
               [ ["Star Wars Episode IV : A New Hope","Star Wars Episode IV - A New Hope"],["Star Wars Episode V : The Empire Strikes Back","Star Wars Episode V - The Empire Strikes Back"],["Star Wars Episode VI : Return of the Jedi","Star Wars Episode VI - Return of the Jedi"],["Star Wars Episode I : The Phantom Menace","Star Wars Episode I - The Phantom Menace"],["Star Wars Episode II : Attack of the Clones","Star Wars Episode II - Attack of the Clones"],["Star Wars Episode III : Revenge of the Sith","Star Wars Episode III - Revenge of the Sith"],["Star Wars : The Clone Wars","Star Wars - The Clone Wars"] ]
-              ]
-    musics = [
-              []
               ]
     occupations = {"L" : ["Maha siswa","Mahasiswa","Siswa"], "P" : ["Maha siswi","Mahasiswi","Siswi"] }
     
