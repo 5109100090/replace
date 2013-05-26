@@ -9,7 +9,6 @@ class User(models.Model):
     userDrinks = models.TextField()
     userBooks = models.TextField()
     userMovies = models.TextField()
-    userMusics = models.TextField()
     userGender = models.CharField(max_length=1)
     userOccupation = models.CharField(max_length=50)
     userDOB = models.DateField()
