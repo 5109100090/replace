@@ -20,8 +20,8 @@ import java.util.List;
 
 public class PlaceSelector extends ListActivity {
 
-	private Integer userId, typeId;
-	private String range, currentLat, currentLng, jsonValue;
+	private Integer userId, typeId, nPlaces = 0;
+	private String range, currentLat, currentLng, jsonValue, typeName;
 	private List<Place> placesList = new ArrayList<Place>();
 	private ProgressBar progressBar;
 
@@ -36,8 +36,7 @@ public class PlaceSelector extends ListActivity {
 		this.range = intent.getStringExtra("range");
 		this.currentLat = intent.getStringExtra("currentLat");
 		this.currentLng = intent.getStringExtra("currentLng");
-		String typeName = intent.getStringExtra("typeName");
-		setTitle(typeName + " from the nearest " + this.range + " meter");
+		typeName = intent.getStringExtra("typeName");
 
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 
@@ -96,8 +95,9 @@ public class PlaceSelector extends ListActivity {
 			try {
 				ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 				JSONArray jArray = new JSONArray(result);
-
-				for (int i = 0; i < jArray.length(); i++) {
+				nPlaces = jArray.length();
+				setTitle(nPlaces + " closest " + typeName + " in " + range + " meter");
+				for (int i = 0; i < nPlaces; i++) {
 					JSONObject json_data = jArray.getJSONObject(i);
 
 					HashMap<String, String> map = new HashMap<String, String>();

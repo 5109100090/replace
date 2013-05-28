@@ -4,13 +4,27 @@
     android:layout_height="wrap_content"
     android:padding="15dp" >
 
-    <ImageView
-        android:id="@+id/placeIcon"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginRight="10dp"
-        android:src="@drawable/place_icon"
-        android:background="#33b5e5" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp" >
+
+        <ImageView
+            android:id="@+id/placeIcon"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginRight="10dp"
+            android:background="#33b5e5"
+            android:src="@drawable/place_icon" />
+
+        <TextView
+            android:id="@+id/placeReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/placeIcon"
+            android:text="placeReviews"
+            android:textSize="18sp" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -21,34 +35,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="placeName"
-            android:textSize="20sp"
             android:textColor="#0099FF"
+            android:textSize="20sp"
             android:textStyle="bold" />
-        
+
         <TextView
             android:id="@+id/placeDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/placeName"
             android:text="placeDesc"
-            android:textSize="18sp"
-            android:layout_below="@+id/placeName" />
-
-        <TextView
-            android:id="@+id/placeReviews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="placeReviews"
-            android:textSize="18sp"
-            android:layout_below="@+id/placeDesc" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/placeDistance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/placeDesc"
             android:text="placeDistance"
-            android:textSize="16sp"
             android:textColor="#989898"
-            android:layout_below="@+id/placeReviews" />
+            android:textSize="16sp" />
     </RelativeLayout>
 
 </LinearLayout>
