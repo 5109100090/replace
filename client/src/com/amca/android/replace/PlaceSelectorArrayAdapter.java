@@ -30,7 +30,7 @@ public class PlaceSelectorArrayAdapter extends ArrayAdapter<HashMap<String, Stri
 		TextView placeReviews = (TextView) rowView.findViewById(R.id.placeReviews);
 		TextView placeDistance = (TextView) rowView.findViewById(R.id.placeDistance);
 		
-		DecimalFormat df = new DecimalFormat("0.00");
+		DecimalFormat df = new DecimalFormat("#0.##");
 		
 		HashMap<String, String> value = values.get(position);
 		placeName.setText(value.get("placeName"));

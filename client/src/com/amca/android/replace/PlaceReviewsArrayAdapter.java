@@ -30,7 +30,7 @@ public class PlaceReviewsArrayAdapter extends ArrayAdapter<HashMap<String, Strin
 		TextView similarity = (TextView) rowView.findViewById(R.id.similarity);
 		TextView reviewText = (TextView) rowView.findViewById(R.id.reviewText);
 		
-		DecimalFormat df = new DecimalFormat("0.00");
+		DecimalFormat df = new DecimalFormat("#0.##");
 
 		HashMap<String, String> value = values.get(position);
 		reviewUser.setText(value.get("reviewUser"));
