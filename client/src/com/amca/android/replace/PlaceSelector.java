@@ -57,7 +57,7 @@ public class PlaceSelector extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Place selectedPlace = placesList.get(position);
-		Intent intent = new Intent(PlaceSelector.this, PlaceDetail.class);
+		Intent intent = new Intent(PlaceSelector.this, PlaceReviews.class);
 		intent.putExtra("placeId", selectedPlace.getPlaceId());
 		intent.putExtra("userId", this.userId);
 		startActivity(intent);
