@@ -55,8 +55,8 @@ def update(request):
         u.userDOB = datetime.date(int(dob[0]), int(dob[1]), int(dob[2]))
         u.save()
         
-        sp = SimilarityProcess()
-        sp.processUser(u.userId)
+        #sp = SimilarityProcess()
+        #sp.processUser(u.userId)
         return HttpResponse("oke")
     else :
         return HttpResponse("what?")
@@ -68,9 +68,9 @@ def register(request):
         u = User(userName=req['userName'], userAlias=req['userAlias'], userPassword=hashlib.md5(str(req['userPassword'])).hexdigest(), userFoods=req['userFoods'], userDrinks=req['userDrinks'], userBooks=req['userBooks'], userMovies=req['userMovies'], userGender=req['userGender'], userOccupation=req['userOccupation'], userDOB=datetime.date(int(dob[0]), int(dob[1]), int(dob[2])))
         u.save()
         
-        user = User.objects.latest('userId')
-        sp = SimilarityProcess()
-        sp.processUser(user.userId)
+        #user = User.objects.latest('userId')
+        #sp = SimilarityProcess()
+        #sp.processUser(user.userId)
         return HttpResponse("oke")
     else :
         return HttpResponse("what?")
