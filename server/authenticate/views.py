@@ -23,7 +23,7 @@ def detail(request):
     if request.method == "POST" :
         userId = str(request.POST["userId"])
         u = User.objects.get(userId=userId)
-        data = [ { 'userName':u.userName, 'userPassword':u.userPassword, 'userAlias':u.userAlias, 'userFoods':u.userFoods, 'userDrinks':u.userDrinks, 'userBooks':u.userBooks, 'userMovies':u.userMovies, 'userMusics':u.userMusics, 'userGender':u.userGender, 'userOccupation':u.userOccupation, 'userDOB':str(u.userDOB)} ]
+        data = [ { 'userName':u.userName, 'userPassword':u.userPassword, 'userAlias':u.userAlias, 'userFoods':u.userFoods, 'userDrinks':u.userDrinks, 'userBooks':u.userBooks, 'userMovies':u.userMovies, 'userGender':u.userGender, 'userOccupation':u.userOccupation, 'userDOB':str(u.userDOB)} ]
         return HttpResponse(json.dumps(data))
     else :
         return HttpResponse("what?")
