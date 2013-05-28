@@ -94,29 +94,28 @@ public class PlaceSelector extends ListActivity {
 			jsonValue = result;
 			// parse json data
 			try {
-				List<String> list = new ArrayList<String>();
+				ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 				JSONArray jArray = new JSONArray(result);
 
-				if (jArray.length() == 0) {
-					list.add("no data available");
-				}
-
 				for (int i = 0; i < jArray.length(); i++) {
-					JSONObject jd = jArray.getJSONObject(i);
+					JSONObject json_data = jArray.getJSONObject(i);
 
+					HashMap<String, String> map = new HashMap<String, String>();
+					map.put("placeName", json_data.getString("placeName"));
+					map.put("placeDesc", json_data.getString("placeDesc"));
+					map.put("placeReviews", json_data.getString("placeReviews"));
+					map.put("placeDistance", json_data.getString("placeDistance"));
+					
 					Place place = new Place();
-					place.setPlaceId(jd.getInt("placeId"));
-					place.setPlaceName(jd.getString("placeName"));
-					place.setPlaceDesc(jd.getString("placeDesc"));
-					place.setPlaceLat(jd.getString("placeLat"));
-					place.setPlaceLng(jd.getString("placeLng"));
-					place.setPlaceType(jd.getInt("placeType"));
+					place.setPlaceId(json_data.getInt("placeId"));
+					/*place.setPlaceName(map.get("placeName"));
+					place.setPlaceDesc(map.get("placeDesc"));
+					place.setPlaceLat(json_data.getString("placeLat"));
+					place.setPlaceLng(json_data.getString("placeLng"));
+					place.setPlaceType(json_data.getInt("placeType"));*/
 					placesList.add(place);
 
-					list.add(jd.getString("placeName") + "#" + 
-							jd.getString("placeDesc") + "#" + 
-							jd.getString("placeReviews") + "#" + 
-							jd.getString("placeDistance"));
+					list.add(map);
 				}
 
 				PlaceSelectorArrayAdapter adapter = new PlaceSelectorArrayAdapter(PlaceSelector.this, list);
