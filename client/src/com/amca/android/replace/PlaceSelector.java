@@ -38,7 +38,7 @@ public class PlaceSelector extends ListActivity {
 		this.currentLat = intent.getStringExtra("currentLat");
 		this.currentLng = intent.getStringExtra("currentLng");
 		String typeName = intent.getStringExtra("typeName");
-		setTitle(typeName);
+		setTitle(typeName + " from the nearest " + this.range + " meter");
 
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 
@@ -103,24 +103,24 @@ public class PlaceSelector extends ListActivity {
 				}
 
 				for (int i = 0; i < jArray.length(); i++) {
-					JSONObject json_data = jArray.getJSONObject(i);
+					JSONObject jd = jArray.getJSONObject(i);
 
 					Place place = new Place();
-					place.setPlaceId(json_data.getInt("placeId"));
-					place.setPlaceName(json_data.getString("placeName"));
-					place.setPlaceDesc(json_data.getString("placeDesc"));
-					place.setPlaceLat(json_data.getString("placeLat"));
-					place.setPlaceLng(json_data.getString("placeLng"));
-					place.setPlaceType(json_data.getInt("placeType"));
+					place.setPlaceId(jd.getInt("placeId"));
+					place.setPlaceName(jd.getString("placeName"));
+					place.setPlaceDesc(jd.getString("placeDesc"));
+					place.setPlaceLat(jd.getString("placeLat"));
+					place.setPlaceLng(jd.getString("placeLng"));
+					place.setPlaceType(jd.getInt("placeType"));
 					placesList.add(place);
 
-					list.add(json_data.getString("placeName") + " - "
-							+ json_data.getString("placeDistance"));
+					list.add(jd.getString("placeName") + "#" + 
+							jd.getString("placeDesc") + "#" + 
+							jd.getString("placeReviews") + "#" + 
+							jd.getString("placeDistance"));
 				}
 
-				ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-						this.getContext(), android.R.layout.simple_list_item_1,
-						list);
+				PlaceSelectorArrayAdapter adapter = new PlaceSelectorArrayAdapter(PlaceSelector.this, list);
 				setListAdapter(adapter);
 			} catch (JSONException e) {
 				Toast.makeText(getApplicationContext(),
