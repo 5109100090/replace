@@ -13,9 +13,13 @@ class PlaceManager(models.Manager):
                         sin( radians(%s) ) * \
                         sin( radians(placeLat) ) \
                     ) \
-                ) AS placeDistance \
+                ) AS placeDistance, \
+            COUNT(r.reviewId) as placeReviews \
             FROM place_place p \
+            LEFT JOIN review_review r \
+            ON r.reviewPlace_id = p.placeId\
             WHERE placeType_id = %s \
+            GROUP BY p.placeId \
             HAVING placeDistance < %s \
             ORDER BY placeDistance"
         
