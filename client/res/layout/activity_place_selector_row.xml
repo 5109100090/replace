@@ -5,7 +5,7 @@
     android:padding="15dp" >
 
     <ImageView
-        android:id="@+id/place_icon"
+        android:id="@+id/placeIcon"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_marginRight="10dp"
@@ -17,38 +17,38 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/place_name"
+            android:id="@+id/placeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="place name"
+            android:text="placeName"
             android:textSize="20sp"
             android:textColor="#0099FF"
             android:textStyle="bold" />
         
         <TextView
-            android:id="@+id/place_desc"
+            android:id="@+id/placeDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="place desc"
+            android:text="placeDesc"
             android:textSize="18sp"
-            android:layout_below="@+id/place_name" />
+            android:layout_below="@+id/placeName" />
 
         <TextView
-            android:id="@+id/place_rating"
+            android:id="@+id/placeReviews"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="place_rating"
+            android:text="placeReviews"
             android:textSize="18sp"
-            android:layout_below="@+id/place_desc" />
+            android:layout_below="@+id/placeDesc" />
 
         <TextView
-            android:id="@+id/place_distance"
+            android:id="@+id/placeDistance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="place_distance"
+            android:text="placeDistance"
             android:textSize="16sp"
             android:textColor="#989898"
-            android:layout_below="@+id/place_rating" />
+            android:layout_below="@+id/placeReviews" />
     </RelativeLayout>
 
 </LinearLayout>
