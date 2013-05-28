@@ -21,8 +21,8 @@ def user(request):
             ]
     drinks = [
               [ ["Teh Manis"],["Teh Tawar"],["Teh Hijau"],["Teh Botol"],["Teh Susu"] ],
-              [ ["Es Teh"],["Es Teh Manis"],["Es Teh Tawar"],["Es Jeruk"],["Es Sirup","Es Syrup"],["Es Campur"],["Es Leci","Es Lecy"],["Es Susu"] ],
-              [ ["Teh Hangat","Teh Anget"],["Jeruk Hangat"],["Kopi Hangat"],["Susu Hangat"] ],
+              [ ["Es Teh"],["Es Teh Manis"],["Es Teh Tawar"],["Es Jeruk"],["Es Sirup","Es Syrup","Es Sirup Susu"],["Es Campur"],["Es Leci","Es Lecy"],["Es Susu"] ],
+              [ ["Teh Hangat","Teh Anget"],["Jeruk Hangat","Jeruk Anget"],["Kopi Hangat,Kopi Anget"],["Susu Hangat","Susu Anget"] ],
               [ ["Teh Panas"],["Jeruk Panas"],["Kopi Panas"],["Susu Panas"] ],
               [ ["Kopi"],["Kopi Susu"],["Kopi Luwak"],["Kopi Hitam"],["Kopi Putih"] ]
               ]
