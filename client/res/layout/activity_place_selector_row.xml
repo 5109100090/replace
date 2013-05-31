@@ -11,8 +11,8 @@
 
         <ImageView
             android:id="@+id/placeIcon"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:layout_marginRight="10dp"
             android:background="#33b5e5"
             android:src="@drawable/place_icon" />
