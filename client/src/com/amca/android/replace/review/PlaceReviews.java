@@ -1,24 +1,31 @@
 package com.amca.android.replace.review;
 
-import android.app.ListActivity;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.app.SherlockListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import com.amca.android.replace.R;
 import com.amca.android.replace.http.HTTPTransfer;
+import com.amca.android.replace.model.Review;
+import com.amca.android.replace.model.User;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
-public class PlaceReviews extends ListActivity {
+public class PlaceReviews extends SherlockListActivity {
 
 	private Integer userId, placeId;
 	private ProgressBar progressBar;
+	private List<Review> list = new ArrayList<Review>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +51,29 @@ public class PlaceReviews extends ListActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.place_reviews, menu);
+		getSupportMenuInflater().inflate(R.menu.place_reviews, menu);
 		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int key = 0;
+		switch (item.getItemId()) {
+		case R.id.action_sort_by_similarity:
+			key = 1;
+		case R.id.action_sort_by_star:
+			key = 2;
+		default:
+			key = 0;
+		}
+
+		setListAdapter(null);
+		PlaceReviewsArrayAdapter adapter = new PlaceReviewsArrayAdapter(
+				PlaceReviews.this, list);
+		adapter.sort(key);
+		setListAdapter(adapter);
+		adapter.notifyDataSetChanged();
+		return super.onOptionsItemSelected(item);
 	}
 
 	class HTTPPlaceDetail extends HTTPTransfer {
@@ -54,19 +82,24 @@ public class PlaceReviews extends ListActivity {
 			super.onPostExecute(result);
 			// parse json data
 			try {
-				ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 				JSONArray jArray = new JSONArray(result);
 
 				for (int i = 0; i < jArray.length(); i++) {
 					JSONObject json_data = jArray.getJSONObject(i);
 
-					HashMap<String, String> map = new HashMap<String, String>();
-					map.put("reviewUser", json_data.getString("userAlias"));
-					map.put("reviewPoint", json_data.getString("reviewPoint"));
-					map.put("similarity",
-							json_data.getString("similarityValue"));
-					map.put("reviewText", "oke");
-					list.add(map);
+					Double newSimilarity = json_data.getDouble("reviewPoint")
+							* json_data.getDouble("similarityValue");
+					User user = new User();
+					user.setUserAlias(json_data.getString("userAlias"));
+
+					Review review = new Review();
+					review.setReviewUser(user);
+					review.setReviewPoint(json_data.getInt("reviewPoint"));
+					review.setReviewText("bagus sekali");
+					review.setSimilarity(json_data.getDouble("similarityValue"));
+					review.setNewSimilarity(newSimilarity);
+
+					list.add(review);
 				}
 
 				PlaceReviewsArrayAdapter adapter = new PlaceReviewsArrayAdapter(

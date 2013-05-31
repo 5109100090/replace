@@ -1,20 +1,20 @@
 package com.amca.android.replace.place;
 
-import android.app.ListActivity;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.app.SherlockListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.amca.android.replace.R;
 import com.amca.android.replace.http.HTTPTransfer;
 import com.amca.android.replace.model.Place;
 import com.amca.android.replace.review.PlaceReviews;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class PlaceSelector extends ListActivity {
+public class PlaceSelector extends SherlockListActivity {
 
 	private Integer userId, typeId, nPlaces = 0;
 	private String range, currentLat, currentLng, jsonValue, typeName;
@@ -69,7 +69,7 @@ public class PlaceSelector extends ListActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.place_selector, menu);
+		getSupportMenuInflater().inflate(R.menu.place_selector, menu);
 		return true;
 	}
 

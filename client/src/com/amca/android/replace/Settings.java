@@ -1,8 +1,9 @@
 package com.amca.android.replace;
-import android.preference.PreferenceActivity;
+
+import com.actionbarsherlock.app.SherlockPreferenceActivity;
 import android.os.Bundle;
 
-public class Settings extends PreferenceActivity {
+public class Settings extends SherlockPreferenceActivity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

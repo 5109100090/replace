@@ -1,15 +1,17 @@
 package com.amca.android.replace.user;
 
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.app.SherlockActivity;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import com.amca.android.replace.R;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.text.InputType;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -19,7 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-public class UserFormDetail extends Activity implements OnClickListener {
+public class UserFormDetail extends SherlockActivity implements OnClickListener {
 
 	private static final int MY_BUTTON = 9000;
 	private String mode = null, attribute = null;
@@ -144,7 +146,7 @@ public class UserFormDetail extends Activity implements OnClickListener {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.user_form_detail, menu);
+		getSupportMenuInflater().inflate(R.menu.user_form_detail, menu);
 		return true;
 	}
 

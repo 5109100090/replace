@@ -1,19 +1,19 @@
 package com.amca.android.replace.user;
 
-import android.app.ListActivity;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.app.SherlockListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.amca.android.replace.R;
 import com.amca.android.replace.http.HTTPTransfer;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class UserForm extends ListActivity {
+public class UserForm extends SherlockListActivity {
 
 	static final int USER_FORM_DETAIL_REQUEST = 1;
 	private String mode = null;
@@ -101,7 +101,7 @@ public class UserForm extends ListActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.user_form, menu);
+		getSupportMenuInflater().inflate(R.menu.user_form, menu);
 		return true;
 	}
 

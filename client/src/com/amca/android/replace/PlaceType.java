@@ -1,12 +1,14 @@
 package com.amca.android.replace;
 
-import android.app.Activity;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.app.SherlockActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -15,13 +17,11 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.amca.android.replace.gps.GPSTracker;
 import com.amca.android.replace.http.HTTPTransfer;
 import com.amca.android.replace.model.Type;
 import com.amca.android.replace.place.PlaceSelector;
 import com.amca.android.replace.user.UserForm;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,7 +29,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlaceType extends Activity implements OnClickListener {
+public class PlaceType extends SherlockActivity implements OnClickListener {
 
 	private Integer userId;
 	private String currentLat, currentLng;
@@ -122,7 +122,7 @@ public class PlaceType extends Activity implements OnClickListener {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.place_type, menu);
+		getSupportMenuInflater().inflate(R.menu.place_type, menu);
 		return true;
 	}
 
