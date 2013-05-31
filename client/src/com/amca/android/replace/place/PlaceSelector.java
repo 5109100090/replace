@@ -24,8 +24,8 @@ import java.util.List;
 
 public class PlaceSelector extends SherlockListActivity {
 
-	private Integer userId, typeId, nPlaces = 0;
-	private String range, currentLat, currentLng, jsonValue, typeName;
+	private Integer userId, typeId;
+	private String range, currentLat, currentLng, jsonValue, typeName, title;
 	private List<Place> placesList = new ArrayList<Place>();
 	private ProgressBar progressBar;
 
@@ -33,7 +33,8 @@ public class PlaceSelector extends SherlockListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_place_selector);
-
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		Intent intent = getIntent();
 		this.userId = intent.getIntExtra("userId", 0);
 		this.typeId = intent.getIntExtra("typeId", 0);
@@ -84,6 +85,7 @@ public class PlaceSelector extends SherlockListActivity {
 			intent.putExtra("currentLng", Float.parseFloat(this.currentLng));
 			intent.putExtra("jsonValue", this.jsonValue);
 			intent.putExtra("userId", this.userId);
+			intent.putExtra("title", this.title);
 			startActivity(intent);
 			return true;
 		default:
@@ -100,8 +102,9 @@ public class PlaceSelector extends SherlockListActivity {
 			try {
 				ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 				JSONArray jArray = new JSONArray(result);
-				nPlaces = jArray.length();
-				setTitle("showing " + nPlaces + " result(s)");
+				int nPlaces = jArray.length();
+				title = "showing " + nPlaces + " result(s)"; 
+				setTitle(title);
 				for (int i = 0; i < nPlaces; i++) {
 					JSONObject json_data = jArray.getJSONObject(i);
 

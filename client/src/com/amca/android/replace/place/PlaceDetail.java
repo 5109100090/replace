@@ -34,7 +34,8 @@ public class PlaceDetail extends SherlockListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_place_detail);
-
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		Intent intent = getIntent();
 		this.userId = intent.getIntExtra("userId", 0);
 		this.placeId = intent.getIntExtra("placeId", 0);

@@ -30,7 +30,8 @@ public class UserFormDetail extends SherlockActivity implements OnClickListener 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user_form_detail);
-
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		String[] dataSplit = null;
 		int n = 1;
 

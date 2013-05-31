@@ -31,18 +31,22 @@ public class PlaceSelectorMap extends SherlockFragmentActivity implements
 	private Integer userId;
 	private GoogleMap map = null;
 	private Float currentLat, currentLng;
-	private String jsonValue;
+	private String jsonValue, title;
 	private List<Place> placesList = new ArrayList<Place>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_place_selector_map);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		Intent intent = getIntent();
 		this.currentLat = intent.getFloatExtra("currentLat", 0);
 		this.currentLng = intent.getFloatExtra("currentLng", 0);
 		this.jsonValue = intent.getStringExtra("jsonValue");
 		this.userId = intent.getIntExtra("userId", 0);
+		this.title = intent.getStringExtra("title");
+		setTitle(title);
 
 		setUpMap();
 	}

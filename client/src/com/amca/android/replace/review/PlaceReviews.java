@@ -32,7 +32,8 @@ public class PlaceReviews extends SherlockListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_place_reviews);
-
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		Intent intent = getIntent();
 		this.userId = intent.getIntExtra("userId", 0);
 		this.placeId = intent.getIntExtra("placeId", 0);

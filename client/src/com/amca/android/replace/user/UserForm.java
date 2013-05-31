@@ -34,7 +34,8 @@ public class UserForm extends SherlockListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user_form);
-
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 		progressBar.setVisibility(View.VISIBLE);
 

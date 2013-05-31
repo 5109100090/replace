@@ -44,7 +44,8 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_place_type);
-
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		Intent intent = getIntent();
 		this.userId = intent.getIntExtra("userId", 0);
 		setTitle("Welcome");
