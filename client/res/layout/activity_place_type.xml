@@ -2,38 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="#ffffff"
     tools:context=".PlaceType" >
-
-    <!-- Header  Starts -->
-
-    <LinearLayout
-        android:id="@+id/header"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="5dip"
-        android:paddingTop="5dip" >
-
-        <!-- Logo Start -->
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:src="@drawable/ic_launcher" />
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dip"
-            android:gravity="left|center"
-            android:text="RePlace"
-            android:textColor="#4099ff"
-            android:textSize="30sp" />
-        <!-- Logo Ends -->
-    </LinearLayout>
-    <!-- Header Ends -->
-
 
     <!-- Footer Start -->
 
@@ -50,7 +19,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/header"
         android:orientation="vertical"
         android:padding="20dip" >
 
