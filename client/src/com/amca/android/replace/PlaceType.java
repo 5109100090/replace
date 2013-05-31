@@ -47,7 +47,7 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 
 		Intent intent = getIntent();
 		this.userId = intent.getIntExtra("userId", 0);
-		setTitle("Welcome " + intent.getStringExtra("userAlias"));
+		setTitle("Welcome");
 
 		textViewPlaceType = (TextView) findViewById(R.id.textViewPlaceType);
 		textViewRange = (TextView) findViewById(R.id.textViewRange);

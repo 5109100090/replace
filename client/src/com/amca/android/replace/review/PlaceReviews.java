@@ -24,6 +24,7 @@ import java.util.List;
 public class PlaceReviews extends SherlockListActivity {
 
 	private Integer userId, placeId;
+	private String placeName;
 	private ProgressBar progressBar;
 	private List<Review> list = new ArrayList<Review>();
 
@@ -35,7 +36,8 @@ public class PlaceReviews extends SherlockListActivity {
 		Intent intent = getIntent();
 		this.userId = intent.getIntExtra("userId", 0);
 		this.placeId = intent.getIntExtra("placeId", 0);
-
+		this.placeName = intent.getStringExtra("placeName");
+		setTitle(this.placeName);
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 
 		HashMap<String, String> data = new HashMap<String, String>();

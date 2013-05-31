@@ -41,6 +41,9 @@ public class UserForm extends SherlockListActivity {
 		Intent intent = getIntent();
 		mode = intent.getStringExtra("mode");
 
+		if(mode.equals("register")){
+			setTitle("Registration");
+		}
 		attributeList.add("Username");
 		attributeList.add("Password");
 		attributeList.add("Alias");
@@ -160,7 +163,7 @@ public class UserForm extends SherlockListActivity {
 						"Error parsing data " + e.toString(),
 						Toast.LENGTH_SHORT).show();
 			}
-
+			setTitle(dataList.get(2));
 			progressBar.setVisibility(View.INVISIBLE);
 		}
 	}

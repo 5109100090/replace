@@ -33,7 +33,7 @@ public class MainActivity extends SherlockActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		setTitle("Login to your Account");
+		setTitle("RePlace");
 
 		userName = (EditText) findViewById(R.id.userName);
 		userPassword = (EditText) findViewById(R.id.userPassword);

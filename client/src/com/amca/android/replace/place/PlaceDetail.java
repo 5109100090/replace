@@ -1,33 +1,33 @@
 package com.amca.android.replace.place;
 
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.app.SherlockListActivity;
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.Toast;
-
 import com.amca.android.replace.R;
 import com.amca.android.replace.http.HTTPTransfer;
 import com.amca.android.replace.review.PlaceReviews;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class PlaceDetail extends ListActivity {
+public class PlaceDetail extends SherlockListActivity {
 
 	private Integer userId, placeId;
+	private String placeName;
 	private ProgressBar progressBar;
 
 	@Override
@@ -38,7 +38,9 @@ public class PlaceDetail extends ListActivity {
 		Intent intent = getIntent();
 		this.userId = intent.getIntExtra("userId", 0);
 		this.placeId = intent.getIntExtra("placeId", 0);
-
+		this.placeName = intent.getStringExtra("placeName");
+		setTitle(this.placeName);
+		
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 
 		HashMap<String, String> data = new HashMap<String, String>();
@@ -53,7 +55,7 @@ public class PlaceDetail extends ListActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.place_detail, menu);
+		getSupportMenuInflater().inflate(R.menu.place_detail, menu);
 		return true;
 	}
 

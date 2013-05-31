@@ -62,6 +62,7 @@ public class PlaceSelector extends SherlockListActivity {
 		Place selectedPlace = placesList.get(position);
 		Intent intent = new Intent(PlaceSelector.this, PlaceReviews.class);
 		intent.putExtra("placeId", selectedPlace.getPlaceId());
+		intent.putExtra("placeName", selectedPlace.getPlaceName());
 		intent.putExtra("userId", this.userId);
 		startActivity(intent);
 	}
@@ -100,8 +101,7 @@ public class PlaceSelector extends SherlockListActivity {
 				ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 				JSONArray jArray = new JSONArray(result);
 				nPlaces = jArray.length();
-				setTitle(nPlaces + " closest " + typeName + " in " + range
-						+ " meter");
+				setTitle("showing " + nPlaces + " result(s)");
 				for (int i = 0; i < nPlaces; i++) {
 					JSONObject json_data = jArray.getJSONObject(i);
 
@@ -114,6 +114,7 @@ public class PlaceSelector extends SherlockListActivity {
 
 					Place place = new Place();
 					place.setPlaceId(json_data.getInt("placeId"));
+					place.setPlaceName(json_data.getString("placeName"));
 					/*
 					 * place.setPlaceName(map.get("placeName"));
 					 * place.setPlaceDesc(map.get("placeDesc"));
