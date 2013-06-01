@@ -25,12 +25,12 @@
     <string name="spinnerPlaceType">Place Type</string>
     <string name="spinnerRange">Range</string>
     <string name="action_settings">Settings</string>
-    <string name="action_reviews">Reviews</string>
-    <string name="action_rating">Give Rating</string>
     <string name="title_activity_place_reviews">PlaceReviews</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_place_selector_map">PlaceSelectorMap</string>
     <string name="title_activity_user_form">UserForm</string>
     <string name="title_activity_user_form_detail">UserFormDetail</string>
     <string name="linkToRegister">New user? Register here</string>
+    <string name="title_activity_write_review">WriteReview</string>
+
 </resources>
