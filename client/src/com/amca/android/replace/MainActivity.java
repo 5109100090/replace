@@ -1,19 +1,19 @@
 package com.amca.android.replace;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.app.SherlockActivity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+import com.amca.android.replace.http.ConnectionChecker;
 import com.amca.android.replace.http.HTTPTransfer;
 import com.amca.android.replace.user.UserForm;
 import org.json.JSONArray;
@@ -25,9 +25,7 @@ import java.util.HashMap;
 public class MainActivity extends SherlockActivity {
 
 	private ProgressDialog progressDialog;
-	private TextView registerScreen;
 	private EditText userName, userPassword;
-	private Button buttonLogin;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,28 +35,40 @@ public class MainActivity extends SherlockActivity {
 
 		userName = (EditText) findViewById(R.id.userName);
 		userPassword = (EditText) findViewById(R.id.userPassword);
-		buttonLogin = (Button) findViewById(R.id.buttonLogin);
-		buttonLogin.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				if (userName.getText().toString().equals("")
-						|| userPassword.getText().toString().equals("")) {
-					Toast.makeText(MainActivity.this,
-							"input your username and password",
-							Toast.LENGTH_SHORT).show();
-				} else {
-					doLogin(userName.getText().toString(), userPassword
-							.getText().toString());
-				}
-			}
-		});
-		registerScreen = (TextView) findViewById(R.id.linkToRegister);
-		registerScreen.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, UserForm.class);
-				intent.putExtra("mode", "register");
-				startActivity(intent);
-			}
-		});
+		findViewById(R.id.buttonLogin).setOnClickListener(
+				new OnClickListener() {
+					public void onClick(View v) {
+						ConnectionChecker cd = new ConnectionChecker(
+								getApplicationContext());
+						if (cd.isConnected()) {
+							if (userName.getText().toString().equals("")
+									|| userPassword.getText().toString()
+											.equals("")) {
+								showAlertDialog(MainActivity.this,
+										"Required Data",
+										"Input your username and password.",
+										false);
+							} else {
+								doLogin(userName.getText().toString(),
+										userPassword.getText().toString());
+							}
+						} else {
+							showAlertDialog(MainActivity.this,
+									"No Internet Connection",
+									"You don't have internet connection.",
+									false);
+						}
+					}
+				});
+		findViewById(R.id.linkToRegister).setOnClickListener(
+				new View.OnClickListener() {
+					public void onClick(View v) {
+						Intent intent = new Intent(MainActivity.this,
+								UserForm.class);
+						intent.putExtra("mode", "register");
+						startActivity(intent);
+					}
+				});
 	}
 
 	@Override
@@ -93,15 +103,26 @@ public class MainActivity extends SherlockActivity {
 		login.execute("authenticate/login/");
 	}
 
+	public void showAlertDialog(Context context, String title, String message,
+			Boolean status) {
+		AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+		alertDialog.setTitle(title);
+		alertDialog.setMessage(message);
+		alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+			}
+		});
+		alertDialog.show();
+	}
+
 	class HTTPLogin extends HTTPTransfer {
 		@Override
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);
 			if (result.equals("null")) {
 				System.out.println("invalid username & password");
-				Toast.makeText(this.getContext(),
-						"invalid username & password", Toast.LENGTH_SHORT)
-						.show();
+				showAlertDialog(MainActivity.this, "Error Authentication",
+						"Invalid username & password.", false);
 			} else {
 				try {
 					JSONArray jArray = new JSONArray(result);
