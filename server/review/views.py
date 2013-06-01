@@ -23,13 +23,17 @@ def listReviews(request):
         for r in Review.objects.filter(reviewPlace_id=place).exclude(reviewUser_id=user) :
             dict = {}
             dict['userAlias'] = r.reviewUser.userAlias
-            dict['reviewPoint'] = str(r.reviewPoint)
-            # dict['similarityValue'] = str(r.similarityValue)
-            # dict['newSimilarityValue'] = str(r.newSimilarityValue)
-            
+            dict['reviewPointPrice'] = r.reviewPointPrice
+            dict['reviewPointService'] = r.reviewPointService
+            dict['reviewPointLocation'] = r.reviewPointLocation
+            dict['reviewPointCondition'] = r.reviewPointCondition
+            dict['reviewPointComfort'] = r.reviewPointComfort
+            dict['reviewText'] = r.reviewText
+            average = float(r.reviewPointPrice+r.reviewPointService+r.reviewPointLocation+r.reviewPointCondition+r.reviewPointComfort) / 5
+            dict['averagePoint'] = str(average)
             sp = SimilarityProcess()
             dict['similarityValue'] = sp.process(User.objects.get(userId=user.userId), r.reviewUser, typeId)
-            dict['newSimilarityValue'] = float(dict['similarityValue']) * float(r.reviewPoint)  
+            dict['newSimilarityValue'] = float(dict['similarityValue']) * average
             data.append(dict)
         data = sorted(data, key=lambda rev: rev['newSimilarityValue'], reverse=True)
         return HttpResponse(json.dumps(data))

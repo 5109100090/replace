@@ -42,7 +42,7 @@ public class PlaceReviewsArrayAdapter extends ArrayAdapter<Review> {
 		user = review.getReviewUser();
 
 		reviewUser.setText(user.getUserAlias());
-		reviewPoint.setText(review.getReviewPoint() + " star(s)");
+		reviewPoint.setText(review.getAveragePoint() + " points");
 		similarity.setText("similarity\n" + df.format(review.getSimilarity()));
 		reviewText.setText(review.getReviewText());
 

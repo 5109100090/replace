@@ -105,17 +105,20 @@ public class PlaceReviews extends SherlockListActivity {
 				for (int i = 0; i < jArray.length(); i++) {
 					JSONObject json_data = jArray.getJSONObject(i);
 
-					Double newSimilarity = json_data.getDouble("reviewPoint")
-							* json_data.getDouble("similarityValue");
 					User user = new User();
 					user.setUserAlias(json_data.getString("userAlias"));
 
 					Review review = new Review();
 					review.setReviewUser(user);
-					review.setReviewPoint(json_data.getInt("reviewPoint"));
-					review.setReviewText("bagus sekali");
+					review.setReviewPointPrice(json_data.getInt("reviewPointPrice"));
+					review.setReviewPointService(json_data.getInt("reviewPointService"));
+					review.setReviewPointLocation(json_data.getInt("reviewPointLocation"));
+					review.setReviewPointCondition(json_data.getInt("reviewPointCondition"));
+					review.setReviewPointComfort(json_data.getInt("reviewPointComfort"));
+					review.setAveragePoint(json_data.getDouble("averagePoint"));
+					review.setReviewText(json_data.getString("reviewText"));
 					review.setSimilarity(json_data.getDouble("similarityValue"));
-					review.setNewSimilarity(newSimilarity);
+					review.setNewSimilarity(json_data.getDouble("newSimilarityValue"));
 
 					list.add(review);
 				}
