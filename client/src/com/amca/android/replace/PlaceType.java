@@ -36,7 +36,7 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 	private List<Type> typeList = new ArrayList<Type>();
 	private TextView textViewPlaceType, textViewRange;
 	private Spinner spinnerPlaceType, spinnerRange;
-	private Button buttonSubmit;
+	private Button buttonFind;
 	private ProgressBar progressBar;
 
 	@Override
@@ -54,15 +54,15 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 		spinnerPlaceType = (Spinner) findViewById(R.id.spinnerPlaceType);
 		spinnerRange = (Spinner) findViewById(R.id.spinnerRange);
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
-		buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
-		buttonSubmit.setOnClickListener(this);
+		buttonFind = (Button) findViewById(R.id.buttonFind);
+		buttonFind.setOnClickListener(this);
 
 		progressBar.setVisibility(View.VISIBLE);
 		textViewPlaceType.setVisibility(View.INVISIBLE);
 		textViewRange.setVisibility(View.INVISIBLE);
 		spinnerPlaceType.setVisibility(View.INVISIBLE);
 		spinnerRange.setVisibility(View.INVISIBLE);
-		buttonSubmit.setVisibility(View.INVISIBLE);
+		buttonFind.setVisibility(View.INVISIBLE);
 
 		SharedPreferences preferences = PreferenceManager
 				.getDefaultSharedPreferences(PlaceType.this);
@@ -81,7 +81,7 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 					textViewRange.setVisibility(View.VISIBLE);
 					spinnerPlaceType.setVisibility(View.VISIBLE);
 					spinnerRange.setVisibility(View.VISIBLE);
-					buttonSubmit.setVisibility(View.VISIBLE);
+					buttonFind.setVisibility(View.VISIBLE);
 				}
 			} else {
 				gps.showSettingsAlert();
@@ -174,7 +174,7 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 				textViewRange.setVisibility(View.VISIBLE);
 				spinnerPlaceType.setVisibility(View.VISIBLE);
 				spinnerRange.setVisibility(View.VISIBLE);
-				buttonSubmit.setVisibility(View.VISIBLE);
+				buttonFind.setVisibility(View.VISIBLE);
 			}
 		}
 	}

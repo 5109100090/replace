@@ -10,14 +10,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import com.amca.android.replace.PlaceType;
 import com.amca.android.replace.R;
 import com.amca.android.replace.http.HTTPTransfer;
 import com.amca.android.replace.model.Review;
 import com.amca.android.replace.model.User;
-import com.amca.android.replace.user.UserForm;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -64,7 +60,7 @@ public class PlaceReviews extends SherlockListActivity {
 		menuReview.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			@Override
 			public boolean onMenuItemClick(final MenuItem item) {
-				Intent intent = new Intent(PlaceReviews.this, UserForm.class);
+				Intent intent = new Intent(PlaceReviews.this, WriteReview.class);
 				intent.putExtra("mode", "update");
 				intent.putExtra("userId", userId.toString());
 				startActivity(intent);

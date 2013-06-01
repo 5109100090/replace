@@ -17,7 +17,7 @@
     <string name="buttonLogin">Login</string>
     <string name="quickButtonLogin">Quick Login</string>
     <string name="buttonRegister">Register</string>
-    <string name="buttonSubmit">Submit</string>
+    <string name="buttonFind">Find</string>
     <string name="title_activity_place_type">PlaceType</string>
     <string name="title_activity_place_selector">PlaceSelector</string>
     <string name="title_activity_place_detail">PlaceDetail</string>

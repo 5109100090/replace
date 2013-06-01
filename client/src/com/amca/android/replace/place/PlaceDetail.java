@@ -2,7 +2,6 @@ package com.amca.android.replace.place;
 
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.SubMenu;
 import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
 import com.actionbarsherlock.app.SherlockListActivity;
 import android.content.Intent;
