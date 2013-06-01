@@ -1,19 +1,23 @@
 package com.amca.android.replace.review;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.SubMenu;
+import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
 import com.actionbarsherlock.app.SherlockListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.amca.android.replace.PlaceType;
 import com.amca.android.replace.R;
 import com.amca.android.replace.http.HTTPTransfer;
 import com.amca.android.replace.model.Review;
 import com.amca.android.replace.model.User;
+import com.amca.android.replace.user.UserForm;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,23 +57,36 @@ public class PlaceReviews extends SherlockListActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getSupportMenuInflater().inflate(R.menu.place_reviews, menu);
-		return true;
+		MenuItem menuReview = menu.add("Review");
+		menuReview.setIcon(R.drawable.content_new);
+		menuReview.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM
+				| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+		menuReview.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			@Override
+			public boolean onMenuItemClick(final MenuItem item) {
+				Intent intent = new Intent(PlaceReviews.this, UserForm.class);
+				intent.putExtra("mode", "update");
+				intent.putExtra("userId", userId.toString());
+				startActivity(intent);
+				return true;
+			}
+		});
+		
+        SubMenu subMenu1 = menu.addSubMenu(0, Menu.FIRST, Menu.NONE, "Sort");
+        subMenu1.add(0, 10, Menu.NONE, "by Star");
+        subMenu1.add(0, 20, Menu.NONE, "by Similarity");
+        subMenu1.add(0, 30, Menu.NONE, "by New Similarity");
+
+        MenuItem subMenu1Item = subMenu1.getItem();
+        subMenu1Item.setIcon(R.drawable.collections_sort_by_size);
+        subMenu1Item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+        
+        return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		int key = 0;
-		switch (item.getItemId()) {
-		case R.id.action_sort_by_similarity:
-			key = 1;
-		case R.id.action_sort_by_star:
-			key = 2;
-		default:
-			key = 0;
-		}
-
+		int key = item.getItemId();
 		setListAdapter(null);
 		PlaceReviewsArrayAdapter adapter = new PlaceReviewsArrayAdapter(
 				PlaceReviews.this, list);

@@ -1,18 +1,15 @@
 package com.amca.android.replace.place;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.SubMenu;
+import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
 import com.actionbarsherlock.app.SherlockListActivity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
-import android.widget.RatingBar;
 import android.widget.Toast;
 import com.amca.android.replace.R;
 import com.amca.android.replace.http.HTTPTransfer;
@@ -55,11 +52,26 @@ public class PlaceDetail extends SherlockListActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getSupportMenuInflater().inflate(R.menu.place_detail, menu);
+		MenuItem menuReview = menu.add("Review");
+		menuReview.setIcon(R.drawable.collections_view_as_list);
+		menuReview.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM
+				| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+		menuReview.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			@Override
+			public boolean onMenuItemClick(final MenuItem item) {
+				Intent intent = new Intent(PlaceDetail.this, PlaceReviews.class);
+				intent.putExtra("userId", userId);
+				intent.putExtra("placeId", placeId);
+				intent.putExtra("placeName", placeName);
+				startActivity(intent);
+				return true;
+			}
+		});
+		
 		return true;
 	}
-
+	
+/*
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -113,7 +125,8 @@ public class PlaceDetail extends SherlockListActivity {
 			return super.onOptionsItemSelected(item);
 		}
 	}
-
+*/
+	
 	class HTTPPlaceDetail extends HTTPTransfer {
 		@Override
 		protected void onPostExecute(String result) {

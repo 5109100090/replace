@@ -1,9 +1,8 @@
 package com.amca.android.replace;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
 import com.actionbarsherlock.app.SherlockActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -45,7 +44,7 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_place_type);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		
+
 		Intent intent = getIntent();
 		this.userId = intent.getIntExtra("userId", 0);
 		setTitle("Welcome");
@@ -122,25 +121,23 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getSupportMenuInflater().inflate(R.menu.place_type, menu);
+		MenuItem menuProfile = menu.add("Profile");
+		menuProfile.setIcon(R.drawable.social_person);
+		menuProfile.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM
+				| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+		menuProfile.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			@Override
+			public boolean onMenuItemClick(final MenuItem item) {
+				Intent intent = new Intent(PlaceType.this, UserForm.class);
+				intent.putExtra("mode", "update");
+				intent.putExtra("userId", userId.toString());
+				startActivity(intent);
+				return true;
+			}
+		});
 		return true;
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.action_profile:
-			Intent intent = new Intent(PlaceType.this, UserForm.class);
-			intent.putExtra("mode", "update");
-			intent.putExtra("userId", this.userId.toString());
-			startActivity(intent);
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
-	}
-	
 	class HTTPPlaceType extends HTTPTransfer {
 		@Override
 		protected void onPostExecute(String result) {

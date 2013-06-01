@@ -1,9 +1,8 @@
 package com.amca.android.replace.user;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
 import com.actionbarsherlock.app.SherlockListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -104,37 +103,35 @@ public class UserForm extends SherlockListActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getSupportMenuInflater().inflate(R.menu.user_form, menu);
+		MenuItem menuSave = menu.add("Save");
+		menuSave.setIcon(R.drawable.content_save);
+		menuSave.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM
+				| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+		menuSave.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			@Override
+			public boolean onMenuItemClick(final MenuItem item) {
+				HashMap<String, String> data = new HashMap<String, String>();
+				data.put("userName", dataList.get(0));
+				data.put("userPassword", dataList.get(1));
+				data.put("userAlias", dataList.get(2));
+				data.put("userFoods", dataList.get(3));
+				data.put("userDrinks", dataList.get(4));
+				data.put("userBooks", dataList.get(5));
+				data.put("userMovies", dataList.get(6));
+				data.put("userGender", dataList.get(7));
+				data.put("userOccupation", dataList.get(8));
+				data.put("userDOB", dataList.get(9));
+
+				HTTPUserForm http = new HTTPUserForm();
+				http.setMode(1);
+				http.setContext(UserForm.this);
+				http.setData(data);
+				http.execute("authenticate/" + mode + "/");
+				finish();
+				return true;
+			}
+		});
 		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.action_submit:
-			HashMap<String, String> data = new HashMap<String, String>();
-			data.put("userName", dataList.get(0));
-			data.put("userPassword", dataList.get(1));
-			data.put("userAlias", dataList.get(2));
-			data.put("userFoods", dataList.get(3));
-			data.put("userDrinks", dataList.get(4));
-			data.put("userBooks", dataList.get(5));
-			data.put("userMovies", dataList.get(6));
-			data.put("userGender", dataList.get(7));
-			data.put("userOccupation", dataList.get(8));
-			data.put("userDOB", dataList.get(9));
-
-			HTTPUserForm http = new HTTPUserForm();
-			http.setMode(1);
-			http.setContext(UserForm.this);
-			http.setData(data);
-			http.execute("authenticate/" + mode + "/");
-			finish();
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
 	}
 
 	class HTTPUserForm extends HTTPTransfer {

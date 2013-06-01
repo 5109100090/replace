@@ -1,29 +1,24 @@
 package com.amca.android.replace.user;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
 import com.actionbarsherlock.app.SherlockActivity;
 import java.util.ArrayList;
 import java.util.Arrays;
 import com.amca.android.replace.R;
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
 import android.text.InputType;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-public class UserFormDetail extends SherlockActivity implements OnClickListener {
+public class UserFormDetail extends SherlockActivity {
 
-	private static final int MY_BUTTON = 9000;
 	private String mode = null, attribute = null;
 
 	@Override
@@ -89,22 +84,24 @@ public class UserFormDetail extends SherlockActivity implements OnClickListener 
 				ll.addView(ed);
 			}
 		}
-
-		Button b = new Button(this);
-		b.setText("Save");
-		b.setId(MY_BUTTON);
-		b.setOnClickListener(this);
-		ll.addView(b);
 	}
 
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case MY_BUTTON:
-			saveForm();
-			break;
-		}
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuItem menuSave = menu.add("Add");
+		menuSave.setIcon(R.drawable.av_add_to_queue);
+		menuSave.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM
+				| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+		menuSave.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			@Override
+			public boolean onMenuItemClick(final MenuItem item) {
+				saveForm();
+				return true;
+			}
+		});
+		return true;
 	}
-
+	
 	public void saveForm() {
 		LinearLayout root = (LinearLayout) findViewById(R.id.linearLayout);
 		loopQuestions(root);
@@ -143,12 +140,4 @@ public class UserFormDetail extends SherlockActivity implements OnClickListener 
 	private void storeAnswer(int question, int answer) {
 
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getSupportMenuInflater().inflate(R.menu.user_form_detail, menu);
-		return true;
-	}
-
 }

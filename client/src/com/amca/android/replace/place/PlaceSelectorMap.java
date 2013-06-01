@@ -1,13 +1,8 @@
 package com.amca.android.replace.place;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 import com.amca.android.replace.R;
 import com.amca.android.replace.model.Place;
@@ -49,13 +44,6 @@ public class PlaceSelectorMap extends SherlockFragmentActivity implements
 		setTitle(title);
 
 		setUpMap();
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getSupportMenuInflater().inflate(R.menu.place_selector_map, menu);
-		return true;
 	}
 
 	@Override

@@ -1,9 +1,8 @@
 package com.amca.android.replace.place;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
 import com.actionbarsherlock.app.SherlockListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -70,27 +69,25 @@ public class PlaceSelector extends SherlockListActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getSupportMenuInflater().inflate(R.menu.place_selector, menu);
+		MenuItem menuProfile = menu.add("View Map");
+		menuProfile.setIcon(R.drawable.location_map);
+		menuProfile.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM
+				| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+		menuProfile.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			@Override
+			public boolean onMenuItemClick(final MenuItem item) {
+				Intent intent = new Intent(PlaceSelector.this,
+						PlaceSelectorMap.class);
+				intent.putExtra("currentLat", Float.parseFloat(currentLat));
+				intent.putExtra("currentLng", Float.parseFloat(currentLng));
+				intent.putExtra("jsonValue", jsonValue);
+				intent.putExtra("userId", userId);
+				intent.putExtra("title", title);
+				startActivity(intent);
+				return true;
+			}
+		});
 		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.action_map:
-			Intent intent = new Intent(PlaceSelector.this,
-					PlaceSelectorMap.class);
-			intent.putExtra("currentLat", Float.parseFloat(this.currentLat));
-			intent.putExtra("currentLng", Float.parseFloat(this.currentLng));
-			intent.putExtra("jsonValue", this.jsonValue);
-			intent.putExtra("userId", this.userId);
-			intent.putExtra("title", this.title);
-			startActivity(intent);
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
 	}
 
 	class HTTPPlaceSelector extends HTTPTransfer {
