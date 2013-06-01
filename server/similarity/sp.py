@@ -26,9 +26,12 @@ class SimilarityProcess():
             sim.save()
             # '''
         
-    def process(self, user1, user2):
+    def process(self, user1, user2, type):
         response = ""
-        weightAttribute = {'userFoods' : 0.25, 'userDrinks' : 0.25, 'userBooks' : 0.05, 'userMovies' : 0.05, 'userOccupation' : 0.1, 'userDOB' : 0.2, 'userGender' : 0.1}
+        weightAttribute = {
+                           1 : {'userFoods' : 0.25, 'userDrinks' : 0.25, 'userBooks' : 0.05, 'userMovies' : 0.05, 'userOccupation' : 0.1, 'userDOB' : 0.2, 'userGender' : 0.1},
+                           2 : {'userFoods' : 0.175, 'userDrinks' : 0.125, 'userBooks' : 0.1, 'userMovies' : 0.1, 'userOccupation' : 0.175, 'userDOB' : 0.175, 'userGender' : 0.15},
+                           }
         
         user1Property = {}
         user1Property['userFoods'] = user1.userFoods.split(',')
@@ -86,8 +89,8 @@ class SimilarityProcess():
                 method = "Average EditDistance"
             
             # newSim = average    
-            newSim = float((2 * average * weightAttribute[keyProperty]) / (1 + (average * weightAttribute[keyProperty])))
-            # newSim = average * weightAttribute[keyProperty]
+            newSim = float((2 * average * weightAttribute[type][keyProperty]) / (1 + (average * weightAttribute[type][keyProperty])))
+            # newSim = average * weightAttribute[type][keyProperty]
             attributeValue[keyProperty] = newSim
             
             response += keyProperty + " => " + method + " = " + str(newSim) + "<br />"

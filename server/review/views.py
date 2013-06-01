@@ -16,6 +16,8 @@ def listReviews(request):
         place = Place()
         place.placeId = int(request.POST["placeId"])
         
+        typeId = int(request.POST["typeId"])
+        
         data = []       
         # for r in Review.objects.listReviews(user, place) :
         for r in Review.objects.filter(reviewPlace_id=place).exclude(reviewUser_id=user) :
@@ -26,7 +28,7 @@ def listReviews(request):
             # dict['newSimilarityValue'] = str(r.newSimilarityValue)
             
             sp = SimilarityProcess()
-            dict['similarityValue'] = sp.process(User.objects.get(userId=user.userId), r.reviewUser)
+            dict['similarityValue'] = sp.process(User.objects.get(userId=user.userId), r.reviewUser, typeId)
             dict['newSimilarityValue'] = float(dict['similarityValue']) * float(r.reviewPoint)  
             data.append(dict)
         data = sorted(data, key=lambda rev: rev['newSimilarityValue'], reverse=True)

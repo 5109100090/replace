@@ -61,6 +61,7 @@ public class PlaceSelector extends SherlockListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Place selectedPlace = placesList.get(position);
 		Intent intent = new Intent(PlaceSelector.this, PlaceReviews.class);
+		intent.putExtra("typeId", this.typeId);
 		intent.putExtra("placeId", selectedPlace.getPlaceId());
 		intent.putExtra("placeName", selectedPlace.getPlaceName());
 		intent.putExtra("userId", this.userId);

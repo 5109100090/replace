@@ -38,12 +38,14 @@ public class PlaceReviews extends SherlockListActivity {
 		this.userId = intent.getIntExtra("userId", 0);
 		this.placeId = intent.getIntExtra("placeId", 0);
 		this.placeName = intent.getStringExtra("placeName");
+		Integer typeId = intent.getIntExtra("typeId", 1);
 		setTitle(this.placeName);
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("userId", userId.toString());
 		data.put("placeId", placeId.toString());
+		data.put("typeId", typeId.toString());
 
 		HTTPPlaceDetail http = new HTTPPlaceDetail();
 		http.setContext(PlaceReviews.this);
