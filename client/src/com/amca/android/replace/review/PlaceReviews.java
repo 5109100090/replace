@@ -27,6 +27,7 @@ public class PlaceReviews extends SherlockListActivity {
 	private String placeName;
 	private ProgressBar progressBar;
 	private List<Review> list = new ArrayList<Review>();
+	PlaceReviewsArrayAdapter adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -86,12 +87,10 @@ public class PlaceReviews extends SherlockListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int key = item.getItemId();
 		setListAdapter(null);
-		PlaceReviewsArrayAdapter adapter = new PlaceReviewsArrayAdapter(
-				PlaceReviews.this, list);
 		adapter.sort(key);
 		setListAdapter(adapter);
 		adapter.notifyDataSetChanged();
-		return super.onOptionsItemSelected(item);
+		return true;
 	}
 
 	class HTTPPlaceDetail extends HTTPTransfer {
@@ -123,7 +122,7 @@ public class PlaceReviews extends SherlockListActivity {
 					list.add(review);
 				}
 
-				PlaceReviewsArrayAdapter adapter = new PlaceReviewsArrayAdapter(
+				adapter = new PlaceReviewsArrayAdapter(
 						PlaceReviews.this, list);
 				setListAdapter(adapter);
 			} catch (JSONException e) {
