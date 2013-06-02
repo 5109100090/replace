@@ -86,10 +86,12 @@ public class PlaceReviews extends SherlockListActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int key = item.getItemId();
-		setListAdapter(null);
-		adapter.sort(key);
-		setListAdapter(adapter);
-		adapter.notifyDataSetChanged();
+		if(key != 1){
+			setListAdapter(null);
+			adapter.sort(key);
+			setListAdapter(adapter);
+			adapter.notifyDataSetChanged();
+		}
 		return true;
 	}
 
