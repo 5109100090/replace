@@ -98,7 +98,6 @@ public class PlaceSelector extends SherlockListActivity {
 			jsonValue = result;
 			// parse json data
 			try {
-				ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 				JSONArray jArray = new JSONArray(result);
 				int nPlaces = jArray.length();
 				title = "showing " + nPlaces + " result(s)"; 
@@ -106,30 +105,19 @@ public class PlaceSelector extends SherlockListActivity {
 				for (int i = 0; i < nPlaces; i++) {
 					JSONObject json_data = jArray.getJSONObject(i);
 
-					HashMap<String, String> map = new HashMap<String, String>();
-					map.put("placeName", json_data.getString("placeName"));
-					map.put("placeDesc", json_data.getString("placeDesc"));
-					map.put("placeReviews", json_data.getString("placeReviews"));
-					map.put("placeDistance",
-							json_data.getString("placeDistance"));
-
 					Place place = new Place();
 					place.setPlaceId(json_data.getInt("placeId"));
 					place.setPlaceName(json_data.getString("placeName"));
-					/*
-					 * place.setPlaceName(map.get("placeName"));
-					 * place.setPlaceDesc(map.get("placeDesc"));
-					 * place.setPlaceLat(json_data.getString("placeLat"));
-					 * place.setPlaceLng(json_data.getString("placeLng"));
-					 * place.setPlaceType(json_data.getInt("placeType"));
-					 */
+					place.setPlaceAddress(json_data.getString("placeAddress"));
+					place.setPlaceDesc(json_data.getString("placeDesc"));
+					place.setPlaceReviews(json_data.getInt("placeReviews"));
+					place.setPlaceDistance(json_data.getDouble("placeDistance"));
+					place.setAveragePoint(json_data.getDouble("averagePoint"));
 					placesList.add(place);
-
-					list.add(map);
 				}
 
 				PlaceSelectorArrayAdapter adapter = new PlaceSelectorArrayAdapter(
-						PlaceSelector.this, list);
+						PlaceSelector.this, placesList);
 				setListAdapter(adapter);
 			} catch (JSONException e) {
 				Toast.makeText(getApplicationContext(),

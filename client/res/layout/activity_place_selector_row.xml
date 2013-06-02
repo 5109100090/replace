@@ -19,12 +19,14 @@
             android:src="@drawable/place_icon" />
 
         <TextView
-            android:id="@+id/placeReviews"
+            android:id="@+id/placePoint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/placeIcon"
-            android:text="placeReviews"
-            android:textSize="18sp" />
+            android:text="placePoint"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -48,11 +50,20 @@
             android:text="placeDesc"
             android:textSize="18sp" />
 
+		<TextView
+            android:id="@+id/placeAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/placeDesc"
+            android:text="placeAddress"
+            android:textSize="16sp"
+            android:textColor="#372c24" />
+        
         <TextView
             android:id="@+id/placeDistance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/placeDesc"
+            android:layout_below="@+id/placeAddress"
             android:text="placeDistance"
             android:textColor="#989898"
             android:textSize="16sp" />

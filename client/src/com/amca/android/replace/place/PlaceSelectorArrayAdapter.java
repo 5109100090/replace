@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.amca.android.replace.R;
+import com.amca.android.replace.model.Place;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,12 +15,12 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 public class PlaceSelectorArrayAdapter extends
-		ArrayAdapter<HashMap<String, String>> {
+		ArrayAdapter<Place> {
 	private final Context context;
-	private final List<HashMap<String, String>> values;
+	private final List<Place> values;
 
 	public PlaceSelectorArrayAdapter(Context context,
-			List<HashMap<String, String>> values) {
+			List<Place> values) {
 		super(context, R.layout.activity_place_selector_row, values);
 		this.context = context;
 		this.values = values;
@@ -32,20 +33,21 @@ public class PlaceSelectorArrayAdapter extends
 		View rowView = inflater.inflate(R.layout.activity_place_selector_row,
 				parent, false);
 		TextView placeName = (TextView) rowView.findViewById(R.id.placeName);
+		TextView placeAddress = (TextView) rowView.findViewById(R.id.placeAddress);
 		TextView placeDesc = (TextView) rowView.findViewById(R.id.placeDesc);
-		TextView placeReviews = (TextView) rowView
-				.findViewById(R.id.placeReviews);
+		TextView placePoint = (TextView) rowView
+				.findViewById(R.id.placePoint);
 		TextView placeDistance = (TextView) rowView
 				.findViewById(R.id.placeDistance);
 
 		DecimalFormat df = new DecimalFormat("#0.##");
 
-		HashMap<String, String> value = values.get(position);
-		placeName.setText(value.get("placeName"));
-		placeDesc.setText(value.get("placeDesc"));
-		placeReviews.setText(value.get("placeReviews") + " review(s)");
-		placeDistance.setText(df.format(Float.parseFloat(value
-				.get("placeDistance")) / 1000) + " km");
+		Place place = values.get(position);
+		placeName.setText(place.getPlaceName());
+		placeAddress.setText(place.getPlaceAddress());
+		placeDesc.setText(place.getPlaceDesc());
+		placePoint.setText(df.format(place.getAveragePoint()));
+		placeDistance.setText(place.getPlaceReviews() + " review(s) | " + df.format(place.getPlaceDistance() / 1000) + " km");
 
 		return rowView;
 	}

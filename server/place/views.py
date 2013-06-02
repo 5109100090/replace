@@ -26,6 +26,8 @@ def process(request):
             dict['placeType'] = p.placeType.typeId
             dict['placeDistance'] = p.placeDistance
             dict['placeReviews'] = p.placeReviews
+            dict['placeAddress'] = p.placeAddress
+            dict['averagePoint'] = str(p.averagePoint)
             data.append(dict)
         return HttpResponse(json.dumps(data))
     else :

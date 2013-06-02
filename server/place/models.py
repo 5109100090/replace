@@ -14,7 +14,8 @@ class PlaceManager(models.Manager):
                         sin( radians(placeLat) ) \
                     ) \
                 ) AS placeDistance, \
-            COUNT(r.reviewId) as placeReviews \
+            COUNT(r.reviewId) as placeReviews, \
+            (SUM(r.reviewPointPrice)/COUNT(r.reviewId)+SUM(r.reviewPointService)/COUNT(r.reviewId)+SUM(r.reviewPointLocation)/COUNT(r.reviewId)+SUM(r.reviewPointCondition)/COUNT(r.reviewId)+SUM(r.reviewPointComfort)/COUNT(r.reviewId))/5 AS averagePoint \
             FROM place_place p \
             LEFT JOIN review_review r \
             ON r.reviewPlace_id = p.placeId\
@@ -32,4 +33,5 @@ class Place(models.Model):
     placeLat = models.TextField()
     placeLng = models.TextField()
     placeType = models.ForeignKey(Type)
+    placeAddress = models.TextField()
     objects = PlaceManager()
