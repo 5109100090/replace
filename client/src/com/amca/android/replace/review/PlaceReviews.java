@@ -63,8 +63,8 @@ public class PlaceReviews extends SherlockListActivity {
 			@Override
 			public boolean onMenuItemClick(final MenuItem item) {
 				Intent intent = new Intent(PlaceReviews.this, WriteReview.class);
-				intent.putExtra("mode", "update");
-				intent.putExtra("userId", userId.toString());
+				intent.putExtra("userId", userId);
+				intent.putExtra("placeId", placeId);
 				startActivity(intent);
 				return true;
 			}

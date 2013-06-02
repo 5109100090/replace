@@ -1,25 +1,44 @@
 package com.amca.android.replace.review;
 
+import java.util.HashMap;
+
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.Window;
 import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
 import com.amca.android.replace.R;
+import com.amca.android.replace.http.HTTPTransfer;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class WriteReview extends SherlockActivity {
 
+	private Integer userId, placeId;
 	private TextView textViewPointPrice, textViewPointService, textViewPointLocation, textViewPointCondition, textViewPointComfort;
 	private SeekBar seekBarPointPrice, seekBarPointService,
 			seekBarPointLocation, seekBarPointCondition, seekBarPointComfort;
+	private EditText editTextReviewText;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.activity_write_review);
-
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		setSupportProgressBarIndeterminateVisibility(false);
+		
+		Intent intent = getIntent();
+		this.userId = intent.getIntExtra("userId", 0);
+		this.placeId = intent.getIntExtra("placeId", 0);
+		setTitle("Write Review");
+		
+		editTextReviewText = (EditText) findViewById(R.id.editTextReviewText);
+		
 		textViewPointPrice = (TextView) findViewById(R.id.textViewPointPrice);
 		textViewPointService = (TextView) findViewById(R.id.textViewPointService);
 		textViewPointLocation = (TextView) findViewById(R.id.textViewPointLocation);
@@ -135,17 +154,41 @@ public class WriteReview extends SherlockActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuItem menuSave = menu.add("Save");
+		final MenuItem menuSave = menu.add("Save");
 		menuSave.setIcon(R.drawable.content_save);
 		menuSave.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM
 				| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 		menuSave.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			@Override
 			public boolean onMenuItemClick(final MenuItem item) {
+				menuSave.setVisible(false);
+				setSupportProgressBarIndeterminateVisibility(true);
+				HashMap<String, String> data = new HashMap<String, String>();
+				data.put("userId", userId.toString());
+				data.put("placeId", placeId.toString());
+				data.put("reviewPointPrice", String.valueOf(seekBarPointPrice.getProgress()));
+				data.put("reviewPointService", String.valueOf(seekBarPointService.getProgress()));
+				data.put("reviewPointLocation", String.valueOf(seekBarPointLocation.getProgress()));
+				data.put("reviewPointCondition", String.valueOf(seekBarPointCondition.getProgress()));
+				data.put("reviewPointComfort", String.valueOf(seekBarPointComfort.getProgress()));
+				data.put("reviewText", editTextReviewText.getText().toString());
+				
+				HTTPPWriteReview http = new HTTPPWriteReview();
+				http.setContext(WriteReview.this);
+				http.setData(data);
+				http.execute("review/write/");
 				return true;
 			}
 		});
 		return true;
 	}
-
+	
+	class HTTPPWriteReview extends HTTPTransfer {
+		@Override
+		protected void onPostExecute(String result) {
+			super.onPostExecute(result);
+			setSupportProgressBarIndeterminateVisibility(false);
+			finish();
+		}
+	}
 }
