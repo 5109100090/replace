@@ -14,6 +14,11 @@
     <string name="userGender">Gender</string>
     <string name="userOccupation">Occupation</string>
     <string name="userDOB">Date of Birth</string>
+    <string name="pointPrice">Value for Money</string>
+    <string name="pointService">Staff Performance</string>
+    <string name="pointLocation">Location</string>
+    <string name="pointCondition">Condition/Cleanliness</string>
+    <string name="pointComfort">Comfort/Standard</string>
     <string name="buttonLogin">Login</string>
     <string name="quickButtonLogin">Quick Login</string>
     <string name="buttonRegister">Register</string>

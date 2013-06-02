@@ -1,0 +1,133 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <!-- Footer Start -->
+
+        <LinearLayout
+            android:id="@+id/footer"
+            android:layout_width="fill_parent"
+            android:layout_height="72dip"
+            android:layout_alignParentBottom="true"
+            android:background="@layout/footer_repeat"
+            android:orientation="horizontal" >
+        </LinearLayout>
+        <!-- Footer Ends -->
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dip" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@layout/gray_box"
+                android:orientation="vertical"
+                android:padding="20dip" >
+
+                <TextView
+                    android:id="@+id/textViewPointPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pointPrice"
+                    android:textColor="#372c24" />
+
+                <SeekBar
+                    android:id="@+id/seekBarPointPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewPointPrice"
+                    android:layout_marginBottom="10dip"
+                    android:max="10"
+                    android:progress="1" />
+
+                <TextView
+                    android:id="@+id/textViewPointService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seekBarPointPrice"
+                    android:text="@string/pointService"
+                    android:textColor="#372c24" />
+
+                <SeekBar
+                    android:id="@+id/seekBarPointService"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewPointService"
+                    android:layout_marginBottom="10dip"
+                    android:max="10"
+                    android:progress="1" />
+
+                <TextView
+                    android:id="@+id/textViewPointLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seekBarPointService"
+                    android:text="@string/pointLocation"
+                    android:textColor="#372c24" />
+
+                <SeekBar
+                    android:id="@+id/seekBarPointLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewPointLocation"
+                    android:layout_marginBottom="10dip"
+                    android:max="10"
+                    android:progress="1" />
+
+                <TextView
+                    android:id="@+id/textViewPointCondition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seekBarPointLocation"
+                    android:text="@string/pointCondition"
+                    android:textColor="#372c24" />
+
+                <SeekBar
+                    android:id="@+id/seekBarPointCondition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewPointCondition"
+                    android:layout_marginBottom="10dip"
+                    android:max="10"
+                    android:progress="1" />
+
+                <TextView
+                    android:id="@+id/textViewPointComfort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seekBarPointCondition"
+                    android:text="@string/pointComfort"
+                    android:textColor="#372c24" />
+
+                <SeekBar
+                    android:id="@+id/seekBarPointComfort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewPointComfort"
+                    android:layout_marginBottom="10dip"
+                    android:max="10"
+                    android:progress="1" />
+
+                <EditText
+                    android:id="@+id/editTextReviewText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/seekBarPointComfort"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:hint="Write your opinion here" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>
