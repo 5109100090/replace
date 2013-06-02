@@ -19,7 +19,6 @@ def listReviews(request):
         typeId = int(request.POST["typeId"])
         
         data = []       
-        # for r in Review.objects.listReviews(user, place) :
         for r in Review.objects.filter(reviewPlace_id=place).exclude(reviewUser_id=user) :
             dict = {}
             dict['userAlias'] = r.reviewUser.userAlias
@@ -30,11 +29,23 @@ def listReviews(request):
             dict['reviewPointComfort'] = r.reviewPointComfort
             dict['reviewText'] = r.reviewText
             average = float(r.reviewPointPrice+r.reviewPointService+r.reviewPointLocation+r.reviewPointCondition+r.reviewPointComfort) / 5
-            dict['averagePoint'] = str(average)
+            dict['averagePoint'] = average
             sp = SimilarityProcess()
             dict['similarityValue'] = sp.process(User.objects.get(userId=user.userId), r.reviewUser, typeId)
             dict['newSimilarityValue'] = float(dict['similarityValue']) * average
             data.append(dict)
+        
+        #''' normalizing similarity on same place
+        minV = min(data, key=lambda x:x['similarityValue'])
+        maxV = max(data, key=lambda x:x['similarityValue'])
+        minValue = minV['similarityValue']
+        maxValue = maxV['similarityValue']    
+        for dict in data:
+            dict["similarityValue"] = float((dict["similarityValue"] - minValue)/(maxValue - minValue))
+            dict['newSimilarityValue'] = dict['similarityValue'] * dict['averagePoint']
+            dict['averagePoint'] = str(dict['averagePoint'])
+        #'''
+            
         data = sorted(data, key=lambda rev: rev['newSimilarityValue'], reverse=True)
         return HttpResponse(json.dumps(data))
     else :

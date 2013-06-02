@@ -97,7 +97,7 @@ class SimilarityProcess():
         
         # '''
         ds = DempsterShafer()
-        simValue = ds.process2(attributeValue) * 1000000
+        simValue = ds.process2(attributeValue) #* 1000000
         # response += "DS : " + str(simValue) + "<br />"
         # '''
         # simValue = reduce(lambda x, y: x + y / float(len(attributeValue.values())), attributeValue.values(), 0)

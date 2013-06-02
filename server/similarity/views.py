@@ -24,7 +24,7 @@ def processAll(request):
                     continue
             
             sp = SimilarityProcess()
-            simValue = sp.process(user1, user2)
+            simValue = sp.process(user1, user2, 1)
             
             response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
             similarityValue[user1.userId][user2.userId] = simValue
