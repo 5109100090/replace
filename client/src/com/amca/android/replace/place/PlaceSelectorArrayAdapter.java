@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 import com.amca.android.replace.R;
 import com.amca.android.replace.model.Place;
-import com.fedorvlasov.lazylist.ImageLoader;
+import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -54,8 +54,8 @@ public class PlaceSelectorArrayAdapter extends
 		
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
 		String serverUrl = preferences.getString("serverUrl", "");
-		ImageLoader imageLoader = new ImageLoader(context);
-		imageLoader.DisplayImage(serverUrl + "static/place/" + place.getPlaceId() + ".jpg", placeIcon);
+		
+		UrlImageViewHelper.setUrlDrawable(placeIcon, serverUrl + "static/place/" + place.getPlaceId() + ".jpg", R.drawable.gif_loader);
 
 		return rowView;
 	}
