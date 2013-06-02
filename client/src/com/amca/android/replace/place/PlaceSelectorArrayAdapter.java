@@ -1,12 +1,9 @@
 package com.amca.android.replace.place;
 
 import java.text.DecimalFormat;
-import java.util.HashMap;
 import java.util.List;
-
 import com.amca.android.replace.R;
 import com.amca.android.replace.model.Place;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
