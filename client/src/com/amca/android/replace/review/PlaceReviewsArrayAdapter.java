@@ -29,8 +29,12 @@ public class PlaceReviewsArrayAdapter extends ArrayAdapter<Review> {
 		View rowView = inflater.inflate(R.layout.activity_place_reviews_row,
 				parent, false);
 		TextView reviewUser = (TextView) rowView.findViewById(R.id.reviewUser);
-		TextView reviewPoint = (TextView) rowView
-				.findViewById(R.id.reviewPoint);
+		TextView reviewPoint = (TextView) rowView.findViewById(R.id.reviewPoint);
+		TextView reviewPointPrice = (TextView) rowView.findViewById(R.id.textViewPointPrice);
+		TextView reviewPointService = (TextView) rowView.findViewById(R.id.textViewPointService);
+		TextView reviewPointLocation = (TextView) rowView.findViewById(R.id.textViewPointLocation);
+		TextView reviewPointCondition = (TextView) rowView.findViewById(R.id.textViewPointCondition);
+		TextView reviewPointComfort = (TextView) rowView.findViewById(R.id.textViewPointComfort);
 		TextView similarity = (TextView) rowView.findViewById(R.id.similarity);
 		TextView reviewText = (TextView) rowView.findViewById(R.id.reviewText);
 
@@ -43,6 +47,11 @@ public class PlaceReviewsArrayAdapter extends ArrayAdapter<Review> {
 
 		reviewUser.setText(user.getUserAlias());
 		reviewPoint.setText(review.getAveragePoint() + " points");
+		reviewPointPrice.setText(reviewPointPrice.getText() + " : " + review.getReviewPointPrice());
+		reviewPointService.setText(reviewPointService.getText() + " : " + review.getReviewPointService());
+		reviewPointLocation.setText(reviewPointLocation.getText() + " : " + review.getReviewPointLocation());
+		reviewPointCondition.setText(reviewPointCondition.getText() + " : " + review.getReviewPointCondition());
+		reviewPointComfort.setText(reviewPointComfort.getText() + " : " + review.getReviewPointComfort());
 		similarity.setText("similarity\n" + df.format(review.getSimilarity()));
 		reviewText.setText(review.getReviewText());
 
