@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/similarityText"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:layout_centerHorizontal="true"
             android:text="similarity"
             android:textSize="18sp" />
@@ -120,6 +120,7 @@
             android:id="@+id/reviewText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_below="@+id/textViewPointComfort"
             android:text="reviewText"
             android:textSize="18sp" />
