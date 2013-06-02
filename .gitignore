@@ -216,3 +216,5 @@ pip-log.txt
 
 /client/bin/
 bin
+static
+gen
