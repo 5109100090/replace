@@ -2,6 +2,7 @@ package com.amca.android.replace;
 
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.MenuItem.OnMenuItemClickListener;
 import com.actionbarsherlock.app.SherlockActivity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -73,22 +74,23 @@ public class MainActivity extends SherlockActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getSupportMenuInflater().inflate(R.menu.main, menu);
-		return true;
+		MenuItem menuSetting = menu.add("Setting");
+		menuSetting.setIcon(R.drawable.action_settings);
+		menuSetting.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM
+				| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+		menuSetting.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			@Override
+			public boolean onMenuItemClick(final MenuItem item) {
+				Intent intent = new Intent(MainActivity.this,
+						Settings.class);
+				startActivity(intent);
+				return true;
+			}
+		});
+
+        return super.onCreateOptionsMenu(menu);
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.action_settings:
-			Intent intent = new Intent(MainActivity.this, Settings.class);
-			startActivity(intent);
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
-	}
 
 	private void doLogin(String username, String password) {
 		progressDialog = ProgressDialog.show(MainActivity.this, "Loading...",
