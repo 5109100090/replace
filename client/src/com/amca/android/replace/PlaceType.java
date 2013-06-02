@@ -87,8 +87,8 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 				gps.showSettingsAlert();
 			}
 		} else {
-			this.currentLat = "-7.27957";
-			this.currentLng = "112.79751";
+			this.currentLat = "-7.279241";
+			this.currentLng = "112.790392";
 		}
 
 		HTTPPlaceType http = new HTTPPlaceType();
