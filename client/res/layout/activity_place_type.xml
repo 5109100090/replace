@@ -46,7 +46,7 @@
                 android:id="@+id/spinnerPlaceType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dip"
+                android:layout_marginBottom="10dip"
                 android:layout_marginTop="5dip"
                 android:prompt="@string/spinnerPlaceType"
                 android:layout_below="@id/textViewPlaceType" />
@@ -73,7 +73,7 @@
                 android:id="@+id/buttonFind"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dip"
+                android:layout_marginTop="20dip"
                 android:text="@string/buttonFind"
                 android:layout_below="@id/spinnerRange"
                 android:drawableStart="@drawable/action_search" />
