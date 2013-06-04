@@ -52,12 +52,17 @@ public class PlaceSelectorMap extends SherlockFragmentActivity implements
 		String[] s = markerId.split("m");
 		int id = Integer.parseInt(s[1]);
 		if (id >= 0 && id < placesList.size()) {
-			Place selectedPlace = placesList.get(id);
+			Place place = placesList.get(id);
 			Intent intent = new Intent(PlaceSelectorMap.this, PlaceDetail.class);
 			intent.putExtra("userId", this.userId);
-			intent.putExtra("placeId", selectedPlace.getPlaceId());
-			intent.putExtra("typeId", selectedPlace.getPlaceType());
-			intent.putExtra("placeName", selectedPlace.getPlaceName());
+			intent.putExtra("typeId", place.getPlaceType());
+			intent.putExtra("placeId", place.getPlaceId());
+			intent.putExtra("placeName", place.getPlaceName());
+			intent.putExtra("placeAddress", place.getPlaceAddress());
+			intent.putExtra("placeDesc", place.getPlaceDesc());
+			intent.putExtra("placeReviews", place.getPlaceReviews().toString());
+			intent.putExtra("placeDistance", place.getPlaceDistance());
+			intent.putExtra("averagePoint", place.getAveragePoint());
 			startActivity(intent);
 		}
 	}
@@ -88,6 +93,10 @@ public class PlaceSelectorMap extends SherlockFragmentActivity implements
 						place.setPlaceLat(json_data.getString("placeLat"));
 						place.setPlaceLng(json_data.getString("placeLng"));
 						place.setPlaceType(json_data.getInt("placeType"));
+						place.setPlaceAddress(json_data.getString("placeAddress"));
+						place.setPlaceReviews(json_data.getInt("placeReviews"));
+						place.setPlaceDistance(json_data.getDouble("placeDistance"));
+						place.setAveragePoint(json_data.getDouble("averagePoint"));
 						placesList.add(place);
 
 						map.addMarker(new MarkerOptions()
