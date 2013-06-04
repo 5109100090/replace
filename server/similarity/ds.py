@@ -67,7 +67,8 @@ class DempsterShafer():
     def assignThreshold(self, data):
         # data['A'] = round(data['A'], 2)
 
-        a = data['A'] - (data['A'] * 0.1)
+        uncertainty = 0.05
+        a = data['A'] - (data['A'] * uncertainty)
         b = 1 - data['A']
         ab = 1 - (a + b)
         
