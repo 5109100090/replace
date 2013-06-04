@@ -32,12 +32,3 @@ def process(request):
         return HttpResponse(json.dumps(data))
     else :
         return HttpResponse("what?")
-    
-def getDetail(request):
-    if request.method == "POST" :
-        placeId = int(request.POST["placeId"])        
-        place = Place.objects.get(pk=placeId)
-        data = [ { 'placeId':str(place.placeId), 'placeName':place.placeName, 'placeDesc':place.placeDesc, 'placeLat':str(place.placeLat), 'placeLng':str(place.placeLng), 'typeId':str(place.placeType.typeId), 'typeName':place.placeType.typeName } ]
-        return HttpResponse(json.dumps(data))
-    else :
-        return HttpResponse("what?")
