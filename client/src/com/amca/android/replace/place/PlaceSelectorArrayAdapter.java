@@ -49,7 +49,7 @@ public class PlaceSelectorArrayAdapter extends
 		placeName.setText(place.getPlaceName());
 		placeAddress.setText(place.getPlaceAddress());
 		placeDesc.setText(place.getPlaceDesc());
-		placePoint.setText(df.format(place.getAveragePoint()));
+		placePoint.setText(df.format(place.getAveragePoint()) + "/10");
 		placeDistance.setText(place.getPlaceReviews() + " review(s) | " + df.format(place.getPlaceDistance() / 1000) + " km");
 		
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());

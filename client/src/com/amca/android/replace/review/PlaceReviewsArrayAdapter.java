@@ -45,14 +45,26 @@ public class PlaceReviewsArrayAdapter extends ArrayAdapter<Review> {
 		review = values.get(position);
 		user = review.getReviewUser();
 
+		double sim = review.getSimilarity();
+		String simText = null;
+		if(sim <= 0.25){
+			simText = "not\nsimilar";
+		}else if(sim <= 0.5){
+			simText = "similar\nenough";
+		}else if(sim <= 0.75){
+			simText = "similar";
+		}else{
+			simText = "very\nsimilar";
+		}
+		
 		reviewUser.setText(user.getUserAlias());
-		reviewPointPrice.setText(reviewPointPrice.getText() + " : " + review.getReviewPointPrice());
-		reviewPointService.setText(reviewPointService.getText() + " : " + review.getReviewPointService());
-		reviewPointLocation.setText(reviewPointLocation.getText() + " : " + review.getReviewPointLocation());
-		reviewPointCondition.setText(reviewPointCondition.getText() + " : " + review.getReviewPointCondition());
-		reviewPointComfort.setText(reviewPointComfort.getText() + " : " + review.getReviewPointComfort());
-		similarity.setText(df.format(review.getSimilarity()));
-		reviewPoint.setText(df.format(review.getAveragePoint()));
+		reviewPointPrice.setText(reviewPointPrice.getText() + " : " + review.getReviewPointPrice() + "/10");
+		reviewPointService.setText(reviewPointService.getText() + " : " + review.getReviewPointService() + "/10");
+		reviewPointLocation.setText(reviewPointLocation.getText() + " : " + review.getReviewPointLocation() + "/10");
+		reviewPointCondition.setText(reviewPointCondition.getText() + " : " + review.getReviewPointCondition() + "/10");
+		reviewPointComfort.setText(reviewPointComfort.getText() + " : " + review.getReviewPointComfort() + "/10");
+		similarity.setText(simText);
+		reviewPoint.setText(df.format(review.getAveragePoint()) + "/10");
 		reviewText.setText(review.getReviewText());
 
 		return rowView;
