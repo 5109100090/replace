@@ -63,7 +63,7 @@ public class PlaceSelector extends SherlockListActivity {
 		Intent intent = new Intent(PlaceSelector.this, PlaceDetail.class);
 		intent.putExtra("userId", this.userId);
 		intent.putExtra("typeId", this.typeId);
-		intent.putExtra("placeId", this.typeId);
+		intent.putExtra("placeId", place.getPlaceId());
 		intent.putExtra("placeName", place.getPlaceName());
 		intent.putExtra("placeAddress", place.getPlaceAddress());
 		intent.putExtra("placeDesc", place.getPlaceDesc());
