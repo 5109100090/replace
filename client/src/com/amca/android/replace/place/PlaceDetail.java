@@ -14,13 +14,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.amca.android.replace.R;
+import com.amca.android.replace.model.Place;
 import com.amca.android.replace.review.PlaceReviews;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
 
 public class PlaceDetail extends SherlockActivity {
 
-	private Integer userId, placeId;
-	private String placeNameValue;
+	private Integer userId;
+	private Place place;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,24 +30,23 @@ public class PlaceDetail extends SherlockActivity {
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		Intent intent = getIntent();
-		this.userId = intent.getIntExtra("userId", 0);
-		this.placeId = intent.getIntExtra("placeId", 0);
-		this.placeNameValue = intent.getStringExtra("placeName");
-		setTitle(this.placeNameValue);
+		userId = intent.getIntExtra("userId", 0);
+		place = (Place) getIntent().getSerializableExtra("place");
+		setTitle(place.getPlaceName());
 		
 		DecimalFormat df = new DecimalFormat("#0.##");
-		((TextView) findViewById(R.id.placeName)).setText(intent.getStringExtra("placeName"));
-		((TextView) findViewById(R.id.placeAddress)).setText(intent.getStringExtra("placeAddress"));
-		((TextView) findViewById(R.id.placeDesc)).setText(intent.getStringExtra("placeDesc"));
-		((TextView) findViewById(R.id.placeReviews)).setText(intent.getStringExtra("placeReviews") + " review(s) | " + df.format(intent.getDoubleExtra("placeDistance", 0)/1000) + " km");
-		((TextView) findViewById(R.id.placePoint)).setText(df.format(intent.getDoubleExtra("averagePoint", 0)));
+		((TextView) findViewById(R.id.placeName)).setText(place.getPlaceName());
+		((TextView) findViewById(R.id.placeAddress)).setText(place.getPlaceAddress());
+		((TextView) findViewById(R.id.placeDesc)).setText(place.getPlaceDesc());
+		((TextView) findViewById(R.id.placeReviews)).setText(place.getPlaceReviews() + " review(s) | " + df.format(place.getPlaceDistance()/1000) + " km");
+		((TextView) findViewById(R.id.placePoint)).setText(df.format(place.getAveragePoint()));
 
 		ImageView placeIcon = (ImageView) findViewById(R.id.placeIcon);
 		
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 		String serverUrl = preferences.getString("serverUrl", "");
 		
-		UrlImageViewHelper.setUrlDrawable(placeIcon, serverUrl + "static/place/" + this.placeId + ".jpg", R.drawable.gif_loader);
+		UrlImageViewHelper.setUrlDrawable(placeIcon, serverUrl + "static/place/" + place.getPlaceId() + ".jpg", R.drawable.gif_loader);
 	}
 
 	@Override
@@ -60,8 +60,8 @@ public class PlaceDetail extends SherlockActivity {
 			public boolean onMenuItemClick(final MenuItem item) {
 				Intent intent = new Intent(PlaceDetail.this, PlaceReviews.class);
 				intent.putExtra("userId", userId);
-				intent.putExtra("placeId", placeId);
-				intent.putExtra("placeName", placeNameValue);
+				intent.putExtra("placeId", place.getPlaceId());
+				intent.putExtra("placeName", place.getPlaceName());
 				startActivity(intent);
 				return true;
 			}

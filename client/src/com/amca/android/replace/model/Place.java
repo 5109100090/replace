@@ -1,6 +1,9 @@
 package com.amca.android.replace.model;
 
-public class Place {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class Place implements Serializable {
 	private Integer placeId;
 	private String placeName;
 	private String placeDesc;
