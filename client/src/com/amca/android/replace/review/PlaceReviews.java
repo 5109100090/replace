@@ -72,9 +72,9 @@ public class PlaceReviews extends SherlockListActivity {
 		});
 		
         SubMenu subMenu1 = menu.addSubMenu(0, Menu.FIRST, Menu.NONE, "Sort");
-        subMenu1.add(0, 10, Menu.NONE, "by Star");
+        subMenu1.add(0, 10, Menu.NONE, "by Review Point");
         subMenu1.add(0, 20, Menu.NONE, "by Similarity");
-        subMenu1.add(0, 30, Menu.NONE, "by New Similarity");
+        subMenu1.add(0, 30, Menu.NONE, "by Recommendation");
 
         MenuItem subMenu1Item = subMenu1.getItem();
         subMenu1Item.setIcon(R.drawable.collections_sort_by_size);
