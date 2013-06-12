@@ -220,3 +220,10 @@ static
 gen
 *.pyc
 system
+hooks
+language
+logs
+third_party
+cache
+core
+errors
