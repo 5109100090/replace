@@ -24,7 +24,7 @@ import java.util.List;
 public class UserForm extends SherlockListActivity {
 
 	static final int USER_FORM_DETAIL_REQUEST = 1;
-	private String mode = null;
+	private String mode = null, status = null;
 	private List<String> dataList = new ArrayList<String>();
 	private List<String> attributeList = new ArrayList<String>();
 	private ProgressBar progressBar;
@@ -34,14 +34,14 @@ public class UserForm extends SherlockListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user_form);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		
+
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 		progressBar.setVisibility(View.VISIBLE);
 
 		Intent intent = getIntent();
 		mode = intent.getStringExtra("mode");
 
-		if(mode.equals("register")){
+		if (mode.equals("register")) {
 			setTitle("Registration");
 		}
 		attributeList.add("Username");
@@ -122,12 +122,11 @@ public class UserForm extends SherlockListActivity {
 				data.put("userOccupation", dataList.get(8));
 				data.put("userDOB", dataList.get(9));
 
+				status = "REGISTER";
 				HTTPUserForm http = new HTTPUserForm();
-				http.setMode(1);
 				http.setContext(UserForm.this);
 				http.setData(data);
 				http.execute("authenticate/" + mode + "/");
-				finish();
 				return true;
 			}
 		});
@@ -138,7 +137,13 @@ public class UserForm extends SherlockListActivity {
 		@Override
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);
-			if (getMode() == 1) {
+			if (status.equals("REGISTER")) {
+				if (result.equals("OKE")) {
+					finish();
+				} else {
+					Toast.makeText(getApplicationContext(),
+							"profile already exist", Toast.LENGTH_SHORT).show();
+				}
 				return;
 			}
 
@@ -157,9 +162,7 @@ public class UserForm extends SherlockListActivity {
 				dataList.set(8, json_data.getString("userOccupation"));
 				dataList.set(9, json_data.getString("userDOB"));
 			} catch (JSONException e) {
-				Toast.makeText(getApplicationContext(),
-						"Error parsing data " + e.toString(),
-						Toast.LENGTH_SHORT).show();
+				System.out.println("Error parsing data " + e.toString());
 			}
 			setTitle(dataList.get(2));
 			progressBar.setVisibility(View.INVISIBLE);

@@ -63,14 +63,18 @@ def update(request):
 
 def register(request):
     if request.method == "POST" :
+        ret = "OK"
         req = request.POST
-        dob = req['userDOB'].split('-')
-        u = User(userName=req['userName'], userAlias=req['userAlias'], userPassword=hashlib.md5(str(req['userPassword'])).hexdigest(), userFoods=req['userFoods'], userDrinks=req['userDrinks'], userBooks=req['userBooks'], userMovies=req['userMovies'], userGender=req['userGender'], userOccupation=req['userOccupation'], userDOB=datetime.date(int(dob[0]), int(dob[1]), int(dob[2])))
-        u.save()
-        
-        #user = User.objects.latest('userId')
-        #sp = SimilarityProcess()
-        #sp.processUser(user.userId)
-        return HttpResponse("oke")
+        if User.objects.filter(userName=userName, userPassword=userPassword).exists():
+            ret = "EXIST"
+        else:
+            dob = req['userDOB'].split('-')
+            u = User(userName=req['userName'], userAlias=req['userAlias'], userPassword=hashlib.md5(str(req['userPassword'])).hexdigest(), userFoods=req['userFoods'], userDrinks=req['userDrinks'], userBooks=req['userBooks'], userMovies=req['userMovies'], userGender=req['userGender'], userOccupation=req['userOccupation'], userDOB=datetime.date(int(dob[0]), int(dob[1]), int(dob[2])))
+            u.save()
+            
+            #user = User.objects.latest('userId')
+            #sp = SimilarityProcess()
+            #sp.processUser(user.userId)
+        return HttpResponse(ret)
     else :
         return HttpResponse("what?")
