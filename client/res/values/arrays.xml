@@ -12,7 +12,7 @@
         <item name="2">riset.ajk.if.its.ac.id</item>
     </string-array>
     <string-array name="serverUrlValues">
-        <item name="1">http://10.151.36.36:8080/</item>
+        <item name="1">http://10.151.36.36:9090/</item>
         <item name="2">http://riset.ajk.if.its.ac.id/replace/</item>
     </string-array>
 
