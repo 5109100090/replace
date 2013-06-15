@@ -120,6 +120,7 @@ public class PlaceReviews extends SherlockListActivity {
 					review.setReviewText(json_data.getString("reviewText"));
 					review.setSimilarity(json_data.getDouble("similarityValue"));
 					review.setNewSimilarity(json_data.getDouble("newSimilarityValue"));
+					review.setSimilarityFlag(json_data.getInt("similarityFlag"));
 
 					list.add(review);
 				}

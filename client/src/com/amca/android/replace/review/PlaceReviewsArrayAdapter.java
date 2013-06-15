@@ -45,16 +45,18 @@ public class PlaceReviewsArrayAdapter extends ArrayAdapter<Review> {
 		review = values.get(position);
 		user = review.getReviewUser();
 
-		double sim = review.getSimilarity();
 		String simText = null;
-		if(sim <= 0.25){
-			simText = "not\nsimilar";
-		}else if(sim <= 0.5){
-			simText = "similar\nenough";
-		}else if(sim <= 0.75){
-			simText = "similar";
-		}else{
-			simText = "very\nsimilar";
+		switch(review.getSimilarityFlag()){
+			case 0:
+				simText = "not\nsimilar"; break;
+			case 1:
+				simText = "look\nlike"; break;
+			case 2:
+				simText = "quite\nsimilar"; break;
+			case 3:
+				simText = "similar"; break;
+			case 4:
+				simText = "very\nsimilar"; break;
 		}
 		
 		reviewUser.setText(user.getUserAlias());

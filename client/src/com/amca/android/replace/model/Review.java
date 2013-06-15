@@ -13,6 +13,7 @@ public class Review {
 	private String reviewText;
 	private Double similarity;
 	private Double newSimilarity;
+	private Integer similarityFlag;
 
 	public Integer getReviewId() {
 		return reviewId;
@@ -108,6 +109,14 @@ public class Review {
 
 	public void setNewSimilarity(Double newSimilarity) {
 		this.newSimilarity = newSimilarity;
+	}
+	
+	public Integer getSimilarityFlag() {
+		return similarityFlag;
+	}
+
+	public void setSimilarityFlag(Integer similarityFlag) {
+		this.similarityFlag = similarityFlag;
 	}
 
 }
