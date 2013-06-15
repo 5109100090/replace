@@ -3,6 +3,7 @@ from review.models import Review
 from authenticate.models import User
 from place.models import Place
 from similarity.sp import SimilarityProcess
+from similarity.fuzzy import Fuzzy
 import json
 
 def index(request):
@@ -44,6 +45,8 @@ def listReviews(request):
             dict["similarityValue"] = float((dict["similarityValue"] - minValue)/(maxValue - minValue))
             dict['newSimilarityValue'] = dict['similarityValue'] * dict['averagePoint']
             dict['averagePoint'] = str(dict['averagePoint'])
+            fuzzy = Fuzzy()
+            dict['similarityFlag'] = str(fuzzy.process(dict['similarityValue']))
         #'''
             
         data = sorted(data, key=lambda rev: rev['newSimilarityValue'], reverse=True)
