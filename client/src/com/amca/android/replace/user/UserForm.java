@@ -24,7 +24,7 @@ import java.util.List;
 public class UserForm extends SherlockListActivity {
 
 	static final int USER_FORM_DETAIL_REQUEST = 1;
-	private String mode = null, status = null;
+	private String mode = null;
 	private List<String> dataList = new ArrayList<String>();
 	private List<String> attributeList = new ArrayList<String>();
 	private ProgressBar progressBar;
@@ -51,7 +51,6 @@ public class UserForm extends SherlockListActivity {
 		attributeList.add("Favourite Drinks");
 		attributeList.add("Favourite Books");
 		attributeList.add("Favourite Movies");
-		// attributeList.add("Favourite Musics");
 		attributeList.add("Gender");
 		attributeList.add("Occupation");
 		attributeList.add("Date of Birth");
@@ -122,7 +121,6 @@ public class UserForm extends SherlockListActivity {
 				data.put("userOccupation", dataList.get(8));
 				data.put("userDOB", dataList.get(9));
 
-				status = "REGISTER";
 				HTTPUserForm http = new HTTPUserForm();
 				http.setContext(UserForm.this);
 				http.setData(data);
@@ -137,7 +135,8 @@ public class UserForm extends SherlockListActivity {
 		@Override
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);
-			if (status.equals("REGISTER")) {
+			System.out.println(result);
+			if (mode.equals("register")) {
 				if (result.equals("OKE")) {
 					finish();
 				} else {
@@ -157,7 +156,6 @@ public class UserForm extends SherlockListActivity {
 				dataList.set(4, json_data.getString("userDrinks"));
 				dataList.set(5, json_data.getString("userBooks"));
 				dataList.set(6, json_data.getString("userMovies"));
-				// dataList.set(json_data.getString("userMusics"));
 				dataList.set(7, json_data.getString("userGender"));
 				dataList.set(8, json_data.getString("userOccupation"));
 				dataList.set(9, json_data.getString("userDOB"));
