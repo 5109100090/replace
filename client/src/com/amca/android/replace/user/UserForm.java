@@ -137,7 +137,7 @@ public class UserForm extends SherlockListActivity {
 			super.onPostExecute(result);
 			System.out.println(result);
 			if (mode.equals("register")) {
-				if (result.equals("OKE")) {
+				if (result.equals("OK")) {
 					finish();
 				} else {
 					Toast.makeText(getApplicationContext(),
