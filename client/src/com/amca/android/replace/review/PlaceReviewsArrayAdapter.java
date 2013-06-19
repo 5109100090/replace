@@ -56,7 +56,7 @@ public class PlaceReviewsArrayAdapter extends ArrayAdapter<Review> {
 			case 0:
 				simText = "not\nsimilar"; break;
 			case 1:
-				simText = "look\nlike"; break;
+				simText = "less\nsimilar"; break;
 			case 2:
 				simText = "quite\nsimilar"; break;
 			case 3:
