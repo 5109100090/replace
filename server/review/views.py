@@ -22,6 +22,7 @@ def listReviews(request):
         data = []       
         for r in Review.objects.filter(reviewPlace_id=place).exclude(reviewUser_id=user) :
             dict = {}
+            dict['userId'] = r.reviewUser.userId
             dict['userAlias'] = r.reviewUser.userAlias
             dict['reviewPointPrice'] = r.reviewPointPrice
             dict['reviewPointService'] = r.reviewPointService
