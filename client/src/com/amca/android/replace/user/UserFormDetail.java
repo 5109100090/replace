@@ -45,7 +45,7 @@ public class UserFormDetail extends SherlockActivity {
 			if (attribute.equals("Password")) {
 				ed.setInputType(InputType.TYPE_CLASS_TEXT
 						| InputType.TYPE_TEXT_VARIATION_PASSWORD);
-			} else if (mode.equals("update")) {
+			} else if (!data.equals("null") || mode.equals("update")) {
 				ed.setText(data);
 			} else {
 				ed.setHint("Write your " + attribute + " here");
