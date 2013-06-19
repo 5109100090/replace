@@ -73,9 +73,9 @@ def review(request):
     response = ""
     
     text = {
-            1 : ["kurang memuaskan karena harganya cukup mahal","pelayananannya kurang oke","masih banyak yang perlu di tingkatkan","pelayanannnya lemot","AC nya terlalu dingin, pernah ketetesan karena bocor","pelayannya kurang ramah kepada pengunjung"],
-            2 : ["tempatnya lumayan juga walau agak jauh","tempatnya kecil, kalo rame jadi sempit","ruangannya panas dan pengap","AC nya kurang dingin, so far so good","mungkin perlu buka cabang biar gak overload","coba harganya lebih murah dikit, pasti lebih rame"],
-            3 : ["tempatnya nyaman buat kumpul sama teman-teman","pelayan nya oke-oke semua","biarpun jauh pasti aku datengin karena tempatnya oke","harganya murah, jadi suka","biarpun mahal tapi aku suka","gak bosen-bosen nya kesini karena dekat rumah","suka kesini kalo rame-rame sama temen"],
+            1 : ["kurang memuaskan karena harganya cukup mahal","pelayananannya kurang oke","masih banyak yang perlu di tingkatkan","pelayanannnya lemot","AC nya terlalu dingin, pernah ketetesan karena bocor","pelayannya kurang ramah kepada pengunjung","kurang asik tempatnya","bukan cuman bergaya jadul, udah mau kayak bangunan roboh!"],
+            2 : ["tempatnya lumayan juga walau agak jauh","tempatnya kecil, kalo rame jadi sempit","ruangannya panas dan pengap","AC nya kurang dingin, so far so good","mungkin perlu buka cabang biar gak overload","coba harganya lebih murah dikit, pasti lebih rame","suka ada lalat masuk, perlu ditindak lanjuti"],
+            3 : ["tempatnya nyaman buat kumpul sama teman-teman","pelayan nya oke-oke semua","biarpun jauh pasti aku datengin karena tempatnya oke","harganya murah, jadi suka","biarpun mahal tapi aku suka","gak bosen-bosen nya kesini karena dekat rumah","suka kesini kalo rame-rame sama temen","udah murah, cozy lagi, oke dah"],
             4 : ["high recommended buat yang low budget","paling cocok buat yang suka cuci mata","gak bosen-bosen nya buat kesini terus karena dekat rumah"],
             }
     
@@ -84,7 +84,7 @@ def review(request):
     
     for place in Place.objects.all():
         response += place.placeName + "<br />"
-        nReview = randrange(6, 10)
+        nReview = randrange(6, 13)
         randomUsers = random.sample(users, nReview)
         
         for user in randomUsers:
