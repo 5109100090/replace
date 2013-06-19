@@ -107,6 +107,7 @@ public class PlaceReviews extends SherlockListActivity {
 					JSONObject json_data = jArray.getJSONObject(i);
 
 					User user = new User();
+					user.setUserId(json_data.getInt("userId"));
 					user.setUserAlias(json_data.getString("userAlias"));
 
 					Review review = new Review();

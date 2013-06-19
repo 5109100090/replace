@@ -5,11 +5,16 @@ import java.util.List;
 import com.amca.android.replace.R;
 import com.amca.android.replace.model.Review;
 import com.amca.android.replace.model.User;
+import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
+
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class PlaceReviewsArrayAdapter extends ArrayAdapter<Review> {
@@ -37,7 +42,8 @@ public class PlaceReviewsArrayAdapter extends ArrayAdapter<Review> {
 		TextView reviewPointComfort = (TextView) rowView.findViewById(R.id.textViewPointComfort);
 		TextView similarity = (TextView) rowView.findViewById(R.id.similarity);
 		TextView reviewText = (TextView) rowView.findViewById(R.id.reviewText);
-
+		ImageView userIcon = (ImageView) rowView.findViewById(R.id.userIcon);
+		
 		DecimalFormat df = new DecimalFormat("#0.##");
 
 		User user = new User();
@@ -69,6 +75,11 @@ public class PlaceReviewsArrayAdapter extends ArrayAdapter<Review> {
 		reviewPoint.setText(df.format(review.getAveragePoint()) + "/10");
 		reviewText.setText(review.getReviewText());
 
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+		String serverUrl = preferences.getString("serverUrl", "");
+		
+		UrlImageViewHelper.setUrlDrawable(userIcon, serverUrl + "static/user/" + user.getUserId() + ".jpg", R.drawable.gif_loader);
+		
 		return rowView;
 	}
 
