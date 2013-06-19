@@ -57,23 +57,28 @@ def listReviews(request):
     
 def write(request):
     if request.method == "POST" :
+        ret = "OK"
+        
         user = User()
         user.userId = int(request.POST["userId"])
         
         place = Place()
         place.placeId = int(request.POST["placeId"])
         
-        review = Review()
-        review.reviewUser = user
-        review.reviewPlace = place
-        review.reviewPointPrice = int(request.POST["reviewPointPrice"])
-        review.reviewPointService = int(request.POST["reviewPointService"])
-        review.reviewPointLocation = int(request.POST["reviewPointLocation"])
-        review.reviewPointCondition = int(request.POST["reviewPointCondition"])
-        review.reviewPointComfort = int(request.POST["reviewPointComfort"])
-        review.reviewText = request.POST["reviewText"]
-        review.save()
+        if Review.objects.filter(reviewUser=user, reviewPlace=place).exists():
+            ret = "EXIST"
+        else:
+            review = Review()
+            review.reviewUser = user
+            review.reviewPlace = place
+            review.reviewPointPrice = int(request.POST["reviewPointPrice"])
+            review.reviewPointService = int(request.POST["reviewPointService"])
+            review.reviewPointLocation = int(request.POST["reviewPointLocation"])
+            review.reviewPointCondition = int(request.POST["reviewPointCondition"])
+            review.reviewPointComfort = int(request.POST["reviewPointComfort"])
+            review.reviewText = request.POST["reviewText"]
+            review.save()
 
-        return HttpResponse("oke")
+        return HttpResponse(ret)
     else :
         return HttpResponse("what?")
