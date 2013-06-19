@@ -65,6 +65,8 @@ def register(request):
     if request.method == "POST" :
         ret = "OK"
         req = request.POST
+        userName = str(req["userName"])
+        userPassword = hashlib.md5(str(req["userPassword"])).hexdigest()
         if User.objects.filter(userName=userName, userPassword=userPassword).exists():
             ret = "EXIST"
         else:
