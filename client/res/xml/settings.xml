@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <PreferenceCategory android:title="Application">
+    <PreferenceCategory android:title="Development">
         <ListPreference
                 android:key="serverUrl"
                 android:entries="@array/serverUrlEntries"
@@ -13,6 +13,12 @@
                 android:summary="locate current position automatically"
                 android:title="Auto Locate Position"
                 android:key="autoLocation"
+                android:defaultValue="false"/>
+        
+        <CheckBoxPreference
+                android:summary="Provide minimalist view"
+                android:title="Minimalist Layout"
+                android:key="minimalist"
                 android:defaultValue="false"/>
     </PreferenceCategory>
 </PreferenceScreen>
