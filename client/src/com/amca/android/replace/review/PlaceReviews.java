@@ -127,7 +127,7 @@ public class PlaceReviews extends SherlockListActivity {
 				}
 
 				adapter = new PlaceReviewsArrayAdapter(
-						PlaceReviews.this, list);
+						PlaceReviews.this, list, R.layout.activity_place_reviews_row);
 				setListAdapter(adapter);
 			} catch (JSONException e) {
 				Toast.makeText(getApplicationContext(),
