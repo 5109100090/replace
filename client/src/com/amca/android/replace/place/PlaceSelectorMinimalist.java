@@ -12,6 +12,7 @@ import com.amca.android.replace.R;
 import com.amca.android.replace.Setting;
 import com.amca.android.replace.http.HTTPTransfer;
 import com.amca.android.replace.model.Place;
+import com.amca.android.replace.review.PlaceReviewsMinimalist;
 
 import android.os.Bundle;
 import android.app.ListActivity;
@@ -55,10 +56,10 @@ public class PlaceSelectorMinimalist extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Place place = placesList.get(position);
 		
-		Intent intent = new Intent(PlaceSelectorMinimalist.this, PlaceDetail.class);
-		intent.putExtra("userId", this.userId);
-		intent.putExtra("typeId", this.typeId);
-		intent.putExtra("place", place);
+		Intent intent = new Intent(PlaceSelectorMinimalist.this, PlaceReviewsMinimalist.class);
+		intent.putExtra("userId", userId);
+		intent.putExtra("placeId", place.getPlaceId());
+		intent.putExtra("placeName", place.getPlaceName());
 		startActivity(intent);
 	}
 
