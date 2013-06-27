@@ -34,22 +34,22 @@ class SimilarityProcess():
                            }
         
         user1Property = {}
-        user1Property['userFoods'] = user1.userFoods.split(',')
-        user1Property['userDrinks'] = user1.userDrinks.split(',')
-        user1Property['userBooks'] = user1.userBooks.split(',')
-        user1Property['userMovies'] = user1.userMovies.split(',')
-        user1Property['userOccupation'] = user1.userOccupation
+        user1Property['userFoods'] = user1.userFoods.lower().split(',')
+        user1Property['userDrinks'] = user1.userDrinks.lower().split(',')
+        user1Property['userBooks'] = user1.userBooks.lower().split(',')
+        user1Property['userMovies'] = user1.userMovies.lower().split(',')
+        user1Property['userOccupation'] = user1.userOccupation.lower()
         user1Property['userDOB'] = str(user1.userDOB).split('-')
-        user1Property['userGender'] = user1.userGender
+        user1Property['userGender'] = user1.userGender.lower()
         
         user2Property = {}
-        user2Property['userFoods'] = user2.userFoods.split(',')
-        user2Property['userDrinks'] = user2.userDrinks.split(',')
-        user2Property['userBooks'] = user2.userBooks.split(',')
-        user2Property['userMovies'] = user2.userMovies.split(',')
-        user2Property['userOccupation'] = user2.userOccupation
+        user2Property['userFoods'] = user2.userFoods.lower().split(',')
+        user2Property['userDrinks'] = user2.userDrinks.lower().split(',')
+        user2Property['userBooks'] = user2.userBooks.lower().split(',')
+        user2Property['userMovies'] = user2.userMovies.lower().split(',')
+        user2Property['userOccupation'] = user2.userOccupation.lower()
         user2Property['userDOB'] = str(user2.userDOB).split('-')
-        user2Property['userGender'] = user2.userGender
+        user2Property['userGender'] = user2.userGender.lower()
         
         attributeValue = {}
         for keyProperty in user1Property:
@@ -80,7 +80,7 @@ class SimilarityProcess():
                         numOfItem += 1
                         strTemp = keyProperty + " => [EditDistance]  " + p1 + " & " + p2 + " = " + str(edValue) + "<br />"
                         
-                        listTemp.append((edValue, strTemp))
+                        #listTemp.append((edValue, strTemp))
                         
                 # for l in sorted(listTemp, key=lambda attr: attr[0], reverse=True):
                 #    response += l[1]
@@ -88,8 +88,8 @@ class SimilarityProcess():
                 average = sumOfItem / numOfItem
                 method = "Average EditDistance"
             
-            # newSim = average    
-            newSim = float((2 * average * weightAttribute[type][keyProperty]) / (1 + (average * weightAttribute[type][keyProperty])))
+            newSim = average    
+            #newSim = float((2 * average * weightAttribute[type][keyProperty]) / (1 + (average * weightAttribute[type][keyProperty])))
             # newSim = average * weightAttribute[type][keyProperty]
             attributeValue[keyProperty] = newSim
             
@@ -105,7 +105,7 @@ class SimilarityProcess():
         # response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
         # response += str(time.clock() - start_time) + " seconds<br />"
         response += "<br/>"
-        # simValue = response
+        #simValue = response
 
         return simValue
         
