@@ -37,5 +37,8 @@
     <string name="title_activity_user_form_detail">UserFormDetail</string>
     <string name="linkToRegister">New user? Register here</string>
     <string name="title_activity_write_review">WriteReview</string>
+    <string name="title_activity_place_type_minimalist">PlaceTypeMinimalist</string>
+    <string name="title_activity_place_selector_minimalist">PlaceSelectorMinimalist</string>
+    <string name="title_activity_place_reviews_minimalist">PlaceReviewsMinimalist</string>
 
 </resources>
