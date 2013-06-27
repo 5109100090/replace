@@ -130,8 +130,17 @@ public class MainActivity extends SherlockActivity {
 					JSONArray jArray = new JSONArray(result);
 					JSONObject json_data = jArray.getJSONObject(0);
 
-					Intent intent = new Intent(MainActivity.this,
-							PlaceType.class);
+					Setting setting = new Setting();
+					boolean minimalist = setting.getBoolean(MainActivity.this, "minimalist");
+					
+					Intent intent = null;
+					if(minimalist){
+						intent = new Intent(MainActivity.this,
+								PlaceTypeMinimalist.class);
+					}else{
+						intent = new Intent(MainActivity.this,
+								PlaceType.class);
+					}
 					intent.putExtra("userId", json_data.getInt("userId"));
 					intent.putExtra("userAlias",
 							json_data.getString("userAlias"));
