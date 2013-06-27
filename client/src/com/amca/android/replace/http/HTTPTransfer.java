@@ -17,10 +17,9 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import com.amca.android.replace.Setting;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.preference.PreferenceManager;
 
 public class HTTPTransfer extends AsyncTask<String, String, String> {
 
@@ -138,8 +137,8 @@ public class HTTPTransfer extends AsyncTask<String, String, String> {
 	
 	@Override
 	protected String doInBackground(String... params) {
-		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-		String serverUrl = preferences.getString("serverUrl", "") + params[0];
+		Setting setting = new Setting();
+		String serverUrl = setting.getString(getContext(), "serverUrl") + params[0];
 		
 		switch(getMode()){
 			case 1 :
