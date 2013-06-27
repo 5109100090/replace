@@ -82,7 +82,7 @@ public class MainActivity extends SherlockActivity {
 			@Override
 			public boolean onMenuItemClick(final MenuItem item) {
 				Intent intent = new Intent(MainActivity.this,
-						Settings.class);
+						SettingActivity.class);
 				startActivity(intent);
 				return true;
 			}
