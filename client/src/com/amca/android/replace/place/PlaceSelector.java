@@ -9,8 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 import com.amca.android.replace.R;
+import com.amca.android.replace.Setting;
 import com.amca.android.replace.http.HTTPTransfer;
 import com.amca.android.replace.model.Place;
 import org.json.JSONArray;
@@ -116,12 +116,10 @@ public class PlaceSelector extends SherlockListActivity {
 				}
 
 				PlaceSelectorArrayAdapter adapter = new PlaceSelectorArrayAdapter(
-						PlaceSelector.this, placesList);
+						PlaceSelector.this, placesList, R.layout.activity_place_selector_row);
 				setListAdapter(adapter);
 			} catch (JSONException e) {
-				Toast.makeText(getApplicationContext(),
-						"Error parsing data " + e.toString(),
-						Toast.LENGTH_SHORT).show();
+				System.out.println("Error parsing data " + e.toString());
 			}
 			progressBar.setVisibility(View.INVISIBLE);
 		}
