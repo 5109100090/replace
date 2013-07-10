@@ -47,7 +47,7 @@ public class PlaceReviewsArrayAdapter extends ArrayAdapter<Review> {
 		String simText = null;
 		switch (review.getSimilarityFlag()) {
 		case 0:
-			simText = "not imilar";
+			simText = "not similar";
 			break;
 		case 1:
 			simText = "less similar";

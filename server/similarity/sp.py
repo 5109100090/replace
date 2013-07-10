@@ -105,7 +105,7 @@ class SimilarityProcess():
         # response += user1.userName + " & " + user2.userName + " simValue : " + str(simValue) + "<br />" 
         # response += str(time.clock() - start_time) + " seconds<br />"
         response += "<br/>"
-        #simValue = response
+        # simValue = response
 
         return simValue
         
