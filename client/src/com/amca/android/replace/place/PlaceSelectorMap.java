@@ -56,13 +56,7 @@ public class PlaceSelectorMap extends SherlockFragmentActivity implements
 			Intent intent = new Intent(PlaceSelectorMap.this, PlaceDetail.class);
 			intent.putExtra("userId", this.userId);
 			intent.putExtra("typeId", place.getPlaceType());
-			intent.putExtra("placeId", place.getPlaceId());
-			intent.putExtra("placeName", place.getPlaceName());
-			intent.putExtra("placeAddress", place.getPlaceAddress());
-			intent.putExtra("placeDesc", place.getPlaceDesc());
-			intent.putExtra("placeReviews", place.getPlaceReviews().toString());
-			intent.putExtra("placeDistance", place.getPlaceDistance());
-			intent.putExtra("averagePoint", place.getAveragePoint());
+			intent.putExtra("place", place);
 			startActivity(intent);
 		}
 	}
