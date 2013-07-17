@@ -23,7 +23,7 @@ import java.util.List;
 public class PlaceSelector extends SherlockListActivity {
 
 	private Integer userId, typeId;
-	private String range, currentLat, currentLng, jsonValue, typeName, title;
+	private String currentLat, currentLng, jsonValue, title;
 	private List<Place> placesList = new ArrayList<Place>();
 	private ProgressBar progressBar;
 
@@ -36,19 +36,18 @@ public class PlaceSelector extends SherlockListActivity {
 		Intent intent = getIntent();
 		this.userId = intent.getIntExtra("userId", 0);
 		this.typeId = intent.getIntExtra("typeId", 0);
-		this.range = intent.getStringExtra("range");
 		this.currentLat = intent.getStringExtra("currentLat");
 		this.currentLng = intent.getStringExtra("currentLng");
-		typeName = intent.getStringExtra("typeName");
 
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("userId", userId.toString());
 		data.put("typeId", typeId.toString());
-		data.put("range", range);
+		data.put("range", intent.getStringExtra("range"));
 		data.put("currentLat", this.currentLat);
 		data.put("currentLng", this.currentLng);
+		data.put("placeTag", intent.getStringExtra("placeTag"));
 
 		HTTPPlaceSelector http = new HTTPPlaceSelector();
 		http.setContext(PlaceSelector.this);

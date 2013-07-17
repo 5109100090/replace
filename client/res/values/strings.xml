@@ -29,6 +29,7 @@
     <string name="title_activity_activity_window">ActivityWindow</string>
     <string name="spinnerPlaceType">Place Type</string>
     <string name="spinnerRange">Range</string>
+    <string name="textViewTag">Tag</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_place_reviews">PlaceReviews</string>
     <string name="title_activity_settings">Settings</string>

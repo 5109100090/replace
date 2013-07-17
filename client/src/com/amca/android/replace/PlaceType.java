@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -34,6 +35,7 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 	private List<Type> typeList = new ArrayList<Type>();
 	private TextView textViewPlaceType, textViewRange;
 	private Spinner spinnerPlaceType, spinnerRange;
+	private EditText editTextTag;
 	private Button buttonFind;
 	private ProgressBar progressBar;
 
@@ -51,6 +53,7 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 		textViewRange = (TextView) findViewById(R.id.textViewRange);
 		spinnerPlaceType = (Spinner) findViewById(R.id.spinnerPlaceType);
 		spinnerRange = (Spinner) findViewById(R.id.spinnerRange);
+		editTextTag = (EditText) findViewById(R.id.editTextTag);
 		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 		buttonFind = (Button) findViewById(R.id.buttonFind);
 		buttonFind.setOnClickListener(this);
@@ -60,6 +63,7 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 		textViewRange.setVisibility(View.INVISIBLE);
 		spinnerPlaceType.setVisibility(View.INVISIBLE);
 		spinnerRange.setVisibility(View.INVISIBLE);
+		editTextTag.setVisibility(View.INVISIBLE);
 		buttonFind.setVisibility(View.INVISIBLE);
 
 		Setting setting = new Setting();
@@ -78,6 +82,7 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 					textViewRange.setVisibility(View.VISIBLE);
 					spinnerPlaceType.setVisibility(View.VISIBLE);
 					spinnerRange.setVisibility(View.VISIBLE);
+					editTextTag.setVisibility(View.VISIBLE);
 					buttonFind.setVisibility(View.VISIBLE);
 				}
 			} else {
@@ -105,9 +110,9 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 			intent.putExtra("range", range[0]);
 			intent.putExtra("userId", this.userId);
 			intent.putExtra("typeId", type.getTypeId());
-			intent.putExtra("typeName", type.getTypeName());
 			intent.putExtra("currentLat", this.currentLat);
 			intent.putExtra("currentLng", this.currentLng);
+			intent.putExtra("placeTag", editTextTag.getText().toString());
 			startActivity(intent);
 		} else {
 			Toast.makeText(PlaceType.this,
@@ -171,6 +176,7 @@ public class PlaceType extends SherlockActivity implements OnClickListener {
 				textViewRange.setVisibility(View.VISIBLE);
 				spinnerPlaceType.setVisibility(View.VISIBLE);
 				spinnerRange.setVisibility(View.VISIBLE);
+				editTextTag.setVisibility(View.VISIBLE);
 				buttonFind.setVisibility(View.VISIBLE);
 			}
 		}

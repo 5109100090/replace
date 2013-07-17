@@ -68,6 +68,14 @@
                 android:entries="@array/spinnerRangeEntries"
                 android:prompt="@string/spinnerRange"
                 android:layout_below="@id/textViewRange" />
+            
+            <EditText
+                android:id="@+id/editTextTag"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:layout_below="@id/spinnerRange"
+                android:hint="@string/textViewTag" />
 
             <Button
                 android:id="@+id/buttonFind"
@@ -75,8 +83,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dip"
                 android:text="@string/buttonFind"
-                android:layout_below="@id/spinnerRange"
+                android:layout_below="@id/editTextTag"
                 android:drawableStart="@drawable/action_search" />
+
         </RelativeLayout>
     </LinearLayout>
 
