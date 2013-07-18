@@ -2,7 +2,14 @@ from django.db import models
 from type.models import Type
 
 class PlaceManager(models.Manager):
-    def listInRange(self, placeLat, placeLng, placeType, range):
+    def listInRange(self, placeLat, placeLng, typeId, range, placeTag):
+        '''
+        tags = ''
+        if placeTag:
+            tags = " (`placeTag` LIKE '%" + "%' OR `placeTag` LIKE '%".join(placeTag.split(',')) + "%') AND "
+        '''
+        #placeTag = "'%"+placeTag+"%'"
+
         query = "SELECT *, \
                 ( \
                     6371000 * \
@@ -18,13 +25,13 @@ class PlaceManager(models.Manager):
             (SUM(r.reviewPointPrice)/COUNT(r.reviewId)+SUM(r.reviewPointService)/COUNT(r.reviewId)+SUM(r.reviewPointLocation)/COUNT(r.reviewId)+SUM(r.reviewPointCondition)/COUNT(r.reviewId)+SUM(r.reviewPointComfort)/COUNT(r.reviewId))/5 AS averagePoint \
             FROM place_place p \
             LEFT JOIN review_review r \
-            ON r.reviewPlace_id = p.placeId\
-            WHERE placeType_id = %s \
+            ON r.reviewPlace_id = p.placeId \
+            WHERE placeType_id = %s AND placeTag LIKE '%%" + placeTag + "%%' \
             GROUP BY p.placeId \
             HAVING placeDistance < %s \
             ORDER BY placeDistance"
         
-        return Place.objects.raw(query, [placeLat, placeLng, placeLat, placeType.typeId, range])
+        return Place.objects.raw(query, [placeLat, placeLng, placeLat, typeId, range])
 
 class Place(models.Model):
     placeId = models.AutoField(primary_key=True)
@@ -34,4 +41,5 @@ class Place(models.Model):
     placeLng = models.TextField()
     placeType = models.ForeignKey(Type)
     placeAddress = models.TextField()
+    placeTag = models.TextField()
     objects = PlaceManager()

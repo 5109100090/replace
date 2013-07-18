@@ -1,6 +1,5 @@
 from django.http import HttpResponse
 from place.models import Place
-from type.models import Type
 import json
 
 def index(request):
@@ -12,11 +11,10 @@ def process(request):
         currentLng = str(request.POST["currentLng"])
         typeId = str(request.POST["typeId"])
         range = str(request.POST["range"])
+        placeTag = str(request.POST["placeTag"])
 
         data = []
-        type = Type()
-        type.typeId = typeId
-        for p in Place.objects.listInRange(currentLat, currentLng, type, range) :
+        for p in Place.objects.listInRange(currentLat, currentLng, typeId, range, placeTag) :
             dict = {}
             dict['placeId'] = p.placeId
             dict['placeName'] = p.placeName
