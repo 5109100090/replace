@@ -3,6 +3,6 @@ replace
 
 Recommended Places
 
-Replace - it's a client-server system. Provide nearby recomendation places for user by using profile matching algorithm to the other user's profile who give review. Giving extra value for user in recommendation process.
+RePlace - is an Android application that recommends nearby places by using profile matching algorithm to give similarity value with the reviewers. The similarity gives extra value for users to understand the review for the place. The system was developed over a RESTful communication between Android and Django-based API provider.
 
-&copy; http://babibu.eamca.com
+&copy; http://eamca.com
